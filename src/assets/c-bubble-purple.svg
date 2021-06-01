@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="124px" height="124px" viewBox="0 0 124 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <linearGradient x1="100%" y1="6.77165047%" x2="-61.138966%" y2="89.6003098%" id="linearGradient-1">
+            <stop stop-color="#434179" offset="0%"></stop>
+            <stop stop-color="#00D0FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(1.000000, 1.000000)">
+            <circle id="Oval" stroke="#0091FF" fill="url(#linearGradient-1)" cx="61" cy="61" r="61"></circle>
+            <text id="C" fill="#FFFFFF" fill-rule="nonzero" font-family="AvenirNext-Italic, Avenir Next" font-size="70" font-style="italic" font-weight="normal">
+                <tspan x="35.8" y="83">C</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

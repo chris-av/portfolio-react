@@ -1,0 +1,53 @@
+@import '../../styles/app.scss';
+
+.mb-top {
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  background-color: $purple-5;
+  height: 100%;
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+
+  width: 100%;
+  max-width: 350px;
+  color: white;
+  ul { list-style: none; }
+}
+
+.mb-nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-bottom: 20px;
+}
+
+.hamburger { display: flex; flex-direction: column; }
+.hamburger-bar {
+  width: 35px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+.mb-menu {
+  z-index: 1000000;
+  font-size: 20px;
+}
+
+.mb-menu-item {
+  margin: 15px 0;
+  a { text-decoration: none; color: white; }
+}
+
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}

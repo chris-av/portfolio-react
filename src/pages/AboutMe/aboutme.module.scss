@@ -1,0 +1,50 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-window {
+  max-width: 700px;
+  h1 { text-align: center; }
+}
+
+.stack-container {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.stack-logo {
+  // max-height: 50px;
+  max-width: 100px;
+}
+
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  h1 { font-size: 40px; font-family: 'Courier New', Courier, monospace; }
+  h2 { font-size: 20px; font-family: 'Courier New', Courier, monospace; }
+  span { font-size: inherit; font-family: inherit; color: blue; }
+  strong { font-size: inherit; font-family: inherit; font-weight: 900; }
+}
+
+// .random { transition: all ease 0.5s; }
+
+// .services-item:hover .random {
+//   transform: translateX(15%);
+// }
