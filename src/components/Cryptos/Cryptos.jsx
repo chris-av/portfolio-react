@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './cryptos.module.scss'
 
 const walletAddress = {
-  bitcoin: 'bc1qhvznwqknmhvu5u9c95t2zfmqgms65qk6ppx976',
+  bitcoin: '36VbQZMPk69SLVauprfLZFu4yk1cFmUCwm',
   ethereum: '0x8f6f684ce9df9483753331D78b29367B4AE7A1Ef',
   doge: 'DMavjUyrMdkqYHojfBRR4Uu6742tVswqGW'
 }
