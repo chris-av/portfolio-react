@@ -16,7 +16,7 @@
 }
 
 .frame {
-  position: relative;
+  // position: relative;
   padding: 5px 0px 0px 0px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -34,10 +34,14 @@
 .content {
   will-change: transform, opacity, height;
   margin-left: 6px;
-  padding: 0px 0px 0px 24px;
+  padding: 0px 0px 0px 20px;
   // border-left: 1px dashed rgba(255, 255, 255, 0.4);
   border-left: 1px dashed black;
   margin-bottom: 5px;
   // overflow: hidden;
   div { margin: 10px 0; }
+}
+
+@media (max-width: 900px) {
+  .container { font-size: 10px; }
 }
