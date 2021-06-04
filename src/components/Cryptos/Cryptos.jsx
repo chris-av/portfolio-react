@@ -20,6 +20,13 @@ const Cryptos = () => {
     return innerWidth;
   }
 
+  const determineIconSize = () => {
+    const windowSize = getWindowSize();
+    if (windowSize > 900) { return 'big'; }
+    else if (windowSize < 1200) { return ''; }
+    else if (windowSize < 900) { return 'small'; }
+  }
+
   useEffect(() => {
     function handleResize() {
       setWindowSize(getWindowSize());
@@ -71,7 +78,7 @@ const Cryptos = () => {
     <div className={styles['container']}>
       <div className={styles['crypto-container']}>
         <div className={useClass.bitcoin}>{copyBitCoinSuccess}</div>
-        <i className="bitcoin big icon yellow inverted circular" onClick={() => handleCopy('bitcoin')}></i>
+        <i className={`bitcoin ${determineIconSize()} icon yellow inverted circular`} onClick={() => handleCopy('bitcoin')}></i>
         <div className={styles['crypto-label']}>
           <h3>Bitcoin</h3>
           <span>{walletAddress.bitcoin}</span>
@@ -80,7 +87,7 @@ const Cryptos = () => {
       
       <div className={styles['crypto-container']}>
         <div className={useClass.ethereum}>{copyEthereumSuccess}</div>
-        <i className="ethereum big icon blue inverted circular" onClick={() => handleCopy('ethereum')}></i>
+        <i className={`ethereum ${determineIconSize()} icon blue inverted circular`} onClick={() => handleCopy('ethereum')}></i>
         <div className={styles['crypto-label']}>
           <h3>Ethereum</h3>
           <span>{walletAddress.ethereum}</span>
@@ -89,7 +96,7 @@ const Cryptos = () => {
       
       <div className={styles['crypto-container']}>
         <div className={useClass.doge}>{copyDogeSuccess}</div>
-        <i className="rocket big icon black inverted circular" onClick={() => handleCopy('doge')}></i>
+        <i className={`rocket ${determineIconSize()} icon black inverted circular`} onClick={() => handleCopy('doge')}></i>
         <div className={styles['crypto-label']}>
           <h3>Dogecoin</h3>
           <span>{walletAddress.doge}</span>
