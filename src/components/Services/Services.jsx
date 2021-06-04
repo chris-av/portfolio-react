@@ -81,8 +81,7 @@ const Services = () => {
           <div>Legal</div>
         </Tree>
         <Tree name="Social Media">
-          <div>YouTube, Instagram or Facebook</div>
-          <div>Random comment, subscriber or follower picker</div>
+          <div>Raffles</div>
           <div>Analytics, custom integrations</div>
         </Tree>
         <Tree name="Other">
