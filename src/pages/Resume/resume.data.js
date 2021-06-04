@@ -9,7 +9,7 @@ export const resume = {
       description: () => (
         <div>
           Data Manager for the National School Improvement Program and the Career Pathways program, programmatically consumed large volumes of data using R/Python to derive insights into student performance and academic trends.
-          Maintains School Information System (SIS), database management (SQL) and worked with our SIS APIs to design product integration.
+          Maintains School Information System (SIS), database management (SQL) and designed SIS APIs for custom applications, command line programs, and data access.
           Created workflows in Node and Python to leverage Google APIs to quickly clean and access organizational data.
         </div>
       ),
