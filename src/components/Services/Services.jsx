@@ -38,8 +38,8 @@ const Tree = React.memo(({ children, name, style, defaultOpen = false }) => {
   const Icon = Icons[ `${ children ? (isOpen ? 'Minus' : 'Plus') : 'Close'}SquareO` ];
 
   return (
-    <div className={styles['frame']}>
-      <Icon style={{ ...toggle, opacity: children ? 1 : 0.3 }} onClick={() => setOpen(!isOpen)} />
+    <div className={styles['frame']} onClick={() => setOpen(!isOpen)}>
+      <Icon style={{ ...toggle, opacity: children ? 1 : 0.3 }} />
       <span className={styles['title']} style={style}>{ name }</span>
       <animated.div
         className={styles['content']}
