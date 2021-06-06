@@ -39,7 +39,7 @@ const Contact = () => {
 				</div>
 
 				{ status === false ? (
-					<form name="contact" method="POST" data-netlify="true">
+					<form name="contact" method="POST" data-netlify="true" action="/contact/?success=true">
 						<div className={style['form-group']}>
 							<label>Enter your name</label>
 							<input placeholder="Enter name" onChange={handleChange} id="name" name="name" />
