@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import style from './contact.module.scss';
 
@@ -14,6 +14,12 @@ const Contact = () => {
 		console.log({ name, email, message });
 		setStatus(true);
 	}
+
+	useEffect(() => {
+		if (window.location.search.includes('success=true')) {
+			setStatus(true);
+		}
+	}, []);
 
 	const handleChange = (event) => {
 		// console.log(event.target.name);
