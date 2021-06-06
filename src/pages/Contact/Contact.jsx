@@ -10,7 +10,7 @@ const Contact = () => {
 	const [ status, setStatus ] = useState(false);
 
 	const handleSubmit = (event) => {
-		event.preventDefault();
+		// event.preventDefault();
 		console.log({ name, email, message });
 		setStatus(true);
 	}
