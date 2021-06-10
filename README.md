@@ -8,5 +8,7 @@ Whether it's building out a portfolio, a landing page for your product, an e-com
 [Instagram](https://www.instagram.com/chrisandre95/)
 
 Bitcoin: 36VbQZMPk69SLVauprfLZFu4yk1cFmUCwm
+
 Ethereum: 0x8f6f684ce9df9483753331D78b29367B4AE7A1Ef
+
 Dogecoin: DMavjUyrMdkqYHojfBRR4Uu6742tVswqGW
