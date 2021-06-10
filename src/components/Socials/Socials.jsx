@@ -4,7 +4,7 @@ import styles from './socials.module.scss';
 
 const links = {
   linkedin: 'https://www.linkedin.com/in/christian-a-valenzuela/',
-  github: 'https://github.com/im2wddrf',
+  github: 'https://github.com/chris-av',
   instagram: 'https://www.instagram.com/chrisandre95'
 }
 
