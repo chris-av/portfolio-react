@@ -16,16 +16,15 @@ export const resume = {
       delay: 1000
     },
     {
-      organization: 'CERI',
+      organization: 'Independent Contractor',
       jobtitle: 'Web Developer',
       range: '11/2019 - Present',
       description: () => (
         <div>
-          Created full stack sites for my client.
-          Completed projects that fulfilled business requirements and exceeded client expectations.
+          Created full stack sites for a few clients.
+          Completed projects that fulfilled business requirements and exceeded client expectations for each project.
           Used ReactJS library to create dynamic, smooth SPAs and maintained code repository for client.
-          Integrated backend using MongoDB to store user data and Sanity IO to dynamically render content.
-          Improved maintainability of code using highly organized project structure, differentiating components, pages and global settings.
+          Have created many projects for clients franging from simple landing pages, to full stack projects.
         </div>
       ),
       delay: 1200
