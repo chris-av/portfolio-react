@@ -38,8 +38,8 @@ const Tree = React.memo(({ children, name, style, defaultOpen = false }) => {
   const Icon = Icons[ `${ children ? (isOpen ? 'Minus' : 'Plus') : 'Close'}SquareO` ];
 
   return (
-    <div className={styles['frame']} onClick={() => setOpen(!isOpen)}>
-      <Icon style={{ ...toggle, opacity: children ? 1 : 0.3 }} />
+    <div className={styles['frame']}>
+      <Icon style={{ ...toggle, opacity: children ? 1 : 0.3 }} onClick={() => setOpen(!isOpen)} />
       <span className={styles['title']} style={style}>{ name }</span>
       <animated.div
         className={styles['content']}
@@ -84,8 +84,8 @@ const Services = () => {
           <div>Raffles</div>
           <div>Analytics, custom integrations</div>
         </Tree>
-        <Tree name="Other">
-          <div>Data cleaning</div>
+        <Tree name="Data Analysis">
+          <div>Data Cleaning</div>
           <Tree name="Statistical Analysis">
             <div>Single / Multiple Regression</div>
             <div>Time Series Analysis</div>
