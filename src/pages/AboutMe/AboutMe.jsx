@@ -27,7 +27,7 @@ const AboutMe = () => {
 				<h1>Welcome!</h1>
 				
 				<p>
-					My name's Christian Valenzuela, friendly neighborhood web developer.
+					My name's Christian Valenzuela, your friendly neighborhood web developer!
 					I am glad you came to visit my page!
 				</p>
 				
@@ -35,9 +35,7 @@ const AboutMe = () => {
 					I build everything: whether it is the landing page for your next product, a portfolio site for your artwork or a full e-commerce site.
 				</p>
 				
-				<p>
-					I have full stack experience: that means that not only can I build out the design of your website, I also have database experience to keep your data organized, accessible and secure. 
-				</p>
+        <p>I am a passionate developer with a particular affinity towards Javasciprt and Node. But I also love tinkering in other languages like bash/zsh, python, and C.</p>
 
 				<h1>Services</h1>
 
