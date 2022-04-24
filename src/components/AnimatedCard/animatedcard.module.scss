@@ -7,12 +7,11 @@
   border: none;
   cursor: pointer;
   user-select: none;
-  padding: 2rem;
+  margin: 20px 0;
 
   p { font-size: 1.2rem; }
 
 }
-
 
 .flip-card-inner {
   position: relative;
@@ -72,8 +71,7 @@
 
 @media (max-width: 900px) {
   .flip-card {
-    width: 400px;
-    height: 400px;
+    width: 100%;
   }
 }
 
