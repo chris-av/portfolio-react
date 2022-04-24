@@ -94,15 +94,6 @@ const Cryptos = () => {
         </div>
       </div>
       
-      <div className={styles['crypto-container']}>
-        <div className={useClass.doge}>{copyDogeSuccess}</div>
-        <i className={`rocket ${determineIconSize()} icon black inverted circular`} onClick={() => handleCopy('doge')}></i>
-        <div className={styles['crypto-label']}>
-          <h3>Dogecoin</h3>
-          <span>{walletAddress.doge}</span>
-        </div>
-      </div>
-      
     </div>
   )
 }
