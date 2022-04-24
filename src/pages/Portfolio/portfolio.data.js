@@ -2,6 +2,17 @@ import React from 'react';
 
 export const portfolio = [
   {
+    organization: "South Coast College",
+    jobtitle: "Independent Contractor - Developer",
+    description: () => (
+      <div>
+        <p>Converted an out-of-commission C# application into a full stack Single Page App written in Javascript (React).</p>
+        <p>Worked closely with the college to understand the business logic and reimplement using React for frontend and Node/Express + Postgres</p>
+        <p>Walked throught the team step by step and empowered the college to understand and own their code</p>
+      </div>
+    )
+  },
+  {
     organization: "Wise Attend",
     jobtitle: "Front and Backend",
     description: () => (
