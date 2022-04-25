@@ -43,16 +43,15 @@ const Technologies = () => {
 
       <h3>Platforms</h3>
       <div className={s['icon-row']}>
-        <i className="database huge black icon" />
         <i className="git huge black icon" />
         <i className="github huge black icon" />
+        <i className="docker huge blue icon" />
       </div>
       <div className={s['icon-row']}>
         <i className="cpanel huge orange icon" />
         <i className="aws huge yellow icon" />
         <i className="linode huge green icon" />
       </div>
-      <i className="docker huge blue icon" />
     </div>
   );
 }
