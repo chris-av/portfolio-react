@@ -6,10 +6,9 @@ import styles from './aboutme.module.scss';
 import Cryptos from '../../components/Cryptos/Cryptos';
 // import MyMusic from '../../components/MyMusic/MyMusic';
 import Services from '../../components/Services/Services';
+import Technologies from '../../components/Technologies/Technologies';
 
 // import Template from '../../components/Animations/Template';
-// import Circle from '../../components/Animations/Circle';
-// import Circle from '../../components/Animations/CircleAlt';
 import Message from '../../components/Animations/Message';
 
 const AboutMe = () => {
@@ -37,9 +36,17 @@ const AboutMe = () => {
 				
         <p>I am a passionate developer with a particular affinity towards Javasciprt and Node. But I also love tinkering in other languages like bash/zsh, python, and C.</p>
 
+        <div style={{ margin: "5rem 0" }}></div>
+
 				<h1>Services</h1>
 
 				<Services />
+
+        <div style={{ margin: "5rem 0" }}></div>
+
+        <Technologies />
+
+        <div style={{ margin: "5rem 0" }}></div>
 
 				<h1>Wanna donate ? </h1>
 

@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  h3 { text-align: center; }
+
+}
+
+i { cursor: pointer; transition: all 0.6s ease-in-out; user-select: none; }
+i img { transition: all 0.6s ease-in-out; }
+
+.divider {
+  margin: 2rem 0;
+  height: 1px;
+  border: solid 1px #D9DBDD;
+}
+
+.icon-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.custom-icon-container {
+  max-width: 200px;
+  // img { max-width: 120px; width: 100%; }
+
+  img:hover {
+    max-width: 250px;
+  }
+
+  .postgres { width: 80px;  }
+  .mongo { width: 150px; }
+  .firebase { width: 150px; }
+
+}
+
+
+@media (max-width: 900px) {
+  .custom-icon-container {
+    max-width: 120px;
+    img:hover {
+      max-width: 150px;
+    }
+    .postgres { width: 40px; }
+    .mongo { width: 90px; }
+    .firebase { width: 90px; }
+  }
+}
+
