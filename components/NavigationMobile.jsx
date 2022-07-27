@@ -1,0 +1,128 @@
+import React, { useState, useLayoutEffect, useEffect } from 'react';
+import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
+import Link from 'next/link';
+import styled from 'styled-components';
+import { useRouter } from 'next/router';
+import { useAppContext } from '@/state/state';
+
+import useWindowSize from '@/hooks/useWindowSize';
+
+
+import { github, instagram, linkedin } from '../socials';
+
+const NavigationMobile = () => {
+  
+  const { pathname: location } = useRouter();
+  const windowSize = useWindowSize();
+  const { open, toggleOpen } = useAppContext();
+
+
+  useIsomorphicLayoutEffect(() => {
+    // toggleOpen(false);
+    if (windowSize.width >= 1000) { toggleOpen(false) }
+  }, [windowSize, location, toggleOpen]);
+
+  // console.log({ location, windowSize, open });
+  // console.log({ open, toggleOpen });
+  
+  return (
+    <Container open={open}>
+      <nav className="mb-menu">
+        <ul>
+
+          <li className="mb-menu-item">
+            <Link href="/">
+              <a onClick={() => toggleOpen(false)} >About</a>
+            </Link>
+          </li>
+
+          <li className="mb-menu-item">
+            <Link href="/portfolio">
+              <a onClick={() => toggleOpen(false)}>Portfolio</a>
+            </Link>
+          </li>
+
+          <li className="mb-menu-item">
+            <Link href="/resume">
+              <a onClick={() => toggleOpen(false)}>Resume</a>
+            </Link>
+          </li>
+
+          <li className="mb-menu-item">
+            <Link href="/contact">
+              <a onClick={() => toggleOpen(false)}>Contact</a>
+            </Link>
+          </li>
+
+        </ul>
+      </nav>
+      <div className="logo-container">
+        <a href={linkedin}><i className={`linkedin link big inverted icon`}></i></a>
+        <a href={github}><i className={`github link big inverted icon`}></i></a>
+        <a href={instagram}><i className={`instagram link big inverted icon`}></i></a>
+      </div>
+    </Container>
+  );
+}
+
+
+
+const Container = styled.div`
+
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  background-color: #434179;
+  height: 100%;
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+
+  width: 100%;
+  // max-width: 350px;
+  color: white;
+  ul { list-style: none; }
+
+  .mb-nav-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-bottom: 20px;
+  }
+
+  .hamburger { display: flex; flex-direction: column; }
+  .hamburger-bar {
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+  }
+
+  .mb-menu {
+    z-index: 1000000;
+    font-size: 20px;
+  }
+
+  .mb-menu-item {
+    margin: 15px 0;
+    a { text-decoration: none; color: white; }
+  }
+
+  .logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+  }
+`;
+
+
+
+
+
+export default NavigationMobile;
