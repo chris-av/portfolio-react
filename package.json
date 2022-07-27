@@ -3,24 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.24.0",
-    "framer-motion": "^5.4.3",
+    "axios": "^0.27.2",
+    "framer-motion": "^6.5.1",
+    "next": "^12.2.3",
     "prop-types": "^15.7.2",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-router-dom": "^5.1.2",
-    "react-router-hash-link": "^1.2.2",
-    "react-scripts": "^4.0.3",
-    "react-spring": "^8.0.27",
-    "react-transition-group": "^4.3.0",
-    "react-use-measure": "^2.0.4",
-    "sass": "^1.44.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-spring": "^9.5.2",
+    "styled-components": "^5.3.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "start": "next start",
+    "build": "next build"
   },
   "eslintConfig": {
     "extends": "react-app"
