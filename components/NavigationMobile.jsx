@@ -8,7 +8,7 @@ import { useAppContext } from '@/state/state';
 import useWindowSize from '@/hooks/useWindowSize';
 
 
-import { github, instagram, linkedin } from '../socials';
+import { github, instagram, linkedin } from '@/data/socials';
 
 const NavigationMobile = () => {
   
