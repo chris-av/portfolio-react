@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { github, instagram, linkedin } from '../socials';
+import { github, instagram, linkedin } from '@/data/socials';
 
 
 import Cryptos from '@/components/Cryptos';
