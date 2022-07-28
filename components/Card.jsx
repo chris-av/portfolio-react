@@ -61,7 +61,7 @@ const Container = styled.div`
   }
 
   .job-title {
-    max-width: 15px 0;
+    max-width: 60%;
   }
 
   .date-range {
