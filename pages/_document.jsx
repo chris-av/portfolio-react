@@ -20,7 +20,7 @@ class _MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-  );
+    );
   }
 }
 
