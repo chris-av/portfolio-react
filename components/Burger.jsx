@@ -46,7 +46,7 @@ const Container = styled.button`
 
   }
 
-  @media (max-width: 1100px) {  isplay: flex; }
+  @media (max-width: 1100px) { display: flex; }
   @media (max-width: 750px) { display: flex; }
 
 `;
