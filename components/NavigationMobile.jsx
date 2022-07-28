@@ -84,7 +84,6 @@ const Container = styled.div`
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
 
   width: 100%;
-  // max-width: 350px;
   color: white;
   ul { list-style: none; }
 
