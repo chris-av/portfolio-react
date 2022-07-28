@@ -63,7 +63,7 @@ const AboutMe = () => {
         </div>
 
     </Container>
-  )
+  );
 }
 
 
