@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import GlobalStyle from '@/styles/GlobalStyle';
+import styled from 'styled-components';
+
 
 
 // components
@@ -11,7 +13,7 @@ import { AppWrapper } from '@/state/state';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="app">
+    <div>
       <Head>
         <title>Christian Valenzuela</title>
         <meta
@@ -28,12 +30,19 @@ function MyApp({ Component, pageProps }) {
         <Burger />
         <NavigationMobile />
 
-        <Component {...pageProps} />
+        <AppContainer>
+          <Component {...pageProps} />
+        </AppContainer>
+
       </AppWrapper>
 
     </div>
   );
 }
+
+const AppContainer = styled.div`
+  padding: 25px;
+`;
 
 
 export default MyApp;
