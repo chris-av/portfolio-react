@@ -35,7 +35,7 @@ const AboutMe = () => {
             I build everything: whether it is the landing page for your next product, a portfolio site for your artwork or a full e-commerce site.
           </p>
           
-          <p>I am a passionate developer with a particular affinity towards Javasciprt and Node. But I also love tinkering in other languages like bash/zsh, python, and C.</p>
+          <p>I am a passionate developer with a particular affinity towards Javasciprt and Node. But I also love tinkering in other languages like bash/zsh, python, and zig!</p>
 
           <div style={{ margin: "5rem 0" }}></div>
 
