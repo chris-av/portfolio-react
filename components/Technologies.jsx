@@ -30,14 +30,14 @@ const Technologies = () => {
       <h3>Databases</h3>
 
       <div className="icon-row">
-        <i className="custom-icon-container">
-          <Image src="/postgres.svg" width={100} height={80} alt="postgres database"/>
+        <i className="custom-icon-container postgres">
+          <Image src="/postgres.svg" layout="fill" alt="postgres database"/>
         </i>
-        <i className="custom-icon-container">
-          <Image src="/MongoDB_Logo_FullColorBlack_RGB.svg" width={100} height={80}  alt="mongo nosql database"/>
+        <i className="custom-icon-container mongo">
+          <Image src="/MongoDB_Logo_FullColorBlack_RGB.svg" layout="fill" alt="mongo nosql database"/>
         </i>
-        <i className="custom-icon-container">
-          <Image src="/Firebase_Logo_Standard_Lockup.svg" width={100} height={80} alt="Google Firebase" />
+        <i className="custom-icon-container firebase">
+          <Image src="/Firebase_Logo_Standard_Lockup.svg" layout="fill" alt="Google Firebase" />
         </i>
       </div>
 
@@ -87,6 +87,9 @@ const Container = styled.div`
   }
 
   .custom-icon-container {
+    position: relative;
+    width: 100%;
+    height: 100px;
     max-width: 200px;
     // img { max-width: 120px; width: 100%; }
 
@@ -94,11 +97,11 @@ const Container = styled.div`
       max-width: 250px;
     }
 
-    .postgres { width: 80px;  }
-    .mongo { width: 150px; }
-    .firebase { width: 150px; }
-
   }
+
+  .postgres { width: 80px;  }
+  .mongo { width: 150px; }
+  .firebase { width: 150px; }
 
 
   @media (max-width: 900px) {
@@ -107,7 +110,7 @@ const Container = styled.div`
       img:hover {
         max-width: 150px;
       }
-      .postgres { width: 40px; }
+      .postgres { width: 20px; }
       .mongo { width: 90px; }
       .firebase { width: 90px; }
     }
