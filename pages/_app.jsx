@@ -3,8 +3,6 @@ import GlobalStyle from '@/styles/GlobalStyle';
 import styled from 'styled-components';
 
 
-
-// components
 import Burger from '@/components/Burger.jsx';
 import Navigation from '@/components/Navigation.jsx';
 import NavigationMobile from '@/components/NavigationMobile';

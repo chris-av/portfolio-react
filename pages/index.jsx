@@ -88,7 +88,6 @@ const Container = styled.div`
   }
 
   .stack-logo {
-    // max-height: 50px;
     max-width: 100px;
   }
 
