@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
+import useWindowSize from '@/hooks/useWindowSize';
+import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
+
 const walletAddress = {
   bitcoin: '36VbQZMPk69SLVauprfLZFu4yk1cFmUCwm',
   ethereum: '0x8f6f684ce9df9483753331D78b29367B4AE7A1Ef',
@@ -12,29 +15,14 @@ const Cryptos = () => {
   const [ copyBitCoinSuccess, setBitCoinCopySuccess ] = useState(null);
   const [ copyEthereumSuccess, setEthereumCopySuccess ] = useState(null);
   const [ copyDogeSuccess, setDogeCopySuccess ] = useState(null);
-  // const [ windowSize, setWindowSize ] = useState(0);
+  const [ iconSize, setIconSize ] = useState('small');
+  const windowSize = useWindowSize();
 
-  // const getWindowSize = () => {
-  //   const { innerWidth } = window;
-  //   return innerWidth;
-  // }
-
-  // const determineIconSize = () => {
-  //   const windowSize = getWindowSize();
-  //   if (windowSize > 900) { return 'big'; }
-  //   else if (windowSize < 1200) { return ''; }
-  //   else if (windowSize < 900) { return 'small'; }
-  // }
-
-  // useEffect(() => {
-  //   function handleResize() {
-  //     setWindowSize(getWindowSize());
-  //   }
-  //
-  //   window.addEventListener('resize', handleResize);
-  //   return () => window.removeEventListener('resize', handleResize);
-  //
-  // }, [])
+  useIsomorphicLayoutEffect(() => {
+    if (windowSize.width > 900) { setIconSize('big'); }
+    else if (windowSize.width < 1200) { setIconSize(''); }
+    else if (windowSize.width < 900) { setIconSize('small'); }
+  }, [windowSize]);
 
 
   const handleCopy = (type) => {
@@ -77,7 +65,7 @@ const Cryptos = () => {
     <Container>
       <div className="crypto-container">
         <div className={useClass.bitcoin}>{copyBitCoinSuccess}</div>
-        <i className={`bitcoin small icon yellow inverted circular`} onClick={() => handleCopy('bitcoin')}></i>
+        <i className={`bitcoin ${iconSize} icon yellow inverted circular`} onClick={() => handleCopy('bitcoin')}></i>
         <div className="crypto-label">
           <h3>Bitcoin</h3>
           <span>{walletAddress.bitcoin}</span>
@@ -86,7 +74,7 @@ const Cryptos = () => {
       
       <div className="crypto-container">
         <div className={useClass.ethereum}>{copyEthereumSuccess}</div>
-        <i className={`ethereum small icon blue inverted circular`} onClick={() => handleCopy('ethereum')}></i>
+        <i className={`ethereum ${iconSize} icon blue inverted circular`} onClick={() => handleCopy('ethereum')}></i>
         <div className="crypto-label">
           <h3>Ethereum</h3>
           <span>{walletAddress.ethereum}</span>
