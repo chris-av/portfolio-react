@@ -18,13 +18,9 @@ const NavigationMobile = () => {
 
 
   useIsomorphicLayoutEffect(() => {
-    // toggleOpen(false);
     if (windowSize.width >= 1000) { toggleOpen(false) }
   }, [windowSize, location, toggleOpen]);
 
-  // console.log({ location, windowSize, open });
-  // console.log({ open, toggleOpen });
-  
   return (
     <Container open={open}>
       <nav className="mb-menu">
