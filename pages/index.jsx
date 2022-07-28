@@ -4,11 +4,9 @@ import { github, instagram, linkedin } from '@/data/socials';
 
 
 import Cryptos from '@/components/Cryptos';
-// import MyMusic from '@/components/MyMusic/MyMusic';
 import Services from '@/components/Services';
 import Technologies from '@/components/Technologies';
 
-// import Template from '@/components/Animations/Template';
 import Message from '@/components/Animations/Message';
 
 
