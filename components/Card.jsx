@@ -84,8 +84,19 @@ const Container = styled.div`
 
   @media(max-width: ${breakpoints.smartphoneRegular}) {
 
+    .card-header {
+      h2 { font-size: 24px; } 
+      height: 90px;
+      padding: 0 10px;
+    }
+    
+    .card-title {
+      flex-direction: column;
+    }
+
     .job-title, .date-range {
-      font-size: 18px;
+      max-width: 100%;
+      width: 100%;
     }
 
     .card-text div, p {
