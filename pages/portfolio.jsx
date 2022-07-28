@@ -15,18 +15,15 @@ const Portfolio = () => {
     config: { duration: duration },
   }));
 
-  console.log(styles);
-
   return (
     <div className="portfolio">
       { portfolio.map((portf, i) => (
-          <animated.div style={styles[i]}>
+          <animated.div style={styles[i]} key={i}>
             <Card
               org={portf.organization}
               jobtitle={portf.jobtitle}
               daterange={portf.range}
               description={portf.description}
-              key={i}
             />
           </animated.div>
         )) }
