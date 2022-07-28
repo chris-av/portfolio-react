@@ -1,8 +1,10 @@
 import React from 'react';
+import { useAppContext } from '@/state/state'
 import styled from 'styled-components';
 
-const Burger = ({ open, toggleOpen }) => {
+const Burger = () => {
   const isExpanded = true;
+  const { open, toggleOpen } = useAppContext();
   
   return (
     <Container aria-label="Toggle menu" aria-expanded={isExpanded} onClick={() => toggleOpen(!open)}>
