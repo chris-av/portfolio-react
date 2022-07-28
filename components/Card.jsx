@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { breakpoints } from '@/styles/style-assets';
 
 
 const Card = ({ org, jobtitle, daterange, description, styles }) => {
@@ -79,6 +80,18 @@ const Container = styled.div`
 
   .card-text div, p {
     font-size: 1.1rem;
+  }
+
+  @media(max-width: ${breakpoints.smartphoneRegular}) {
+
+    .job-title, .date-range {
+      font-size: 18px;
+    }
+
+    .card-text div, p {
+      font-size: 14px;
+    }
+
   }
 
 
