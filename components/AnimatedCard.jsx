@@ -12,7 +12,7 @@ const AnimatedCard = ({ front, children }) => {
   // flip-card
   // 
   return (
-    <Container className="flip-card" onClick={clickerHandler}>
+    <Container onClick={clickerHandler}>
       <div className={`flip-card-inner${active ? "-active" : ""}`}>
         <h3 className="flip-card-front">{ front }</h3>
         <div className="flip-card-back">
@@ -25,20 +25,19 @@ const AnimatedCard = ({ front, children }) => {
 
 
 const Container = styled.div`
-  .flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 300px;
-    perspective: 1000px;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    user-select: none;
-    margin: 20px 0;
 
-    p { font-size: 1.2rem; }
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  margin: 20px 0;
 
-  }
+  p { font-size: 1.2rem; }
+
 
   .flip-card-inner {
     position: relative;
@@ -97,9 +96,9 @@ const Container = styled.div`
   }
 
   @media (max-width: 900px) {
-    .flip-card {
-      width: 100%;
-    }
+
+    width: 100%;
+
   }
 
 
