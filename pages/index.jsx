@@ -17,10 +17,7 @@ const AboutMe = () => {
           
         <div className="content-window">
 
-          {/* <Circle/> */}
-          <div className="message-container">
-            <Message />
-          </div>
+          <Message />
           
           <h1>Welcome!</h1>
           
@@ -98,27 +95,7 @@ const Container = styled.div`
     margin: 40px 0;
   }
 
-  .message-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    h1 { font-size: 40px; font-family: 'Courier New', Courier, monospace; }
-    h2 { font-size: 20px; font-family: 'Courier New', Courier, monospace; }
-    span { font-size: inherit; font-family: inherit; color: blue; }
-    strong { font-size: inherit; font-family: inherit; font-weight: 900; }
-  }
 
-  @media(max-width: 900px) {
-    .message-container { 
-      padding: 0 10px;
-      h1 { font-size: 25px; font-family: 'Courier New', Courier, monospace; }
-      h2 { font-size: 18px; font-family: 'Courier New', Courier, monospace; }
-      span { font-size: inherit; font-family: inherit; color: blue; }
-      strong { font-size: inherit; font-family: inherit; font-weight: 900; }
-    }
-  }
 `;
 
 
