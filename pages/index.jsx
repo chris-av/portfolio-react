@@ -47,7 +47,6 @@ const AboutMe = () => {
           <h1>Wanna donate ? </h1>
 
           <Cryptos />
-          {/* <MyMusic /> */}
 
           <div className="logo-container">
             <a target="_blank" rel="noopener noreferrer" href={linkedin}><i className={`linkedin link big black icon`}></i></a>
