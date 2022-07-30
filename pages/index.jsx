@@ -7,7 +7,7 @@ import Cryptos from '@/components/Cryptos';
 import Services from '@/components/Services';
 import Technologies from '@/components/Technologies';
 
-import Message from '@/components/Animations/Message';
+import Message from '@/components/Message';
 
 
 const AboutMe = () => {
