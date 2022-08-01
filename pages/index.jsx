@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { github, instagram, linkedin } from '@/data/socials';
 
+
+// Layouts
+import Layout from '@/styles/LayoutPadding';
 
 import Cryptos from '@/components/Cryptos';
 import Services from '@/components/Services';
@@ -11,52 +14,58 @@ import Message from '@/components/Message';
 
 
 const AboutMe = () => {
+
+  const ref = useRef();
   
   return (
-    <Container>
-          
-        <div className="content-window">
+    <Layout>
+      <Container>
+            
+          <div className="content-window">
 
-          <Message />
-          
-          <h1>Welcome!</h1>
-          
-          <p>
-            My name's Christian Valenzuela, your friendly neighborhood web developer!
-            I am glad you came to visit my page!
-          </p>
-          
-          <p>
-            I build everything: whether it is the landing page for your next product, a portfolio site for your artwork or a full e-commerce site.
-          </p>
-          
-          <p>I am a passionate developer with a particular affinity towards Javasciprt and Node. But I also love tinkering in other languages like bash/zsh, python, and zig!</p>
+            <Message myref={ref} />
+            
+            <h1 ref={ref}>Welcome!</h1>
+            
+            <div className="introduction">
+              <p>
+                My name's Christian Valenzuela, your friendly neighborhood web developer!
+                I am glad you came to visit my page!
+              </p>
+              
+              <p>
+                I build everything: whether it is the landing page for your next product, a portfolio site for your artwork or a full e-commerce site.
+              </p>
+              
+              <p>I am a passionate developer with a particular affinity towards Javasciprt and Node. But I also love tinkering in other languages like bash/zsh, python, and zig!</p>
+            </div>
 
-          <div style={{ margin: "5rem 0" }}></div>
+            <div style={{ margin: "5rem 0" }}></div>
 
-          <h1>Services</h1>
+            <h1>Services</h1>
 
-          <Services />
+            <Services />
 
-          <div style={{ margin: "5rem 0" }}></div>
+            <div style={{ margin: "5rem 0" }}></div>
 
-          <Technologies />
+            <Technologies />
 
-          <div style={{ margin: "5rem 0" }}></div>
+            <div style={{ margin: "5rem 0" }}></div>
 
-          <h1>Wanna donate ? </h1>
+            <h1>Wanna donate ? </h1>
 
-          <Cryptos />
+            <Cryptos />
 
-          <div className="logo-container">
-            <a target="_blank" rel="noopener noreferrer" href={linkedin}><i className={`linkedin link big black icon`}></i></a>
-            <a target="_blank" rel="noopener noreferrer" href={github}><i className={`github link big black icon`}></i></a>
-            <a target="_blank" rel="noopener noreferrer" href={instagram}><i className={`instagram link big black icon`}></i></a>
+            <div className="footer-container">
+              <a target="_blank" rel="noopener noreferrer" href={linkedin}><i className={`linkedin link big black icon`}></i></a>
+              <a target="_blank" rel="noopener noreferrer" href={github}><i className={`github link big black icon`}></i></a>
+              <a target="_blank" rel="noopener noreferrer" href={instagram}><i className={`instagram link big black icon`}></i></a>
+            </div>
+
           </div>
 
-        </div>
-
-    </Container>
+      </Container>
+    </Layout>
   );
 }
 
@@ -64,30 +73,17 @@ const AboutMe = () => {
 const Container = styled.div`
 
   width: 100%;
-  padding: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  .content-window {
-    max-width: 700px;
-    h1 { text-align: center; }
+  .introduction {
+    max-width: 750px;
   }
 
-  .stack-container {
-    width: 100%;
-    margin: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  h1 { text-align: center; }
 
-  }
-
-  .stack-logo {
-    max-width: 100px;
-  }
-
-  .logo-container {
+  .footer-container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -100,3 +96,4 @@ const Container = styled.div`
 
 
 export default AboutMe;
+

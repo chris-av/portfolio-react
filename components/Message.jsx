@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSpring, animated, config } from 'react-spring';
 
 
-const Message = () => {
+const Message = ({ myref }) => {
   const [flip, set] = useState(false);
 		
   const props = useSpring({
@@ -22,10 +22,20 @@ const Message = () => {
       onRest: () => set(!flip)
     });
 
+    const props3 = useSpring({
+      from: { opacity: 0, transform: `translatey(-10%)` },
+      to: { opacity: 1, transform: `translateY(0%)` },
+      delay: 2000,
+      config: config.molasses,
+      onRest: () => set(!flip)
+    });
+
 		return (
 			<Container>
         <Message1 style={props}>Christian Valenzuela</Message1>
         <Message2 style={props2}><strong>const</strong> greeting = () =&gt; console.log(<span>'hello world!'</span>);</Message2>
+        <div style={{ margin: "5rem 0" }} ></div>
+        <animated.i style={props3} className="angle down huge icon" onClick={() => myref.current.scrollIntoView()}></animated.i>
       </Container>
 		);
 }
@@ -36,6 +46,20 @@ const Container = styled.div`
   margin: 150px 0;
   text-align: center;
   width: 100%;
+  transition: all 0.4s ease;
+
+  height: 100vh;
+
+  .angle.down.icon {
+    transition: all 0.2s ease-in-out;
+    tranform-origin: 50% 50%;
+    cursor: pointer;
+    &:hover {
+      color: grey;
+    }
+  }
+
+
 `;
 
 
