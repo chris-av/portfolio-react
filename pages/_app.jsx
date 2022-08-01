@@ -28,9 +28,7 @@ function MyApp({ Component, pageProps }) {
         <Burger />
         <NavigationMobile />
 
-        <AppContainer>
-          <Component {...pageProps} />
-        </AppContainer>
+        <Component {...pageProps} />
 
       </AppWrapper>
 
