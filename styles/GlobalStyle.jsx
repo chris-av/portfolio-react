@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
+    scroll-behavior: smooth;
   }
 
   a {
