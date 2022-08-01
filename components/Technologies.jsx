@@ -63,8 +63,10 @@ const Technologies = () => {
 
 
 const Container = styled.div`
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  max-width: 750px;
 
   h3 { text-align: center; }
 
