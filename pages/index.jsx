@@ -5,6 +5,7 @@ import { github, instagram, linkedin } from '@/data/socials';
 
 // Layouts
 import Layout from '@/styles/LayoutPadding';
+import LayoutTwoPanel from '@/styles/LayoutTwoPanel';
 
 import Cryptos from '@/components/Cryptos';
 import Services from '@/components/Services';
@@ -18,54 +19,50 @@ const AboutMe = () => {
   const ref = useRef();
   
   return (
-    <Layout>
-      <Container>
-            
-          <div className="content-window">
+    <Container>
+          
 
-            <Message myref={ref} />
-            
-            <h1 ref={ref}>Welcome!</h1>
-            
-            <div className="introduction">
-              <p>
-                My name's Christian Valenzuela, your friendly neighborhood web developer!
-                I am glad you came to visit my page!
-              </p>
-              
-              <p>
-                I build everything: whether it is the landing page for your next product, a portfolio site for your artwork or a full e-commerce site.
-              </p>
-              
-              <p>I am a passionate developer with a particular affinity towards Javasciprt and Node. But I also love tinkering in other languages like bash/zsh, python, and zig!</p>
-            </div>
+      <Message myref={ref} />
+      
+      <h1 ref={ref}>Welcome!</h1>
+      
+      <div className="introduction">
+        <p>
+          My name's Christian Valenzuela, your friendly neighborhood web developer!
+          I am glad you came to visit my page!
+        </p>
+        
+        <p>
+          I build everything: whether it is the landing page for your next product, a portfolio site for your artwork or a full e-commerce site.
+        </p>
+        
+        <p>I am a passionate developer with a particular affinity towards Javasciprt and Node. But I also love tinkering in other languages like bash/zsh, python, and zig!</p>
+      </div>
 
-            <div style={{ margin: "5rem 0" }}></div>
+      <div style={{ margin: "5rem 0" }}></div>
 
-            <h1>Services</h1>
+      <h1>Services</h1>
 
-            <Services />
+      <Services />
 
-            <div style={{ margin: "5rem 0" }}></div>
+      <div style={{ margin: "5rem 0" }}></div>
 
-            <Technologies />
+      <Technologies />
 
-            <div style={{ margin: "5rem 0" }}></div>
+      <div style={{ margin: "5rem 0" }}></div>
 
-            <h1>Wanna donate ? </h1>
+      <h1>Wanna donate ? </h1>
 
-            <Cryptos />
+      <Cryptos />
 
-            <div className="footer-container">
-              <a target="_blank" rel="noopener noreferrer" href={linkedin}><i className={`linkedin link big black icon`}></i></a>
-              <a target="_blank" rel="noopener noreferrer" href={github}><i className={`github link big black icon`}></i></a>
-              <a target="_blank" rel="noopener noreferrer" href={instagram}><i className={`instagram link big black icon`}></i></a>
-            </div>
+      <div className="footer-container">
+        <a target="_blank" rel="noopener noreferrer" href={linkedin}><i className={`linkedin link big black icon`}></i></a>
+        <a target="_blank" rel="noopener noreferrer" href={github}><i className={`github link big black icon`}></i></a>
+        <a target="_blank" rel="noopener noreferrer" href={instagram}><i className={`instagram link big black icon`}></i></a>
+      </div>
 
-          </div>
 
-      </Container>
-    </Layout>
+    </Container>
   );
 }
 
@@ -73,9 +70,9 @@ const AboutMe = () => {
 const Container = styled.div`
 
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 
   .introduction {
     max-width: 750px;
