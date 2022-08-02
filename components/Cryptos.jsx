@@ -99,6 +99,8 @@ width: 100%;
   .copy-success {
     position: absolute;
     visibility: hidden;
+  max-width: 750px;
+  margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
