@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import { github, instagram, linkedin } from '@/data/socials';
 
 
-// Layouts
-import Layout from '@/styles/LayoutPadding';
-import LayoutTwoPanel from '@/styles/LayoutTwoPanel';
 
 import Cryptos from '@/components/Cryptos';
 import Services from '@/components/Services';
