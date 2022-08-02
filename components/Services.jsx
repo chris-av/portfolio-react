@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import Image from 'next/image';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 
@@ -40,11 +41,12 @@ const Services = () => {
           <div className="left">
             <h1>Data Analysis</h1>
             <p>Most of my professional career has been spend doing data analysis.</p>
-            <p>My experience with data visualization tools, like Tableau, combined with my passion for programming in R/Python makes me an especially useful asset for deriving insights from your data.</p>
-            <p>Whether it is ETL, data exploration or visualization, I have the expertise to get what you need from your data.</p>
+            <p>My experience with data visualization tools, like Tableau, combined with my passion for programming in R/Python makes me an especially useful partner for deriving insights from your data.</p>
+            <p>I have professional experience pre-processing data using R and Python, and visualizing data using Tableau, Python or R (base or <code>ggplot</code> library)</p>
+            <p>Whether it is ETL, data exploration visualization, or analysis, I have the expertise to create dashboards, reports or other assets to help you understand your own data.</p>
           </div>
           <div className="right" ref={dataRef}>
-            <i className="python green huge icon"></i>
+            <DataAnimation isVisible={dataVisible} />
           </div>
         </LayoutTwoPanel>
       </div>
@@ -65,6 +67,69 @@ const Services = () => {
     </Container>
   );
 }
+
+
+const WebAppsAnimation = ({ isVisible }) => {
+
+  const animate = {
+    opacity: isVisible ? 1 : 0,
+    y: isVisible ? 0 : 24,
+    duration: 2000
+  };
+
+  return (
+    <div className="animation-container">
+      <div className="top">
+        <animated.div style={useSpring({ ...animate, delay: 300 })}>
+          <i className="react blue huge icon"></i>
+        </animated.div>
+        <animated.div style={useSpring({ ...animate, delay: 500 })}>
+          <i className="html5 red huge icon"></i>
+        </animated.div>
+        <animated.div style={useSpring({ ...animate, delay: 800 })}>
+          <i className="js yellow huge icon"></i>
+        </animated.div>
+      </div>
+      <div className="bottom">
+        <animated.div style={useSpring({ ...animate, delay: 1000 })}>
+          <i className="css3 blue huge icon"></i>
+        </animated.div>
+        <animated.div style={useSpring({ ...animate, delay: 1200 })}>
+          <i className="less purple huge icon"></i>
+        </animated.div>
+        <animated.div style={useSpring({ ...animate, delay: 1400 })}>
+          <i className="sass pink huge icon"></i>
+        </animated.div>
+      </div>
+    </div>
+  );
+
+}
+
+
+const DataAnimation = ({ isVisible }) => {
+
+  const animate = {
+    opacity: isVisible ? 1 : 0,
+    y: isVisible ? 0 : 24,
+    duration: 2000
+  };
+
+  return (
+    <div className="animation-container">
+      <div className="top">
+        <animated.img style={useSpring({ ...animate, delay: 300 })} src="/python.svg" />
+        <animated.img style={useSpring({ ...animate, delay: 500 })} src="/noun-data-analysis-1726791.svg" />
+      </div>
+      <div className="bottom">
+        <animated.img style={useSpring({ ...animate, delay: 800 })} src="/Rlogo.svg" />
+        <animated.img style={useSpring({ ...animate, delay: 1000 })} src="/noun-data-analysis-2790390.svg" />
+      </div>
+    </div>
+  );
+
+}
+
 
 
 
@@ -89,6 +154,30 @@ const Container = styled.div`
     border: none;
   }
 
+  .right {
+    .animation-container {
+
+      width: 60%;
+
+      .top {
+        margin-bottom: 40px;
+      }
+
+      .top, .bottom {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-height: 80px;
+
+        img {
+          max-height: 60px;
+        }
+
+      }
+
+    }
+  }
+
 
   @media (max-width: 900px) {
     font-size: 10px;
@@ -97,23 +186,6 @@ const Container = styled.div`
 
 `;
 
-
-const WebAppsAnimation = ({ isVisible }) => {
-
-  const styles = useSpring({
-    opacity: isVisible ? 1 : 0,
-    y: isVisible ? 0 : 24,
-    delay: 300,
-    duration: 2000
-  });
-
-  return (
-    <animated.div style={styles}>
-      <i className="react blue huge icon"></i>
-    </animated.div>
-  );
-
-}
 
 
 export default Services;
