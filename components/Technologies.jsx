@@ -7,7 +7,6 @@ import styled from 'styled-components';
 const Technologies = () => {
   return (
     <Container>
-      <h1>Technologies I have experience in : </h1>
       <h3>Languages/Libraries</h3>
       <div className="icon-row">
         <i className="html5 huge red icon" />
@@ -28,7 +27,6 @@ const Technologies = () => {
       <div className="divider"></div>
 
       <h3>Databases</h3>
-
       <div className="icon-row">
         <i className="custom-icon-container postgres">
           <Image src="/postgres.svg" layout="fill" alt="postgres database"/>
@@ -44,7 +42,6 @@ const Technologies = () => {
       <div className="divider"></div>
 
       <h3>Platforms</h3>
-
       <div className="icon-row">
         <i className="git huge black icon" />
         <i className="github huge black icon" />
