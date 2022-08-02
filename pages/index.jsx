@@ -41,8 +41,6 @@ const AboutMe = () => {
 
       <div style={{ margin: "5rem 0" }}></div>
 
-      <h1>Services</h1>
-
       <Services />
 
       <div style={{ margin: "5rem 0" }}></div>
