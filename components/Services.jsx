@@ -2,40 +2,53 @@ import React from 'react';
 import styled from 'styled-components';
 
 import AnimatedCard from './AnimatedCard';
+import LayoutTwoPanel from '@/styles/LayoutTwoPanel';
 
 
 const Services = () => { return (
     <Container>
 
-      <div className="cards">
 
-        <AnimatedCard front="Landing Pages">
-          <p>I can help you build out landing pages for your products!</p>
-        </AnimatedCard>
+      <div className="layout--webapps">
+        <LayoutTwoPanel>
+          <div className="left">
+            <h1>Web Apps and Landing Pages</h1>
+            <p>Whether you need a simple landing page for your product or portfolio, or a full-stack website, I can help present your work to an online audience!</p>
+            <p>As a developer, I can create your dream website using a CMS tool like WordPress or Squarespace, or I can code it up using HTML, Javascript.</p>
+            <p>I have substantial experience using advanced Javascript libraries and frameworks like React, Nextjs and or others to ensure that your website's codebase is based on the bleeding edge of web technologies!</p>
+          </div>
+          <div className="right">
+            <i className="react blue huge icon"></i>
+          </div>
+        </LayoutTwoPanel>
+      </div>
+      
+      
+      <div className="layout--data">
+        <LayoutTwoPanel reverse={true}>
+          <div className="left">
+            <h1>Data Analysis</h1>
+            <p>Most of my professional career has been spend doing data analysis.</p>
+            <p>My experience with data visualization tools, like Tableau, combined with my passion for programming in R/Python makes me an especially useful asset for deriving insights from your data.</p>
+            <p>Whether it is ETL, data exploration or visualization, I have the expertise to get what you need from your data.</p>
+          </div>
+          <div className="right">
+            <i className="python green huge icon"></i>
+          </div>
+        </LayoutTwoPanel>
+      </div>
 
-        <AnimatedCard front="Portfolios">
-          <p>Are you an artist? A lawyer? A photographer? If you need help showcasing your work hit me up!</p>
-          <p>I can create the perfect website to beautifully present your hard work and talents!</p>
-        </AnimatedCard>
-
-        <AnimatedCard front="E-commerce">
-          <p>I can connect your payment solution to your personal website, whether its Wordpress, Squarespace or other website platform!</p>
-        </AnimatedCard>
-
-        <AnimatedCard front="Data Cleaning and ETL">
-          <p>I've got few years experience as a data analyst.</p>
-          <p>I'm not only a spreadsheet wiz, I also use Python (pandas) and R for the most sophisticated data needs.</p>
-        </AnimatedCard>
-
-        <AnimatedCard front="Tutor">
-          <p>Want some quick hands on tutorials on everything web dev? Data analysis?</p>
-          <p>I can teach you what I know in a one on one session!</p>
-        </AnimatedCard>
-
-        <AnimatedCard front="Network">
-          <p>Wanna connect professionally? I'm always down! 😎</p>
-        </AnimatedCard>
-
+      <div className="layout--technologist">
+        <LayoutTwoPanel>
+          <div className="left">
+            <h1>General Technologies</h1>
+            <p>I love technology! Whatever solution you need&#8212;whether that by a small script, an ad hoc analysis, or a full web app&#8212;I am always up to the challenge to find a solution.</p>
+            <p>I also love learning about new technologies! Some of the newer programming languages that I am trying to learn include zig, carbon and lua. If you need a developer who is willing to learn, I can be your apprentice!</p>
+          </div>
+          <div className="right">
+            <i className="python green huge icon"></i>
+          </div>
+        </LayoutTwoPanel>
       </div>
 
     </Container>
@@ -50,26 +63,24 @@ const Container = styled.div`
   overflow: hidden;
   font-size: 14px;
 
-  .cards {
-    display: grid;
-    margin: 2rem 0;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    grid-auto-rows: minmax(250px, auto);
+  .layout--webapps {
+    background-color: #EDEDED;
+    border: none;
+  }
 
+  .layout--data {
+    background-color: white;
+    border: none;
+  }
+
+  .layout--technologist {
+    background-color: white;
+    border: none;
   }
 
 
   @media (max-width: 900px) {
     font-size: 10px;
-    padding: 0px 0px 0px 20px;
-    .cards {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 0;
-    }
   }
 
 
