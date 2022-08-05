@@ -122,8 +122,8 @@ const DataAnimation = ({ isVisible }) => {
         <animated.img style={useSpring({ ...animate, delay: 500 })} src="/noun-data-analysis-1726791.svg" />
       </div>
       <div className="bottom">
-        <animated.img style={useSpring({ ...animate, delay: 800 })} src="/Rlogo.svg" />
-        <animated.img style={useSpring({ ...animate, delay: 1000 })} src="/noun-data-analysis-2790390.svg" />
+        <animated.img style={useSpring({ ...animate, delay: 800 })} src="/noun-data-analysis-2790390.svg" />
+        <animated.img style={useSpring({ ...animate, delay: 1000 })} src="/Rlogo.svg" />
       </div>
     </div>
   );
