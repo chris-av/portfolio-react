@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { github, instagram, linkedin } from '@/data/socials';
 
 
-
+import Introduction from '@/components/Introduction';
 import Cryptos from '@/components/Cryptos';
 import Services from '@/components/Services';
 import Technologies from '@/components/Technologies';
@@ -21,20 +21,7 @@ const AboutMe = () => {
 
       <Message myref={ref} />
       
-      <h1 ref={ref}>Welcome!</h1>
-      
-      <div className="introduction">
-        <p>
-          My name's Christian Valenzuela, your friendly neighborhood web developer!
-          I am glad you came to visit my page!
-        </p>
-        
-        <p>
-          I build everything: whether it is the landing page for your next product, a portfolio site for your artwork or a full e-commerce site.
-        </p>
-        
-        <p>I am a passionate developer with a particular affinity towards Javasciprt and Node. But I also love tinkering in other languages like bash/zsh, python, and zig!</p>
-      </div>
+      <Introduction myref={ref} />
 
       <div style={{ margin: "5rem 0" }}></div>
 
