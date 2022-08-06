@@ -12,7 +12,12 @@ export default function Layout({ children }) {
 
 
 const Container = styled.div`
-  padding: 25px;
+  padding: 4rem;
+
+  @media (max-width: 900px) {
+    padding: 2rem;
+  }
+
 `;
 
 
