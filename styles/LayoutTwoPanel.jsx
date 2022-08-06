@@ -64,6 +64,11 @@ const Container = styled.div`
 
     .left h1 {
       font-size: 2rem;
+      text-align: center;
+    }
+
+    .right {
+      margin: 3rem 0;
     }
 
   }
