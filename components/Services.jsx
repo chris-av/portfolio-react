@@ -118,7 +118,7 @@ const DataAnimation = ({ isVisible }) => {
   return (
     <div className="animation-container">
       <div className="top">
-        <animated.img style={useSpring({ ...animate, delay: 300 })} src="/python.svg" />
+        <animated.img style={useSpring({ ...animate, delay: 300 })} src="/python-logo-notext.svg" />
         <animated.img style={useSpring({ ...animate, delay: 500 })} src="/noun-data-analysis-1726791.svg" />
       </div>
       <div className="bottom">
