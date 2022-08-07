@@ -1,10 +1,9 @@
 import React, { useRef } from 'react';
-import Image from 'next/image';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 
-import AnimatedCard from './AnimatedCard';
 import LayoutTwoPanel from '@/styles/LayoutTwoPanel';
+import LayoutSinglePanel from '@/styles/LayoutSinglePanel';
 
 import useIsVisible from '@/hooks/useIsVisible';
 
@@ -52,16 +51,16 @@ const Services = () => {
       </div>
 
       <div className="layout--technologist">
-        <LayoutTwoPanel>
-          <div className="left">
-            <h1>General Technologies</h1>
+        <LayoutSinglePanel>
+          <div className="header">
+            <h1>General Technologist</h1>
             <p>I love technology! Whatever solution you need&#8212;whether that by a small script, an ad hoc analysis, or a full web app&#8212;I am always up to the challenge to find a solution.</p>
-            <p>I also love learning about new technologies! Some of the newer programming languages that I am trying to learn include zig, carbon and lua. If you need a developer who is willing to learn, I can be your apprentice!</p>
+            <p>I have experience using different platforms to deploy my projects and ensure a sensible, efficient develop/deployment pipeline.</p>
           </div>
-          <div className="right" ref={techRef}>
-            <i className="python green huge icon"></i>
+          <div className="content" ref={techRef}>
+            <TechnologistAnimation isVisible={techVisible} />
           </div>
-        </LayoutTwoPanel>
+        </LayoutSinglePanel>
       </div>
 
     </Container>
@@ -130,6 +129,44 @@ const DataAnimation = ({ isVisible }) => {
 
 }
 
+const TechnologistAnimation = ({ isVisible }) => {
+
+  const animate = {
+    opacity: isVisible ? 1 : 0,
+    y: isVisible ? 0 : 24,
+    duration: 2000
+  };
+
+  return (
+    <div className="animation-container">
+      <div className="section">
+        <h2>Version Control</h2>
+        <animated.div className="icons" style={useSpring({ ...animate, delay: 300 })}>
+          <i className="git icon huge"></i>
+          <i className="github icon huge"></i>
+          <i className="gitlab orange icon huge"></i>
+        </animated.div>
+      </div>
+      <div className="section">
+        <h2>Databases</h2>
+        <animated.div className="icons" style={useSpring({ ...animate, delay: 500 })}>
+          <img className="postgres" src="/postgres.svg"/>
+          <img className="mongodb" src="/MongoDB_Logo_FullColorBlack_RGB.svg"/>
+          <img className="mongodb" src="/Firebase_Logo_Standard_Lockup.svg"/>
+        </animated.div>
+      </div>
+      <div className="section">
+        <h2>Deployment</h2>
+        <animated.div className="icons" style={useSpring({ ...animate, delay: 800 })}>
+          <i className="docker blue icon huge"></i>
+          <i className="cpanel orange icon huge"></i>
+          <i className="aws yellow icon huge"></i>
+          <i className="linode green icon huge"></i>
+        </animated.div>
+      </div>
+    </div>
+  );
+}
 
 
 
@@ -178,9 +215,48 @@ const Container = styled.div`
     }
   }
 
+  .content {
+    .animation-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .section {
+      width: 33%;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .icons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+
+      .postgres {
+        width: 50px;
+      }
+
+      .mongodb {
+        height: 30px;
+      }
+
+    }
+  }
+
+
 
   @media (max-width: 900px) {
     font-size: 10px;
+    .content {
+      .section {
+        width: 100%;
+        margin: 2rem 0;
+      }
+      .animation-container {
+        flex-direction: column;
+        width: 100%;
+      }
+    }
   }
 
 
