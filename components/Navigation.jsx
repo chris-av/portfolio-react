@@ -56,7 +56,9 @@ const Container = styled.div`
     min-height: 80px;
   }
 
-  .navbar-brand { color: #e9e9e9;
+  .navbar-brand { 
+    color: #e9e9e9;
+    user-select: none;
     text-decoration: none;
     font-size: 20px;
     font-weight: 800;
