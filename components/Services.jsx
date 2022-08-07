@@ -229,6 +229,7 @@ const Container = styled.div`
     .icons {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       align-items: center;
       padding: 10px 0;
 
