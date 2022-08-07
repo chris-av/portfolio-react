@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import LayoutPadding from '@/styles/LayoutPadding';
+
 
 const Contact = () => {
   
@@ -39,45 +41,47 @@ const Contact = () => {
   }
     
   return (
-    <Container>
-      
-      <div className="form-container">
+    <LayoutPadding>
+      <Container>
         
-        <div className="call-to-action">
-          <h1>Contact Me</h1>
-          <p>Wanna work together? Hit me up!</p>
+        <div className="form-container">
+          
+          <div className="call-to-action">
+            <h1>Contact Me</h1>
+            <p>Wanna work together? Hit me up!</p>
+          </div>
+
+          { status === false ? (
+            <form name="contact" method="POST" data-netlify="true" action="/contact?success=true" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label>Enter your name</label>
+                <input placeholder="Enter name" onChange={handleChange} id="name" name="name" value={name} />
+              </div>
+              
+              <div className="form-group">
+                <label>Email address</label>
+                <input type="email" placeholder="Enter email" onChange={handleChange} id="email" name="email" value={email} />
+              </div>
+
+              <div className="form-group">
+                <label>Your inquiry</label>
+                <textarea placeholder="What can I assist you with?" onChange={handleChange} id="message" name="message" value={message} />
+              </div>
+              
+              <button type="submit" className="submit">Submit</button>
+              
+            </form> 
+          ) : (
+            <div className="complete-container">
+              <h2>Thank you!</h2>
+              <p>Let me review your request and I'll try to get back to you as soon as possible.</p>
+            </div>
+          ) }
+          
         </div>
 
-        { status === false ? (
-          <form name="contact" method="POST" data-netlify="true" action="/contact?success=true" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label>Enter your name</label>
-              <input placeholder="Enter name" onChange={handleChange} id="name" name="name" value={name} />
-            </div>
-            
-            <div className="form-group">
-              <label>Email address</label>
-              <input type="email" placeholder="Enter email" onChange={handleChange} id="email" name="email" value={email} />
-            </div>
-
-            <div className="form-group">
-              <label>Your inquiry</label>
-              <textarea placeholder="What can I assist you with?" onChange={handleChange} id="message" name="message" value={message} />
-            </div>
-            
-            <button type="submit" className="submit">Submit</button>
-            
-          </form> 
-        ) : (
-          <div className="complete-container">
-            <h2>Thank you!</h2>
-            <p>Let me review your request and I'll try to get back to you as soon as possible.</p>
-          </div>
-        ) }
-        
-      </div>
-
-    </Container>
+      </Container>
+    </LayoutPadding>
   );
 }
 
