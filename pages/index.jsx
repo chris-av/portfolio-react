@@ -29,9 +29,6 @@ const AboutMe = () => {
 
       <div style={{ margin: "5rem 0" }}></div>
 
-      <Technologies />
-
-      <div style={{ margin: "5rem 0" }}></div>
 
       <h1>Wanna donate ? </h1>
 
