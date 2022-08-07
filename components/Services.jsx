@@ -152,7 +152,7 @@ const TechnologistAnimation = ({ isVisible }) => {
         <animated.div className="icons" style={useSpring({ ...animate, delay: 500 })}>
           <img className="postgres" src="/postgres.svg"/>
           <img className="mongodb" src="/MongoDB_Logo_FullColorBlack_RGB.svg"/>
-          <img className="mongodb" src="/Firebase_Logo_Standard_Lockup.svg"/>
+          <img className="firebase" src="/Firebase_Logo_Standard_Lockup.svg"/>
         </animated.div>
       </div>
       <div className="section">
@@ -240,6 +240,9 @@ const Container = styled.div`
         height: 30px;
       }
 
+      .firebase {
+        height: 30px;
+      }
     }
   }
 
