@@ -244,6 +244,7 @@ const Container = styled.div`
       .firebase {
         height: 30px;
       }
+
     }
   }
 
