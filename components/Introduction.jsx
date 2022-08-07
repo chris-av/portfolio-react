@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
-
-import { useTransition, animated, config } from 'react-spring';
-import { colors } from '@/styles/style-assets';
 
 
 import LayoutPadding from '@/styles/LayoutPadding';
@@ -98,6 +95,7 @@ const Container = styled.div`
     animation-delay: 4s;
   }
 
+
   @media(max-width: 900px) {
     h1 {
       font-size: 2.5rem;
@@ -106,6 +104,17 @@ const Container = styled.div`
       margin-left: 0;
     }
   }
+
+  @media(max-width: 400px) {
+    h1 {
+      font-size: 1.5rem !important;
+    }
+
+    .wrapper {
+      overflow: hidden;
+    }
+  }
+
 
 
 `;
