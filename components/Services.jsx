@@ -83,7 +83,7 @@ const WebAppsAnimation = ({ isVisible }) => {
           <i className="react blue huge icon"></i>
         </animated.div>
         <animated.div style={useSpring({ ...animate, delay: 500 })}>
-          <i className="html5 red huge icon"></i>
+          <i className="node green huge icon"></i>
         </animated.div>
         <animated.div style={useSpring({ ...animate, delay: 800 })}>
           <i className="js yellow huge icon"></i>
@@ -91,10 +91,10 @@ const WebAppsAnimation = ({ isVisible }) => {
       </div>
       <div className="bottom">
         <animated.div style={useSpring({ ...animate, delay: 1000 })}>
-          <i className="css3 blue huge icon"></i>
+          <i className="html5 red huge icon"></i>
         </animated.div>
         <animated.div style={useSpring({ ...animate, delay: 1200 })}>
-          <i className="less purple huge icon"></i>
+          <i className="css3 blue huge icon"></i>
         </animated.div>
         <animated.div style={useSpring({ ...animate, delay: 1400 })}>
           <i className="sass pink huge icon"></i>
