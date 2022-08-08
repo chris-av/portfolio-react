@@ -1,5 +1,6 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
+import { useTransition, animated } from 'react-spring';
+import styled from 'styled-components';
 
 
 import LayoutPadding from '@/styles/LayoutPadding';
@@ -7,21 +8,40 @@ import LayoutPadding from '@/styles/LayoutPadding';
 
 const Introduction = ({ myref }) => {
 
-  const adjectives = [ 'Developer', 'Analyst', 'Engineer' ];
+  const [ items, setItems ] = useState('Analyst');
+  const transitions = useTransition(items, {
+    from: { opacity: 0, y: 50 },
+    enter: { opacity: 1, y: 0 },
+    leave: { opacity: 0, y: -50 },
+    // update: {},
+  });
 
+
+  useEffect(() => {
+    const tmp = setInterval(() => {
+      setItems(prev => {
+        if (prev === 'Developer') return 'Analyst';
+        if (prev === 'Analyst') return 'Engineer';
+        if (prev === 'Engineer') return 'Developer';
+      })
+    }, 2000);
+
+    return () => clearInterval(tmp);
+
+  }, [items]);
 
   return (
     <LayoutPadding>
       <Container>
-        <div className="wrapper">
-          <h1 ref={myref} className="sentence">Professional &nbsp;
-            <div className="slidingVertical">
-              { adjectives.map(adj => (
-                <span className={`${adj.toLowerCase()}`}>{adj}</span> 
-              ))}
-            </div>
-          </h1>
-        </div>
+        <h1 ref={myref} className="sentence">Professional &nbsp;
+          <animated.div className="slidingVertical">
+            { transitions((style, item) => (
+              <animated.span style={{ ...style }} className={`${item.toLowerCase()}`}>
+                { item }
+              </animated.span>
+            )) }
+          </animated.div>
+        </h1>
         
         <div className="introduction">
           <p>
@@ -40,17 +60,6 @@ const Introduction = ({ myref }) => {
   );
 }
 
-
-
-const keyframeAnimations = keyframes`
-  0% { opacity: 0; }
-  5% { opacity: 0; transform: translateY(-50px); }
-  10% { opacity: 1; transform: translateY(0px); }
-  25% { opacity: 1; transform: translateY(0px); }
-  30% { opacity: 0; transform: translateY(50px); }
-  80% { opacity: 0; }
-  100% { opacity: 0; }
-`;
 
 
 const Container = styled.div`
@@ -81,20 +90,10 @@ const Container = styled.div`
   .engineer { color: #91C85D; }
 
   .slidingVertical span {
-    animation: ${keyframeAnimations} 6s linear infinite 0s;
     opacity: 0;
     overflow: hidden;
     position: absolute;
   }
-
-  .slidingVertical span:nth-child(2){
-    animation-delay: 2s;
-  }
-
-  .slidingVertical span:nth-child(3){
-    animation-delay: 4s;
-  }
-
 
   @media(max-width: 900px) {
     h1 {
@@ -114,8 +113,6 @@ const Container = styled.div`
       overflow: hidden;
     }
   }
-
-
 
 `;
 
