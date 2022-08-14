@@ -151,8 +151,8 @@ const TechnologistAnimation = ({ isVisible }) => {
         <h2>Databases</h2>
         <animated.div className="icons" style={useSpring({ ...animate, delay: 500 })}>
           <img className="postgres" src="/postgres.svg"/>
-          <img className="mongodb" src="/MongoDB_Logo_FullColorBlack_RGB.svg"/>
-          <img className="firebase" src="/Firebase_Logo_Standard_Lockup.svg"/>
+          <img className="mongodb" src="/MongoDB_Icon.svg"/>
+          <img className="firebase" src="/Firebase_Logo.svg"/>
         </animated.div>
       </div>
       <div className="section">
@@ -162,6 +162,7 @@ const TechnologistAnimation = ({ isVisible }) => {
           <i className="cpanel orange icon huge"></i>
           <i className="aws yellow icon huge"></i>
           <i className="linode green icon huge"></i>
+          <img className="netlify" src="/netlify-logomark.svg" />
         </animated.div>
       </div>
     </div>
@@ -238,16 +239,17 @@ const Container = styled.div`
       }
 
       .mongodb {
-        height: 30px;
+        height: 80px;
       }
 
       .firebase {
-        height: 30px;
+        height: 60px;
       }
 
     }
   }
 
+  i { margin: 10px 0; }
 
 
   @media (max-width: 900px) {
