@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-export default function Layout({ children }) {
+export default function Layout({ myref, children }) {
   return (
-    <Container>
+    <Container ref={myref}>
       { children }
     </Container>
   );
