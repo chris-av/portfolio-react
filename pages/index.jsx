@@ -6,7 +6,6 @@ import { github, instagram, linkedin } from '@/data/socials';
 import Introduction from '@/components/Introduction';
 import Cryptos from '@/components/Cryptos';
 import Services from '@/components/Services';
-import Technologies from '@/components/Technologies';
 
 import Message from '@/components/Message';
 
