@@ -21,7 +21,7 @@ const Container = styled.div`
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 100;
   }
 
@@ -36,6 +36,7 @@ const Container = styled.div`
 
   @media (max-width: 900px) {
     padding: 2rem;
+    p { font-size: 1rem; }
     h1 {
       font-size: 2rem;
       text-align: center;

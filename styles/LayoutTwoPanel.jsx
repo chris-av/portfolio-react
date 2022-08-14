@@ -39,7 +39,7 @@ const Container = styled.div`
 
     p {
       font-weight: 100;
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
 
     text-align: left;
@@ -60,6 +60,7 @@ const Container = styled.div`
 
     .left, .right {
       width: 100%;
+      p { font-size: 1rem; }
     }
 
     .left h1 {
