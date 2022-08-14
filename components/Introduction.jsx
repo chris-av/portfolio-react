@@ -13,7 +13,6 @@ const Introduction = ({ myref }) => {
     from: { opacity: 0, y: 50 },
     enter: { opacity: 1, y: 0 },
     leave: { opacity: 0, y: -50 },
-    // update: {},
   });
 
 
