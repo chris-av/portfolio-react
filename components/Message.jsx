@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useAppContext } from '@/state/state';
 import { useSpring, animated, config } from 'react-spring';
 
 
 const Message = ({ myref }) => {
   const [flip, set] = useState(false);
+  const { messageRef } = useAppContext();
 		
   const props = useSpring({
       from: { opacity: 0, transform: `translatey(-10%)` },
@@ -35,7 +37,7 @@ const Message = ({ myref }) => {
         <Message1 style={props}>Christian Valenzuela</Message1>
         <Message2 style={props2}><strong>const</strong> greeting = () =&gt; console.log(<span>'hello world!'</span>);</Message2>
         <div style={{ margin: "5rem 0" }} ></div>
-        <animated.i style={props3} className="angle down huge icon" onClick={() => myref.current.scrollIntoView()}></animated.i>
+        <animated.i style={props3} className="angle down huge icon" onClick={() => messageRef.current.scrollIntoView()}></animated.i>
       </Container>
 		);
 }

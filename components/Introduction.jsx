@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useAppContext } from '@/state/state';
 import { useTransition, animated } from 'react-spring';
 import styled from 'styled-components';
 
@@ -6,9 +7,10 @@ import styled from 'styled-components';
 import LayoutPadding from '@/styles/LayoutPadding';
 
 
-const Introduction = ({ myref }) => {
+const Introduction = () => {
 
   const [ items, setItems ] = useState('Analyst');
+  const { messageRef } = useAppContext();
   const transitions = useTransition(items, {
     from: { opacity: 0, y: 50 },
     enter: { opacity: 1, y: 0 },
@@ -30,7 +32,7 @@ const Introduction = ({ myref }) => {
   }, [items]);
 
   return (
-    <LayoutPadding myref={myref}>
+    <LayoutPadding myref={messageRef}>
       <Container>
         <h1 className="sentence">Professional &nbsp;
           <animated.div className="slidingVertical">
