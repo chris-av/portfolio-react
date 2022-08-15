@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from '@/components/Card';
 
-// import { Spring } from 'react-spring';
 import { useSpring, animated } from 'react-spring';
 import { portfolio } from '@/data/portfolio.data';
 
