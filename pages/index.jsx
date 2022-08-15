@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
+import { useAppContext } from '@/state/state';
 import { github, instagram, linkedin } from '@/data/socials';
 
 
@@ -12,22 +13,15 @@ import Message from '@/components/Message';
 
 const AboutMe = () => {
 
-  const ref = useRef();
   
   return (
     <Container>
           
-
-      <Message myref={ref} />
+      <Message />
       
-      <Introduction myref={ref} />
-
-      <div style={{ margin: "5rem 0" }}></div>
+      <Introduction />
 
       <Services />
-
-      <div style={{ margin: "5rem 0" }}></div>
-
 
       <h1>Wanna donate ? </h1>
 
