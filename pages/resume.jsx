@@ -21,7 +21,7 @@ const Resume = () => {
 
       {
         resume.jobs.map((job, i) => (
-          <animated.div style={styles[i]}>
+          <animated.div style={styles[i]} key={i}>
             <Card 
               org={job.organization}
               jobtitle={job.jobtitle}
