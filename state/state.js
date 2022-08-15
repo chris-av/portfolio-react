@@ -1,10 +1,12 @@
-import { useState, createContext, useContext } from 'react';
+import { useState, createContext, useContext, useRef } from 'react';
 
 
 const AppContext = createContext();
 export const AppWrapper = ({ children }) => {
 	const [open, toggleOpen] = useState(false);
-  let sharedState = { open, toggleOpen };
+  const messageRef = useRef();
+
+  let sharedState = { open, toggleOpen, messageRef };
 
   return (
     <AppContext.Provider value={sharedState}>
