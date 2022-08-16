@@ -2,6 +2,7 @@ import React from 'react';
 import { useSpring, animated } from 'react-spring';
 
 import Card from '@/components/Card'
+import LayoutPadding from '@/styles/LayoutPadding';
 
 import { resume } from '@/data/resume.data';
 
@@ -17,8 +18,7 @@ const Resume = () => {
   }));
   
   return (
-    <div className="resume">
-
+    <LayoutPadding>
       {
         resume.jobs.map((job, i) => (
           <animated.div style={styles[i]} key={i}>
@@ -32,7 +32,7 @@ const Resume = () => {
         ))
       }
 
-    </div>
+    </LayoutPadding>
   )
 }
 
