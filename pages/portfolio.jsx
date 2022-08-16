@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '@/components/Card';
+import LayoutPadding from '@/styles/LayoutPadding';
 
 import { useSpring, animated } from 'react-spring';
 import { portfolio } from '@/data/portfolio.data';
@@ -15,7 +16,7 @@ const Portfolio = () => {
   }));
 
   return (
-    <div className="portfolio">
+    <LayoutPadding>
       { portfolio.map((portf, i) => (
           <animated.div style={styles[i]} key={i}>
             <Card
@@ -26,7 +27,7 @@ const Portfolio = () => {
             />
           </animated.div>
         )) }
-    </div>
+    </LayoutPadding>
   )
 }
 
