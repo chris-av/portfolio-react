@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export default function Layout({ myref, children }) {
   return (
     <Container ref={myref}>
-      { children }
+      {children}
     </Container>
   );
 }
@@ -14,7 +14,6 @@ export default function Layout({ myref, children }) {
 const Container = styled.div`
   font-size: 1.2rem;
   padding: 4rem;
-  height: 100vh;
 
   @media (max-width: 900px) {
     padding: 2rem;
