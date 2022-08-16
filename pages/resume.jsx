@@ -10,7 +10,7 @@ const Resume = () => {
   
   const duration = 2300;
 
-  const styles = resume.jobs.map((r, i) => useSpring({
+  const styles = resume.jobs.map(r => useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
     delay: r.delay,
@@ -31,7 +31,6 @@ const Resume = () => {
           </animated.div>
         ))
       }
-
     </LayoutPadding>
   )
 }

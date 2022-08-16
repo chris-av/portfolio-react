@@ -8,7 +8,7 @@ import { portfolio } from '@/data/portfolio.data';
 const Portfolio = () => {
   const duration = 2300;
 
-  const styles = portfolio.map((p, i) => useSpring({
+  const styles = portfolio.map(p => useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
     delay: p.delay,
