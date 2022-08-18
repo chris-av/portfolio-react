@@ -201,7 +201,7 @@ const Container = styled.div`
   }
 
   .layout--webapps, .layout--data, .layout--technologist {
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .right {
