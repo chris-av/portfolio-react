@@ -126,6 +126,9 @@ const Container = styled.div`
     .work-history {
       font-size: 2rem;
     }
+    .timeline {
+      padding: 10px;
+    }
     .time-range {
       font-size: 0.8rem;
     }
