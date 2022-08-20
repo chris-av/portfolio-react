@@ -39,6 +39,7 @@ const Resume = () => {
             description={j.description} 
             myref={refs[i]}
             isVisible={visibles[i]}
+            i={i}
           />
         )) }
     
@@ -49,6 +50,7 @@ const Resume = () => {
 
 
 const TimeLineSection = ({ id, organization, jobtitle, range, description, myref, isVisible }) => {
+const TimeLineSection = ({ id, organization, jobtitle, range, description, myref, isVisible, i }) => {
 
   const animate = {
     opacity: isVisible ? 1 : 0,
@@ -63,6 +65,7 @@ const TimeLineSection = ({ id, organization, jobtitle, range, description, myref
       <animated.div className="job" style={useSpring({ ...animate, delay: 300 })}>
         <h1 ref={myref}>{jobtitle}</h1>
         <h2>{organization}</h2>
+      <animated.div className="job" style={useSpring({ ...animate, delay: 300*i })}>
         <ul>
           { description.map((des, i) => <li key={i}>{ des }</li>) }
         </ul>
