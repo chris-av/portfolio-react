@@ -7,7 +7,7 @@ export const resume = {
       id: "38993e84-2048-11ed861d-0242ac120002",
       organization: 'LA Promise Fund',
       jobtitle: 'Data and Analytics Manager',
-      range: '03/2020 - Present',
+      range: 'March 2020 - Present',
       description: [
         "Data Manager for the National School Improvement Program and the Career Pathways program, programmatically consumed large volumes of data using R/Python to derive insights into student performance and academic trends.",
         "Maintains School Information System (SIS), database management (SQL) and designed SIS APIs for custom applications, command line programs, and data access.",
@@ -18,7 +18,7 @@ export const resume = {
       id: "3899412c-2048-11ed861d-0242ac120002",
       organization: 'Freelance',
       jobtitle: 'Freelance Developer',
-      range: '11/2019 - Present',
+      range: 'Nov 2019 - Present',
       description: [
         "Created full stack sites for a few clients.",
         "Completed projects that fulfilled business requirements and exceeded client expectations for each project.",
@@ -30,7 +30,7 @@ export const resume = {
       id: "38994532-2048-11ed861d-0242ac120002",
       organization: 'Alliance College-Ready Public Schools',
       jobtitle: 'Operations Analyst',
-      range: '09/2017 - 08/2019',
+      range: 'Sep 2017 - Aug 2019',
       description: [
         "Data analyst for the Operations Department.",
         "Tasked with creating a dashboard for department to inform strategic initiatives.",
