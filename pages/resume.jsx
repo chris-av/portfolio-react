@@ -56,6 +56,7 @@ const TimeLineSection = ({ id, organization, jobtitle, range, description, myref
     opacity: isVisible ? 1 : 0,
     y: isVisible ? 0 : 24,
     duraitno: 2000,
+    duration: 2000,
   }
 
   return (
