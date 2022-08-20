@@ -67,6 +67,8 @@ const TimeLineSection = ({ id, organization, jobtitle, range, description, myref
         <h1 ref={myref}>{jobtitle}</h1>
         <h2>{organization}</h2>
       <animated.div className="job" style={useSpring({ ...animate, delay: 300*i })}>
+        <h2 ref={myref}>{jobtitle}</h2>
+        <h3>{organization}</h3>
         <ul>
           { description.map((des, i) => <li key={i}>{ des }</li>) }
         </ul>
@@ -107,10 +109,10 @@ const Container = styled.div`
   }
 
   .job {
-    h1, h2 { margin: 0; padding: 0; }
+    h2, h3 { margin: 0; padding: 0; }
 
-    h1 { font-size: 1.6rem; margin-bottom: 10px; }
-    h2 { font-size: 1.2rem; }
+    h2 { font-size: 1.6rem; margin-bottom: 10px; }
+    h3 { font-size: 1.2rem; }
     ul li {
       font-size: 1rem;
       margin: 10px 0;
@@ -130,8 +132,8 @@ const Container = styled.div`
       font-size: 0.8rem;
     }
     .job {
-      h1 { font-size: 1rem; }
-      h2 { font-size: 1rem; }
+      h2 { font-size: 1.2rem; }
+      h3 { font-size: 0.9rem; }
       ul li { font-size: 0.8rem; }
     }
   }
