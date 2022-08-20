@@ -128,6 +128,9 @@ const Container = styled.div`
 
 
   @media (max-width: 900px) {
+    .work-history {
+      font-size: 2rem;
+    }
     .time-range {
       font-size: 0.8rem;
     }
