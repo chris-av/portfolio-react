@@ -21,8 +21,6 @@ const Resume = () => {
   const refs = [ testRef1, testRef2, testRef3 ];
   const visibles = [ testRefIsVisible1, testRefIsVisible2, testRefIsVisible3 ];
 
-  console.log({ testRefIsVisible1, testRefIsVisible2, testRefIsVisible3 });
-
   return (
     <Container>
 
