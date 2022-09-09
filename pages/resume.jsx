@@ -88,7 +88,7 @@ const Container = styled.div`
   .timeline-section {
     display: flex;
     flex-direction: row;
-    min-height: 80vh;
+    // min-height: 80vh;
   }
 
   .time-range {
