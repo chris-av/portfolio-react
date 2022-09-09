@@ -47,7 +47,7 @@ const Resume = () => {
 }
 
 
-const TimeLineSection = ({ id, organization, jobtitle, range, description, myref, isVisible, i }) => {
+const TimeLineSection = ({ organization, jobtitle, range, description, myref, isVisible, i }) => {
 
   const animate = {
     opacity: isVisible ? 1 : 0,
