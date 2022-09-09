@@ -18,6 +18,7 @@ const Container = styled.div`
 
   h1 {
     font-size: 4rem;
+    margin-bottom: 50px;
   }
 
   p {
