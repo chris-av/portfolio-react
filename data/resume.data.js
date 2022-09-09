@@ -9,9 +9,10 @@ export const resume = {
       jobtitle: 'Data and Analytics Manager',
       range: 'March 2020 - Present',
       description: [
-        "Data Manager for the National School Improvement Program and the Career Pathways program, programmatically consumed large volumes of data using R/Python to derive insights into student performance and academic trends.",
-        "Maintains School Information System (SIS), database management (SQL) and designed SIS APIs for custom applications, command line programs, and data access.",
-        "Created workflows in Node and Python to leverage Google APIs to quickly clean and access organizational data."
+        "Managed large volumes of data from National Student Improvement Program using R/Python to derive insights into student performance and academic trends.",
+        "Maintain School Information System (SIS), and extended our SIS with custom plugins written in Node.js",
+        "Interfaced with SIS APIs to further customize and refine our access to system-level data",
+        "Leverage Google APIs to create custom spreadsheet reports, integrations and increase turnaround time for data reporting."
       ]
     },
     {
