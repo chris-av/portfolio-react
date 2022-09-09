@@ -53,6 +53,7 @@ const Container = styled.div`
     h1, h2, h3 { margin: 10px 0; }
     height: 100%;
     padding: 15px;
+    a { text-decoration: underline; }
   }
 
   .card-title {
