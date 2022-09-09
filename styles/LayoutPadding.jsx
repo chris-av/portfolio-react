@@ -14,6 +14,7 @@ export default function Layout({ myref, children }) {
 const Container = styled.div`
   font-size: 1.2rem;
   padding: 4rem;
+  height: 90vh;
 
   @media (max-width: 900px) {
     padding: 2rem;
