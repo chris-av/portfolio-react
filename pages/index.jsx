@@ -17,8 +17,6 @@ const AboutMe = () => {
   return (
     <Container>
           
-      <Message />
-      
       <Introduction />
 
       <Services />
