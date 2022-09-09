@@ -139,16 +139,13 @@ const TechnologistAnimation = ({ isVisible }) => {
 
   return (
     <div className="animation-container">
-      <div className="section">
-        <h2>Version Control</h2>
+      <div className="section" style={{ width: "50%" }}>
+        <h2>Databases and Version Control</h2>
         <animated.div className="icons" style={useSpring({ ...animate, delay: 300 })}>
           <i className="git icon huge"></i>
           <i className="github icon huge"></i>
           <i className="gitlab orange icon huge"></i>
         </animated.div>
-      </div>
-      <div className="section">
-        <h2>Databases</h2>
         <animated.div className="icons" style={useSpring({ ...animate, delay: 500 })}>
           <i>
             <img className="postgres" src="/postgres.svg"/>
@@ -161,7 +158,7 @@ const TechnologistAnimation = ({ isVisible }) => {
           </i>
         </animated.div>
       </div>
-      <div className="section">
+      <div className="section" style={{ width: "50%" }}>
         <h2>Deployment</h2>
         <animated.div className="icons" style={useSpring({ ...animate, delay: 800 })}>
           <i className="docker blue icon huge"></i>
@@ -170,6 +167,9 @@ const TechnologistAnimation = ({ isVisible }) => {
           <i className="linode green icon huge"></i>
           <i>
             <img className="netlify" src="/netlify-logomark.svg" />
+          </i>
+          <i>
+            <img className="heroku" src="/heroku-logotype-vertical-purple.svg" />
           </i>
         </animated.div>
       </div>
@@ -257,6 +257,10 @@ const Container = styled.div`
       }
 
       .firebase {
+        height: 60px;
+      }
+
+      .heroku {
         height: 60px;
       }
 
