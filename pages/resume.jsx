@@ -56,7 +56,7 @@ const TimeLineSection = ({ organization, jobtitle, range, description, myref, is
   }
 
   return (
-    <div className="timeline-section" key={id}>
+    <div className="timeline-section" >
       <div className="time-range">{ range }</div>
       <div className="line"></div>
       <animated.div className="job" style={useSpring({ ...animate, delay: 300*i })}>
