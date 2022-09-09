@@ -30,7 +30,7 @@ const Resume = () => {
 
         { resume.jobs.map((j, i) => (
           <TimeLineSection 
-            id={j.id} 
+            key={j.id}
             organization={j.organization}
             jobtitle={j.jobtitle} 
             range={j.range} 
