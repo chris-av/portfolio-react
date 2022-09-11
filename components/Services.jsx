@@ -160,10 +160,12 @@ const TechnologistAnimation = ({ isVisible }) => {
       </div>
       <div className="section tech-section">
         <h2>Deployment</h2>
-        <animated.div className="icons" style={useSpring({ ...animate, delay: 800 })}>
+        <animated.div className="icons" style={useSpring({ ...animate, delay: 300 })}>
           <i className="docker blue icon huge"></i>
           <i className="cpanel orange icon huge"></i>
           <i className="aws yellow icon huge"></i>
+        </animated.div>
+        <animated.div className="icons" style={useSpring({ ...animate, delay: 500 })}>
           <i className="linode green icon huge"></i>
           <i>
             <img className="netlify" src="/netlify-logomark.svg" />
