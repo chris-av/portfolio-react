@@ -139,7 +139,7 @@ const TechnologistAnimation = ({ isVisible }) => {
 
   return (
     <div className="animation-container">
-      <div className="section" style={{ width: "50%" }}>
+      <div className="section tech-section">
         <h2>Databases and Version Control</h2>
         <animated.div className="icons" style={useSpring({ ...animate, delay: 300 })}>
           <i className="git icon huge"></i>
@@ -158,7 +158,7 @@ const TechnologistAnimation = ({ isVisible }) => {
           </i>
         </animated.div>
       </div>
-      <div className="section" style={{ width: "50%" }}>
+      <div className="section tech-section">
         <h2>Deployment</h2>
         <animated.div className="icons" style={useSpring({ ...animate, delay: 800 })}>
           <i className="docker blue icon huge"></i>
@@ -239,6 +239,9 @@ const Container = styled.div`
       text-align: center;
       padding: 0 20px;
     }
+    .tech-section {
+      width: 50%;
+    }
     .icons {
       display: flex;
       justify-content: space-between;
@@ -273,6 +276,9 @@ const Container = styled.div`
   @media (max-width: 900px) {
     font-size: 10px;
     .content {
+      .tech-section {
+        width: 100%;
+      }
       .section {
         width: 100%;
         margin: 2rem 0;
