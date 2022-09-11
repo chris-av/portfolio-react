@@ -200,10 +200,6 @@ const Container = styled.div`
     border: none;
   }
 
-  // .layout--webapps, .layout--data, .layout--technologist {
-  //   min-height: 100vh;
-  // }
-
   .right {
     .animation-container {
 
