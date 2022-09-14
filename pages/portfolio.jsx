@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import Card from '@/components/Card';
 import LayoutPadding from '@/styles/LayoutPadding';
 
@@ -16,7 +17,7 @@ const Portfolio = () => {
   }));
 
   return (
-    <LayoutPadding>
+    <Container>
       { portfolio.map((portf, i) => (
           <animated.div style={styles[i]} key={i}>
             <Card
@@ -27,10 +28,14 @@ const Portfolio = () => {
             />
           </animated.div>
         )) }
-    </LayoutPadding>
+    </Container>
   )
 }
 
+
+const Container = styled.div`
+  padding: 2rem 0;
+`;
 
 export default Portfolio;
 
