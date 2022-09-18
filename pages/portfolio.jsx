@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Card from '@/components/Card';
 
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 import { portfolio } from '@/data/portfolio.data';
 
 const Portfolio = () => {

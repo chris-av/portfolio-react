@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 
 import LayoutPadding from '@/styles/LayoutPadding';
 import useIsVisible from '@/hooks/useIsVisible';
