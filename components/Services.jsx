@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 import styled from 'styled-components';
 
 import LayoutTwoPanel from '@/styles/LayoutTwoPanel';
