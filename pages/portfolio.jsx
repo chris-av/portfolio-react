@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Card from '@/components/Card';
-import LayoutPadding from '@/styles/LayoutPadding';
 
 import { useSpring, animated } from 'react-spring';
 import { portfolio } from '@/data/portfolio.data';
