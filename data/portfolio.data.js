@@ -8,8 +8,8 @@ export const portfolio = [
     description: () => (
       <div>
         <p>Converted an out-of-commission C# application into a full stack Single Page App written in Javascript (React).</p>
-        <p>Worked closely with the college to understand the business logic and reimplement using React for frontend and Node/Express + Postgres</p>
-        <p>Worked closely with the team and students to implement features and empowered the college to understand and own their code</p>
+        <p>Worked closely with the college admninistrators to understand the business logic and reimplement using React for frontend and Node/Express + Postgres.</p>
+        <p>Coordinated with students and teachers to incorporate feedback and implement new features.</p>
       </div>
     )
   },
