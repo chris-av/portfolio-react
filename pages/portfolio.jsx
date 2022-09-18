@@ -22,7 +22,6 @@ const Portfolio = () => {
             <Card
               org={portf.organization}
               jobtitle={portf.jobtitle}
-              daterange={portf.range}
               description={portf.description}
             />
           </animated.div>
