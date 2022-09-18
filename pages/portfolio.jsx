@@ -18,7 +18,7 @@ const Portfolio = () => {
 
   return (
     <Container>
-      { portfolio.map((portf, i) => (
+      { portfolio.filter(p => p.active === true).map((portf, i) => (
           <animated.div style={styles[i]} key={i}>
             <Card
               org={portf.organization}

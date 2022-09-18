@@ -3,6 +3,7 @@ import React from 'react';
 export const portfolio = [
   {
     organization: "South Coast College",
+    active: true,
     jobtitle: "Independent Contractor - Developer",
     description: () => (
       <div>
@@ -14,6 +15,7 @@ export const portfolio = [
   },
   {
     organization: "Wise Attend",
+    active: true,
     jobtitle: "Front and Backend",
     description: () => (
       <div>
@@ -27,6 +29,7 @@ export const portfolio = [
   },
   {
     organization: "MomentOm",
+    active: false,
     jobtitle: "Frontend",
     description: () => (
       <div>
@@ -40,6 +43,7 @@ export const portfolio = [
   },
   {
     organization: "Together App",
+    active: false,
     jobtitle: "Frontend",
     description: () => (
       <div>
