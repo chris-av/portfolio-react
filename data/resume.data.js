@@ -21,10 +21,10 @@ export const resume = {
       jobtitle: 'Freelance Developer',
       range: 'Nov 2019 - Present',
       description: [
-        "Created full stack sites for a few clients.",
-        "Completed projects that fulfilled business requirements and exceeded client expectations for each project.",
-        "Used ReactJS library to create dynamic, smooth SPAs and maintained code repository for client.",
-        "Have created many projects for clients franging from simple landing pages, to full stack projects."
+        "Empowered entrepreneurs to pitch their product to prospective investors",
+        "Tutored many peers who are curious about Javascript and web technologies.",
+        "Used ReactJS to create dynamic, smooth SPAs and maintained code repository for client.",
+        "Created solutions for client-side rendering, hydration, and other techniques for optimal page performance."
       ]
     },
     {
