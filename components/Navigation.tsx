@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 
+
 const Navigation = () => {
     return (
       <Container className="container">
@@ -10,28 +11,28 @@ const Navigation = () => {
         <nav className="navbar">
           
           <Link href="/" className="navbar-brand">
-            <a className="navbar-brand">Christian Valenzuela</a>
+            Christian Valenzuela
           </Link>
           
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link href="/">
-                <a className="nav-link">About Me</a>
+              <Link href="/" className="nav-link">
+                About Me
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/portfolio">
-                <a className="nav-link">My Portfolio</a>
+              <Link href="/portfolio" className="nav-link">
+                My Portfolio
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/resume">
-                <a className="nav-link">Resume</a>
+              <Link href="/resume" className="nav-link">
+                Resume
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/contact">
-                <a className="nav-link">Contact</a>
+              <Link href="/contact" className="nav-link">
+                Contact
               </Link>
             </li>
           </ul>

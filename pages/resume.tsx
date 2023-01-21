@@ -47,7 +47,18 @@ const Resume = () => {
 }
 
 
-const TimeLineSection = ({ organization, jobtitle, range, description, myref, isVisible, i }) => {
+
+interface ITimeLineSection {
+  organization: any,
+  jobtitle: any,
+  range: any,
+  description: any,
+  myref: any,
+  isVisible: any,
+  i: number,
+}
+
+const TimeLineSection = ({ organization, jobtitle, range, description, myref, isVisible, i } : ITimeLineSection) => {
 
   const animate = {
     opacity: isVisible ? 1 : 0,
@@ -63,7 +74,7 @@ const TimeLineSection = ({ organization, jobtitle, range, description, myref, is
         <h2 ref={myref}>{jobtitle}</h2>
         <h3>{organization}</h3>
         <ul>
-          { description.map((des, i) => <li key={i}>{ des }</li>) }
+          { description.map((des: any, i: any) => <li key={i}>{ des }</li>) }
         </ul>
       </animated.div>
     </div>

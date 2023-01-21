@@ -21,8 +21,10 @@ const Portfolio = () => {
           <animated.div style={styles[i]} key={i}>
             <Card
               org={portf.organization}
+              daterange={""}
               jobtitle={portf.jobtitle}
               description={portf.description}
+              styles={{}}
             />
           </animated.div>
         )) }

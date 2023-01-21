@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent, ChangeEvent, createRef } from 'react';
 import styled from 'styled-components';
 
 import LayoutPadding from '@/styles/LayoutPadding';
@@ -11,13 +11,15 @@ const Contact = () => {
   const [ message, setMessage ] = useState('');
   const [ status, setStatus ] = useState(false);
 
-  const encode = data => {
+  const layoutRef = createRef();
+
+  const encode = (data : any) => {
     return Object.keys(data).map(key => {
       return encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
     }).join('&');
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus(true);
     console.log(encode({ name, email, message }));
@@ -34,14 +36,14 @@ const Contact = () => {
       .catch(err => console.log(err))
   }
 
-  const handleChange = (event) => {
+  const handleChange = (event : ChangeEvent<HTMLFormElement | HTMLInputElement | HTMLTextAreaElement>) => {
     if (event.target.name === 'name') setName(event.target.value);
     if (event.target.name === 'email') setEmail(event.target.value);
     if (event.target.name === 'message') setMessage(event.target.value);
   }
     
   return (
-    <LayoutPadding>
+    <LayoutPadding myref={layoutRef}>
       <Container>
         
         <div className="form-container">

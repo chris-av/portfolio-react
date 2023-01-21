@@ -10,9 +10,9 @@ import useIsVisible from '@/hooks/useIsVisible';
 
 const Services = () => {
 
-  const webappRef = useRef();
-  const dataRef = useRef();
-  const techRef = useRef();
+  const webappRef = useRef(null);
+  const dataRef = useRef(null);
+  const techRef = useRef(null);
 
   const webappVisible = useIsVisible(webappRef);
   const dataVisible = useIsVisible(dataRef);
@@ -68,7 +68,7 @@ const Services = () => {
 }
 
 
-const WebAppsAnimation = ({ isVisible }) => {
+const WebAppsAnimation = ({ isVisible } : { isVisible : boolean; }) => {
 
   const animate = {
     opacity: isVisible ? 1 : 0,
@@ -106,7 +106,7 @@ const WebAppsAnimation = ({ isVisible }) => {
 }
 
 
-const DataAnimation = ({ isVisible }) => {
+const DataAnimation = ({ isVisible } : { isVisible: boolean; }) => {
 
   const animate = {
     opacity: isVisible ? 1 : 0,
@@ -129,7 +129,7 @@ const DataAnimation = ({ isVisible }) => {
 
 }
 
-const TechnologistAnimation = ({ isVisible }) => {
+const TechnologistAnimation = ({ isVisible } : { isVisible: boolean; }) => {
 
   const animate = {
     opacity: isVisible ? 1 : 0,

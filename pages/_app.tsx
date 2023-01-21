@@ -1,15 +1,16 @@
+import type { AppProps } from 'next/app';
 import Head from 'next/head'
 import GlobalStyle from '@/styles/GlobalStyle';
 import styled from 'styled-components';
 
 
-import Burger from '@/components/Burger.jsx';
-import Navigation from '@/components/Navigation.jsx';
+import Burger from '@/components/Burger';
+import Navigation from '@/components/Navigation';
 import NavigationMobile from '@/components/NavigationMobile';
 import { AppWrapper } from '@/state/state';
 
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps } : AppProps) {
   return (
     <div>
       <Head>

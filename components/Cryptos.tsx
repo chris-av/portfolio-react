@@ -12,9 +12,9 @@ const walletAddress = {
 
 const Cryptos = () => {
   
-  const [ copyBitCoinSuccess, setBitCoinCopySuccess ] = useState(null);
-  const [ copyEthereumSuccess, setEthereumCopySuccess ] = useState(null);
-  const [ copyDogeSuccess, setDogeCopySuccess ] = useState(null);
+  const [ copyBitCoinSuccess, setBitCoinCopySuccess ] = useState<string | null>(null);
+  const [ copyEthereumSuccess, setEthereumCopySuccess ] = useState<string | null>(null);
+  const [ copyDogeSuccess, setDogeCopySuccess ] = useState<string | null>(null);
   const [ iconSize, setIconSize ] = useState('small');
   const windowSize = useWindowSize();
 
@@ -25,9 +25,9 @@ const Cryptos = () => {
   }, [windowSize]);
 
 
-  const handleCopy = (type) => {
+  const handleCopy = (type : string) => {
     
-    if (windowSize < 900) return;
+    if (windowSize.width < 900) return;
 
     if (type === 'bitcoin') {
       navigator.clipboard.writeText(walletAddress.bitcoin);

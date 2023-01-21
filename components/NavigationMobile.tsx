@@ -27,26 +27,26 @@ const NavigationMobile = () => {
         <ul>
 
           <li className="mb-menu-item">
-            <Link href="/">
-              <a onClick={() => toggleOpen(false)} >About</a>
+            <Link href="/" onClick={() => toggleOpen(false)}>
+              About
             </Link>
           </li>
 
           <li className="mb-menu-item">
-            <Link href="/portfolio">
-              <a onClick={() => toggleOpen(false)}>Portfolio</a>
+            <Link href="/portfolio" onClick={() => toggleOpen(false)}>
+              Portfolio
             </Link>
           </li>
 
           <li className="mb-menu-item">
-            <Link href="/resume">
-              <a onClick={() => toggleOpen(false)}>Resume</a>
+            <Link href="/resume" onClick={() => toggleOpen(false)}>
+              Resume
             </Link>
           </li>
 
           <li className="mb-menu-item">
-            <Link href="/contact">
-              <a onClick={() => toggleOpen(false)}>Contact</a>
+            <Link href="/contact" onClick={() => toggleOpen(false)}>
+              Contact
             </Link>
           </li>
 
@@ -63,7 +63,7 @@ const NavigationMobile = () => {
 
 
 
-const Container = styled.div`
+const Container = styled.div<{ open: boolean }>`
 
   position: absolute;
   z-index: 100;

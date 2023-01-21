@@ -4,7 +4,7 @@ import { useAppContext } from '@/state/state';
 import { useSpring, animated, config } from '@react-spring/web';
 
 
-const Message = ({ myref }) => {
+const Message = () => {
   const [flip, set] = useState(false);
   const { messageRef } = useAppContext();
 		

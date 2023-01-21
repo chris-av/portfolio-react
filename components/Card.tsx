@@ -3,7 +3,15 @@ import styled from 'styled-components';
 import { breakpoints } from '@/styles/style-assets';
 
 
-const Card = ({ org, jobtitle, daterange, description, styles }) => {
+interface CardProps {
+  org: string;
+  jobtitle: string;
+  daterange: string;
+  description: any;
+  styles: any;
+}
+
+const Card = ({ org, jobtitle, daterange, description, styles } : CardProps) => {
   return (
     <Container style={styles}>
       <div className="card-header">

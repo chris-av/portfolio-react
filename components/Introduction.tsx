@@ -9,7 +9,7 @@ import LayoutPadding from '@/styles/LayoutPadding';
 
 const Introduction = () => {
 
-  const [ items, setItems ] = useState('Analyst');
+  const [ items, setItems ] = useState<"Developer" | "Analyst" | "Engineer">('Analyst');
   const { messageRef } = useAppContext();
   const transitions = useTransition(items, {
     from: { opacity: 0, y: 50 },
@@ -24,6 +24,7 @@ const Introduction = () => {
         if (prev === 'Developer') return 'Analyst';
         if (prev === 'Analyst') return 'Engineer';
         if (prev === 'Engineer') return 'Developer';
+        return "Analyst"
       })
     }, 2000);
 
