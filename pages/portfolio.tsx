@@ -1,11 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 import Card from '@/components/Card';
 
 import { useSpring, animated } from '@react-spring/web';
 import { portfolio } from '@/data/portfolio.data';
 
-const Portfolio = () => {
+export default function Portfolio() {
   const duration = 2300;
 
   const styles = portfolio.map(p => useSpring({
@@ -16,7 +15,7 @@ const Portfolio = () => {
   }));
 
   return (
-    <Container>
+    <div className="py-[2rem]">
       { portfolio.filter(p => p.active === true).map((portf, i) => (
           <animated.div style={styles[i]} key={i}>
             <Card
@@ -28,14 +27,8 @@ const Portfolio = () => {
             />
           </animated.div>
         )) }
-    </Container>
+    </div>
   )
 }
 
-
-const Container = styled.div`
-  padding: 2rem 0;
-`;
-
-export default Portfolio;
 
