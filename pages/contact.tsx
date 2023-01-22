@@ -1,10 +1,7 @@
-import React, { useState, FormEvent, ChangeEvent, createRef, RefObject } from 'react';
-import styled from 'styled-components';
-
-import LayoutPadding from '@/styles/LayoutPadding';
+import { useState, FormEvent, ChangeEvent, createRef } from 'react';
 
 
-const Contact = () => {
+export default function Contact() {
   
   const [ name, setName ] = useState('');
   const [ email, setEmail ] = useState('');
@@ -22,18 +19,36 @@ const Contact = () => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus(true);
-    console.log(encode({ name, email, message }));
-    console.log('sending fetch!');
-    fetch('/', {
-      method: 'POST',
-      body: encode({ 'form-name': 'contact', name, email, message }),
-      headers: {
-        'Accept': 'application/json',
-        "Content-Type": "application/x-www-form-urlencoded"
+
+    async function makeRequest() {
+
+      try {
+        
+        const response = await fetch('/', {
+          method: "POST",
+          body: encode({ 'form-name': 'contact', name, email, message }),
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        });
+
+        const data = await response.json();
+        console.log({
+          response: {
+            status: response.status,
+            message: response.statusText
+          },
+          data,
+        });
+      } catch (err) {
+        console.log(err);
       }
-    })
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+
+    }
+
+    makeRequest();
+
   }
 
   const handleChange = (event : ChangeEvent<HTMLFormElement | HTMLInputElement | HTMLTextAreaElement>) => {
@@ -43,38 +58,38 @@ const Contact = () => {
   }
     
   return (
-    <LayoutPadding myref={layoutRef}>
-      <Container>
+    <div ref={layoutRef}>
+      <div>
         
-        <div className="form-container">
+        <div className="w-full max-w-[500px] m-auto">
           
-          <div className="call-to-action">
-            <h1>Contact Me</h1>
-            <p>Wanna work together? Hit me up!</p>
+          <div className="mt-[80px] text-center">
+            <h1 className="text-3xl">Contact Me</h1>
+            <p className="text-xl my-2">Wanna work together? Hit me up!</p>
           </div>
 
           { status === false ? (
             <form name="contact" method="POST" data-netlify="true" action="/contact?success=true" onSubmit={handleSubmit}>
-              <div className="form-group">
+              <div className="p-[5px] my-[20px] border border-black rounded-lg flex flex-col">
                 <label>Enter your name</label>
-                <input placeholder="Enter name" onChange={handleChange} id="name" name="name" value={name} />
+                <input placeholder="Enter name" onChange={handleChange} id="name" name="name" value={name} className="focus:outline-none p-[5px]" />
               </div>
               
-              <div className="form-group">
+              <div className="p-[5px] my-[20px] border border-black rounded-lg flex flex-col">
                 <label>Email address</label>
-                <input type="email" placeholder="Enter email" onChange={handleChange} id="email" name="email" value={email} />
+                <input type="email" placeholder="Enter email" onChange={handleChange} id="email" name="email" value={email} className="focus:outline-none p-[5px]" />
               </div>
 
-              <div className="form-group">
+              <div className="p-[5px] my-[20px] border border-black rounded-lg flex flex-col">
                 <label>Your inquiry</label>
-                <textarea placeholder="What can I assist you with?" onChange={handleChange} id="message" name="message" value={message} />
+                <textarea placeholder="What can I assist you with?" onChange={handleChange} id="message" name="message" value={message} className="focus:outline-none p-[5px]"  />
               </div>
               
-              <button type="submit" className="submit">Submit</button>
+              <button type="submit" className="text-xl w-full bg-[#13C253] text-white border-none rounded-md p-[10px] hover:bg-[#27D667]">Submit</button>
               
             </form> 
           ) : (
-            <div className="complete-container">
+            <div className="font-bold text-center flex flex-col justify-center items-center h-[300px]">
               <h2>Thank you!</h2>
               <p>Let me review your request and I'll try to get back to you as soon as possible.</p>
             </div>
@@ -82,89 +97,9 @@ const Contact = () => {
           
         </div>
 
-      </Container>
-    </LayoutPadding>
+      </div>
+    </div>
   );
 }
-
-
-const Container = styled.div`
-
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
-  font-family: inherit;
-
-  .form-container {
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
-  }
-
-  .call-to-action {
-    margin: 20px 0;
-    text-align: center;
-    h1 { margin: 5px 0; }
-  }
-
-  .form-group {
-    padding: 5px;
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    border: solid 1px grey;
-    border-radius: 5px;
-
-    label {
-      font-size: 1rem;
-    }
-
-    input, textarea {
-      min-height: 30px;
-      margin-top: 5px;
-      padding: 0 5px;
-      border: none;
-      background: none;
-    }
-
-    input,textarea:focus {
-      outline: none;
-    }
-
-    textarea {
-      height: 60px;
-    }
-
-  }
-
-  .submit {
-    box-sizing: border-box;
-    font-size: 1.5rem;
-    width: 100%;
-    text-align: center;
-    margin: 20px auto;
-    padding: 10px 0;
-    background-color: #13C253;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    &:hover { cursor: pointer; background-color: #27d667; }
-  }
-
-  .complete-container {
-    font-weight: 900;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-  }
-
-`;
-
-
-export default Contact
 
 
