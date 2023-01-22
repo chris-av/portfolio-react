@@ -1,7 +1,6 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head'
 import '@/styles/globals.css';
-import styled from 'styled-components';
 
 
 import Burger from '@/components/Burger';
@@ -35,10 +34,6 @@ function MyApp({ Component, pageProps } : AppProps) {
     </div>
   );
 }
-
-const AppContainer = styled.div`
-  padding: 25px;
-`;
 
 
 export default MyApp;
