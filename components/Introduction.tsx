@@ -35,7 +35,7 @@ const Introduction = () => {
   return (
     <LayoutPadding myref={messageRef}>
       <Container>
-        <h1 className="sentence">Professional &nbsp;
+        <h1 className="sentence leading-tight">Professional &nbsp;
           <animated.div className="slidingVertical">
             { transitions((style, item) => (
               <animated.span style={{ ...style }} className={`${item.toLowerCase()}`}>
