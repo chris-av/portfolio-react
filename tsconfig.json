@@ -17,6 +17,7 @@
     "incremental": true,
     "paths": {
       "@/components/*": [ "components/*" ],
+      "@/design-system/*": [ "design-system/*" ],
       "@/pages/*": [ "pages/*" ],
       "@/styles/*": [ "styles/*" ],
       "@/hooks/*": [ "hooks/*" ],
