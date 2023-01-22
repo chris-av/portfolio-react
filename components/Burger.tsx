@@ -1,56 +1,22 @@
 import React from 'react';
 import { useAppContext } from '@/state/state'
-import styled from 'styled-components';
 
-const Burger = () => {
+export default function Burger() {
   const isExpanded = true;
   const { open, toggleOpen } = useAppContext();
   
   return (
-    <Container aria-label="Toggle menu" aria-expanded={isExpanded} onClick={() => toggleOpen(!open)}>
-      <span className="bar" style={{ transform: open ? 'rotate(45deg)' : 'rotate(0)' }} />
-      <span className="bar" style={{ transform: open ? 'translateX(20px)' : 'translateX(0)', opacity: open ? 0 : 1 }} />
-      <span className="bar" style={{ transform: open ? 'rotate(-45deg)' : 'rotate(0)' }} />
-    </Container>
+    <div 
+      aria-label="Toggle menu" 
+      aria-expanded={isExpanded} 
+      onClick={() => toggleOpen(!open)}
+      className="lg:hidden bg-purple flex flex-col justify-center w-full h-[80px] outline-transparent pl-8 [&>*]:bg-white [&>*]:h-[4px] [&>*]:w-[35px] [&>*]:my-1 [&>*]:rounded-lg [&>*]:transition-transform [&>*]:duration-300 [&>*]:origin-[3px]"
+    >
+      <span style={{ transform: open ? 'rotate(45deg)' : 'rotate(0)' }} />
+      <span style={{ transform: open ? 'translateX(20px)' : 'translateX(0)', opacity: open ? 0 : 1 }} />
+      <span style={{ transform: open ? 'rotate(-45deg)' : 'rotate(0)' }} />
+    </div>
   );
 }
 
 
-const Container = styled.button`
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 80px;
-  border: none;
-  cursor: pointer;
-  background-color: #434179;
-  border: none;
-  outline: transparent;
-
-  .burger {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .bar {
-    height: 4px;
-    width: 35px;
-    background: white;
-    border-radius: 30px;
-    transition: all 0.3s linear;
-    position: relative;
-    transform-origin: 3px;
-    margin: 3px 0;
-    margin-left: 15px;
-
-  }
-
-  @media (max-width: 1100px) { display: flex; }
-  @media (max-width: 750px) { display: flex; }
-
-`;
-
-
-
-export default Burger;
