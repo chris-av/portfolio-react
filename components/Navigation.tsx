@@ -5,10 +5,10 @@ import Link from 'next/link';
 
 export default function Navigation() {
     return (
-      <div className="">
+      <div className="hidden lg:block">
         <nav className="flex justify-between min-h-[80px] bg-purple text-white">
           
-          <Link href="/" className="flex justify-center items-center select-none text-2xl ml-6">
+          <Link href="/" className="flex justify-center items-center select-none text-2xl ml-6 hover:text-white">
             Christian Valenzuela
           </Link>
           
