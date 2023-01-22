@@ -1,8 +1,8 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 
 
-export default function LayoutSinglePanel({ children }) {
+export default function LayoutSinglePanel({ children } : { children?: ReactNode }) {
   return (
     <Container>
       { children }

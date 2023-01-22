@@ -1,8 +1,8 @@
-import React from 'react'
+import { ReactNode } from 'react'
 import styled from 'styled-components';
 
 
-export default function LayoutTwoPanel({ children, reverse = false }) {
+export default function LayoutTwoPanel({ children, reverse = false } : { children?: ReactNode, reverse?: boolean; }) {
   return (
     <Container reverse={reverse}>
       { children }
@@ -11,7 +11,7 @@ export default function LayoutTwoPanel({ children, reverse = false }) {
 }
 
 
-const Container = styled.div`
+const Container = styled.div<{reverse: boolean;}>`
   width: 100%;
   display: flex;
   justify-content: space-between;
