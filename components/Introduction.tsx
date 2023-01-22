@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useAppContext } from '@/state/state';
 import { useTransition, animated } from '@react-spring/web';
-import styled from 'styled-components';
 
 
 import LayoutPadding from '@/styles/LayoutPadding';
 
 
-const Introduction = () => {
+export default function Introduction() {
 
   const [ items, setItems ] = useState<"Developer" | "Analyst" | "Engineer">('Analyst');
   const { messageRef } = useAppContext();
@@ -17,6 +16,11 @@ const Introduction = () => {
     leave: { opacity: 0, y: -50 },
   });
 
+  const colors = {
+    "Developer": "#C85D91",  
+    "Analyst": "#5D91C8",
+    "Engineer": "#91C85D",
+  } as const;
 
   useEffect(() => {
     const tmp = setInterval(() => {
@@ -34,18 +38,18 @@ const Introduction = () => {
 
   return (
     <LayoutPadding myref={messageRef}>
-      <Container>
-        <h1 className="sentence leading-tight">Professional &nbsp;
-          <animated.div className="slidingVertical">
+      <div>
+        <h1 className="text-left my-[3rem] leading-relaxed text-[4rem]">Professional &nbsp;
+          <animated.div className="slidingVertical inline overflow-y-hidden w-full">
             { transitions((style, item) => (
-              <animated.span style={{ ...style }} className={`${item.toLowerCase()}`}>
+              <animated.span style={{ ...style, color: colors[item] }}  className={`opacity-0 overflow-hidden absolute`}>
                 { item }
               </animated.span>
             )) }
           </animated.div>
         </h1>
         
-        <div className="introduction">
+        <div className="max-w-[750px]">
           <p>
             My name's Christian Valenzuela, your friendly neighborhood web developer!
             I am glad you came to visit my page!
@@ -57,66 +61,8 @@ const Introduction = () => {
           
           <p>I am a passionate developer with a particular affinity towards Javascript and Node. But I also love tinkering in other languages like bash/zsh, python, and zig!</p>
         </div>
-      </Container>
+      </div>
     </LayoutPadding>
   );
 }
-
-
-
-const Container = styled.div`
-  width: 100%;
-
-  h1 {
-    font-size: 4rem;
-    margin: 3rem 0;
-  }
-
-  .wrapper {
-    position: relative;
-    width: 100%;
-  }
-
-  .sentence {
-    text-align: left;
-  }
-
-  .slidingVertical {
-    width: 100%;
-    display: inline;
-    overflow-y: hidden;
-  }
-
-  .developer { color: #C85D91; }
-  .analyst { color: #5D91C8; }
-  .engineer { color: #91C85D; }
-
-  .slidingVertical span {
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-  }
-
-  @media(max-width: 900px) {
-    h1 {
-      font-size: 2.5rem;
-    }
-    .sentence {
-      margin-left: 0;
-    }
-  }
-
-  @media(max-width: 400px) {
-    h1 {
-      font-size: 1.5rem !important;
-    }
-
-    .wrapper {
-      overflow: hidden;
-    }
-  }
-
-`;
-
-export default Introduction;
 
