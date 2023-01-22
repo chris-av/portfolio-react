@@ -1,13 +1,11 @@
 import React, { useRef } from 'react';
-import styled from 'styled-components';
 import { useSpring, animated } from '@react-spring/web';
-
-import LayoutPadding from '@/styles/LayoutPadding';
 import useIsVisible from '@/hooks/useIsVisible';
-
 import { resume } from '@/data/resume.data';
 
-const Resume = () => {
+
+
+export default function Resume() {
 
   const testRef1 = useRef();
   const testRef2 = useRef();
@@ -22,9 +20,9 @@ const Resume = () => {
   const visibles = [ testRefIsVisible1, testRefIsVisible2, testRefIsVisible3 ];
 
   return (
-    <Container>
+    <div>
 
-      <h1 className="work-history">Work History</h1>
+      <h1 className="work-history text-center text-[2.5rem] my-[4rem]">Work History</h1>
 
       <div className="timeline">
 
@@ -42,7 +40,7 @@ const Resume = () => {
         )) }
     
       </div>
-    </Container>
+    </div>
   )
 }
 
@@ -67,88 +65,17 @@ const TimeLineSection = ({ organization, jobtitle, range, description, myref, is
   }
 
   return (
-    <div className="timeline-section" >
-      <div className="time-range">{ range }</div>
-      <div className="line"></div>
-      <animated.div className="job" style={useSpring({ ...animate, delay: 300*i })}>
-        <h2 ref={myref}>{jobtitle}</h2>
-        <h3>{organization}</h3>
-        <ul>
-          { description.map((des: any, i: any) => <li key={i}>{ des }</li>) }
+    <div className="timeline-section flex" >
+      <div className="time-range font-bold italic text-center max-w-[250px] min-w-[20%] p-[5px]">{ range }</div>
+      <div className="line mx-[15px] w-[1px] bg-black"></div>
+      <animated.div style={useSpring({ ...animate, delay: 300*i })} className="min-h-[25vh]" >
+        <h2 ref={myref} className="text-2xl">{jobtitle}</h2>
+        <h3 className="text-xl my-2">{organization}</h3>
+        <ul className="list-disc ml-12">
+          { description.map((des: any, i: any) => <li key={i} className="my-2">{ des }</li>) }
         </ul>
       </animated.div>
     </div>
   );
 }
 
-
-
-const Container = styled.div`
-
-  .work-history {
-    width: 100%;
-    text-align: center;
-    font-size: 2.5rem;
-    margin: 4rem 0;
-  }
-
-  .timeline {
-    width: 100%;
-  }
-
-  .timeline-section {
-    display: flex;
-    flex-direction: row;
-    // min-height: 80vh;
-  }
-
-  .time-range {
-    font-size: 1rem;
-    font-weight: bold;
-    font-style: italic;
-    text-align: right;
-    max-width: 250px;
-    min-width: 20%;
-    padding: 5px;
-  }
-
-  .job {
-    h2, h3 { margin: 0; padding: 0; }
-
-    h2 { font-size: 1.6rem; margin-bottom: 10px; }
-    h3 { font-size: 1.2rem; }
-    ul li {
-      font-size: 1rem;
-      margin: 10px 0;
-    }
-    margin-bottom: 100px;
-  }
-
-  .line {
-    margin: 0 15px;
-    width: 1px;
-    background-color: black;
-  }
-
-
-  @media (max-width: 900px) {
-    .work-history {
-      font-size: 2rem;
-    }
-    .timeline {
-      padding: 10px;
-    }
-    .time-range {
-      font-size: 0.8rem;
-    }
-    .job {
-      h2 { font-size: 1.2rem; }
-      h3 { font-size: 0.9rem; }
-      ul li { font-size: 0.8rem; }
-    }
-  }
-
-`;
-
-
-export default Resume;
