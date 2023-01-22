@@ -1,7 +1,5 @@
-import React, { useState, useLayoutEffect, useEffect } from 'react';
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 import Link from 'next/link';
-import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { useAppContext } from '@/state/state';
 
@@ -10,7 +8,7 @@ import useWindowSize from '@/hooks/useWindowSize';
 
 import { github, instagram, linkedin } from '@/data/socials';
 
-const NavigationMobile = () => {
+export default function NavigationMobile() {
   
   const { pathname: location } = useRouter();
   const windowSize = useWindowSize();
@@ -22,29 +20,32 @@ const NavigationMobile = () => {
   }, [windowSize, location, toggleOpen]);
 
   return (
-    <Container open={open}>
-      <nav className="mb-menu">
+    <div 
+      style={{ transform: open ? "translateX(0)" : "translateX(-100%)" }} 
+      className="fixed bg-purple z-10 flex flex-col h-full w-full text-white p-12 -mt-[1px] transition-transform duration-500"
+    >
+      <nav className="mb-menu text-3xl">
         <ul>
 
-          <li className="mb-menu-item">
+          <li className="mb-menu-item my-4">
             <Link href="/" onClick={() => toggleOpen(false)}>
               About
             </Link>
           </li>
 
-          <li className="mb-menu-item">
+          <li className="mb-menu-item my-4">
             <Link href="/portfolio" onClick={() => toggleOpen(false)}>
               Portfolio
             </Link>
           </li>
 
-          <li className="mb-menu-item">
+          <li className="mb-menu-item my-4">
             <Link href="/resume" onClick={() => toggleOpen(false)}>
               Resume
             </Link>
           </li>
 
-          <li className="mb-menu-item">
+          <li className="mb-menu-item p">
             <Link href="/contact" onClick={() => toggleOpen(false)}>
               Contact
             </Link>
@@ -52,72 +53,12 @@ const NavigationMobile = () => {
 
         </ul>
       </nav>
-      <div className="logo-container">
+      <div className="logo-container w-full my-12 flex justify-center items-center [&>*]:mx-4 [&>*]:text-2xl">
         <a href={linkedin}><i className={`linkedin link big inverted icon`}></i></a>
         <a href={github}><i className={`github link big inverted icon`}></i></a>
         <a href={instagram}><i className={`instagram link big inverted icon`}></i></a>
       </div>
-    </Container>
+    </div>
   );
 }
 
-
-
-const Container = styled.div<{ open: boolean }>`
-
-  position: absolute;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  background-color: #434179;
-  height: 100%;
-  text-align: left;
-  padding: 2rem;
-  position: absolute;
-  top: 80px;
-  left: 0;
-  transition: transform 0.5s ease-in-out;
-  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
-
-  width: 100%;
-  color: white;
-  ul { list-style: none; }
-
-  .mb-nav-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    margin-bottom: 20px;
-  }
-
-  .hamburger { display: flex; flex-direction: column; }
-  .hamburger-bar {
-    width: 35px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
-  }
-
-  .mb-menu {
-    z-index: 1000000;
-    font-size: 20px;
-  }
-
-  .mb-menu-item {
-    margin: 15px 0;
-    a { text-decoration: none; color: white; }
-  }
-
-  .logo-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 40px 0;
-  }
-`;
-
-
-
-
-
-export default NavigationMobile;
