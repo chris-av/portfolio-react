@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, ChangeEvent, createRef } from 'react';
+import React, { useState, FormEvent, ChangeEvent, createRef, RefObject } from 'react';
 import styled from 'styled-components';
 
 import LayoutPadding from '@/styles/LayoutPadding';
@@ -11,7 +11,7 @@ const Contact = () => {
   const [ message, setMessage ] = useState('');
   const [ status, setStatus ] = useState(false);
 
-  const layoutRef = createRef();
+  const layoutRef = createRef<HTMLDivElement>();
 
   const encode = (data : any) => {
     return Object.keys(data).map(key => {
