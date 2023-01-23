@@ -38,29 +38,15 @@ export default function Introduction() {
 
   return (
     <LayoutPadding myref={messageRef}>
-      <div>
-        <h1 className="text-left my-[3rem] leading-relaxed text-[4rem]">Professional &nbsp;
-          <animated.div className="slidingVertical inline overflow-y-hidden w-full">
-            { transitions((style, item) => (
-              <animated.span style={{ ...style, color: colors[item] }}  className={`opacity-0 overflow-hidden absolute`}>
-                { item }
-              </animated.span>
-            )) }
-          </animated.div>
+      <div className="flex items-center h-full">
+        <h1 style={{ lineHeight: "7rem" }} className="relative -top-20 text-[4rem] text-4xl lg:text-8xl">Professional &nbsp;
+          { transitions((style, item) => (
+            <animated.span style={{ ...style, color: colors[item], lineHeight: "7rem" }} className={`opacity-0 overflow-hidden absolute`}>
+              { item }
+            </animated.span>
+          )) }
         </h1>
         
-        <div className="max-w-[750px]">
-          <p>
-            My name's Christian Valenzuela, your friendly neighborhood web developer!
-            I am glad you came to visit my page!
-          </p>
-          
-          <p>
-            I build everything: whether it is the landing page for your next product, a portfolio site for your artwork or a full e-commerce site.
-          </p>
-          
-          <p>I am a passionate developer with a particular affinity towards Javascript and Node. But I also love tinkering in other languages like bash/zsh, python, and zig!</p>
-        </div>
       </div>
     </LayoutPadding>
   );
