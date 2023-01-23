@@ -39,7 +39,7 @@ export default function Introduction() {
   return (
     <LayoutPadding myref={messageRef}>
       <div className="flex items-center h-full">
-        <h1 style={{ lineHeight: "7rem" }} className="relative -top-20 text-[4rem] text-4xl lg:text-8xl">Professional &nbsp;
+        <h1 style={{ lineHeight: "7rem" }} className="relative -top-20 text-4xl lg:text-8xl">Professional &nbsp;
           { transitions((style, item) => (
             <animated.span style={{ ...style, color: colors[item], lineHeight: "7rem" }} className={`opacity-0 overflow-hidden absolute`}>
               { item }
