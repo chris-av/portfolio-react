@@ -14,7 +14,7 @@ export default function AboutMe() {
 
       <Services />
 
-      <h1>Wanna donate ? </h1>
+      <h1 className="text-4xl text-center mt-24 mb-12">Wanna donate ? </h1>
 
       <Cryptos />
 
