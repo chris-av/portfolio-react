@@ -3,9 +3,6 @@ import { useAppContext } from '@/state/state';
 import { useTransition, animated } from '@react-spring/web';
 
 
-import LayoutPadding from '@/styles/LayoutPadding';
-
-
 export default function Introduction() {
 
   const [ items, setItems ] = useState<"Developer" | "Analyst" | "Engineer">('Analyst');
@@ -37,17 +34,17 @@ export default function Introduction() {
   }, [items]);
 
   return (
-    <LayoutPadding>
-      <div className="relative flex items-center h-full">
+    <div className="h-screen p-12">
+      <div className="relative flex items-center h-5/6">
         <h1 className="relative -top-20 text-4xl lg:text-8xl">Professional &nbsp;
           { transitions((style, item) => (
-            <animated.span style={{ ...style, color: colors[item] }} className="overflow-hidden absolute leading-relaxed -top-1/3">
+            <animated.span style={{ ...style, color: colors[item] }} className="overflow-hidden absolute lg:leading-relaxed lg:-top-1/3">
               { item }
             </animated.span>
           )) }
         </h1>
 
-        <div className="absolute left-1/2 bottom-10">
+        <div className="absolute right-1/2 bottom-0 -mr-10">
           <i 
             className="angle down huge icon" 
             onClick={() => messageRef.current.scrollIntoView()}
@@ -55,7 +52,7 @@ export default function Introduction() {
         </div>
         
       </div>
-    </LayoutPadding>
+    </div>
   );
 }
 
