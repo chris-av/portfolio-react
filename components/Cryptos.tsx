@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { wallets as walletAddress } from '@/data/wallets.data';
 import styled from 'styled-components';
 
 import useWindowSize from '@/hooks/useWindowSize';
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 
-const walletAddress = {
-  bitcoin: '36VbQZMPk69SLVauprfLZFu4yk1cFmUCwm',
-  ethereum: '0x8f6f684ce9df9483753331D78b29367B4AE7A1Ef',
-  doge: 'DMavjUyrMdkqYHojfBRR4Uu6742tVswqGW'
-}
 
-const Cryptos = () => {
+export default function Cryptos() {
   
   const [ copyBitCoinSuccess, setBitCoinCopySuccess ] = useState<string | null>(null);
   const [ copyEthereumSuccess, setEthereumCopySuccess ] = useState<string | null>(null);
@@ -55,96 +51,50 @@ const Cryptos = () => {
 
   }
 
-  const useClass = {
-    bitcoin: copyBitCoinSuccess ? "copy-success copy success-active" : "copy-success",
-    ethereum: copyEthereumSuccess ? "copy-success copy success-active" : "copy-success",
-    doge: copyDogeSuccess ? "copy-success copy success-active" : "copy-success"
-  }
   
   return (
-    <Container>
-      <div className="crypto-container">
-        <div className={useClass.bitcoin}>{copyBitCoinSuccess}</div>
+    <div className="max-w-[750px] mx-auto px-12">
+
+      <div className="crypto-container relative flex justify-between items-center my-8 mx-4">
+        <div 
+          style={{
+            opacity: copyBitCoinSuccess ? 1: 0, 
+            transition: "opacity 1s", 
+          }} 
+          className="absolute invisible flex justify-center items-center font-bold -left-[20px] -top-[50px] bg-black text-white w-[130px] h-[35px] rounded-lg"
+        >
+          {copyBitCoinSuccess}
+        </div>
+
         <i className={`bitcoin ${iconSize} icon yellow inverted circular`} onClick={() => handleCopy('bitcoin')}></i>
-        <div className="crypto-label">
-          <h3>Bitcoin</h3>
-          <span>{walletAddress.bitcoin}</span>
+
+        <div className="crypto-label text-right">
+          <h2 className="text-2xl">Bitcoin</h2>
+          <span className="text-xs">{walletAddress.bitcoin}</span>
         </div>
+
       </div>
       
-      <div className="crypto-container">
-        <div className={useClass.ethereum}>{copyEthereumSuccess}</div>
+      <div className="crypto-container relative flex justify-between items-center my-8 mx-4">
+        <div 
+          style={{
+            opacity: copyBitCoinSuccess ? 1: 0, 
+            transition: "opacity 1s", 
+          }}
+          className="absolute invisible flex justify-center items-center font-bold -left-[20px] -top-[50px] bg-black text-white w-[130px] h-[35px] rounded-lg"
+        >
+          {copyEthereumSuccess}
+        </div>
+
         <i className={`ethereum ${iconSize} icon blue inverted circular`} onClick={() => handleCopy('ethereum')}></i>
-        <div className="crypto-label">
-          <h3>Ethereum</h3>
-          <span>{walletAddress.ethereum}</span>
+
+        <div className="crypto-label text-right">
+          <h2 className="text-2xl">Ethereum</h2>
+          <span className="text-xs">{walletAddress.ethereum}</span>
         </div>
       </div>
       
-    </Container>
+    </div>
   )
 }
 
-
-const Container = styled.div`
-  width: 100%;
-  max-width: 750px;
-  margin: 0 auto;
-
-  .crypto-container{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 40px 30px;
-    i { cursor: pointer; }
-    .copy-success {
-      position: absolute;
-      visibility: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: 900;
-      left: -25px;
-      top: -50px;
-      background-color: black;
-      color: white;
-      width: 130px;
-      height: 35px;
-      border-radius: 20px;
-    }
-    .copy-success::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 40%;
-      border-width: 5px;
-      border-style: solid;
-      border-color: black transparent transparent transparent;
-    }
-    .copy-success {
-      opacity: 0;
-      transition: opacity 1s;
-      transition: all 400ms;
-    }
-    .copy-success-active {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  .crypto-label {
-    font-size: 1.2rem;
-    text-align: right;
-    h3 { margin: 0; padding: 0; }
-    span { font-size: inherit; text-overflow: ellipsis; }
-  }
-
-  @media (max-width: 900px) {
-    .crypto-label span { font-size: 9px; }
-  }
-
-`;
-
-
-export default Cryptos;
