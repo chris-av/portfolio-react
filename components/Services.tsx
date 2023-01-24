@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useSpring, animated } from '@react-spring/web';
-import styled from 'styled-components';
+import { useAppContext } from '@/state/state';
 
 import LayoutTwoPanel from '@/styles/LayoutTwoPanel';
 import LayoutSinglePanel from '@/styles/LayoutSinglePanel';
@@ -9,6 +9,8 @@ import useIsVisible from '@/hooks/useIsVisible';
 
 
 export default function Services() {
+
+  const { messageRef } = useAppContext();
 
   const webappRef = useRef(null);
   const dataRef = useRef(null);
@@ -19,7 +21,7 @@ export default function Services() {
   const techVisible = useIsVisible(techRef);
 
   return (
-    <div className="w-full">
+    <div className="w-full" ref={messageRef}>
 
       <div className="layout--webapps">
         <LayoutTwoPanel>
