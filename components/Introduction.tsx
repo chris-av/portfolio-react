@@ -36,7 +36,7 @@ export default function Introduction() {
   return (
     <div className="h-screen p-12">
       <div className="relative flex items-center h-5/6">
-        <h1 className="relative -top-20 -left-2 text-5xl md:text-6xl md:left-20 lg:text-8xl">Professional &nbsp;
+        <h1 className="relative -top-20 -left-2 text-4xl md:text-6xl md:left-20 lg:text-8xl">Professional &nbsp;
           { transitions((style, item) => (
             <animated.span style={{ ...style, color: colors[item] }} className="absolute">
               { item }
