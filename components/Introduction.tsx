@@ -46,7 +46,7 @@ export default function Introduction() {
 
         <div className="absolute right-1/2 bottom-0 -mr-10">
           <i 
-            className="angle down huge icon" 
+            className="angle down huge icon cursor-pointer" 
             onClick={() => messageRef.current.scrollIntoView()}
           />
         </div>
