@@ -24,10 +24,11 @@ function MyApp({ Component, pageProps } : AppProps) {
 
       <AppWrapper>
         <Navigation />
-        <Burger />
         <NavigationMobile />
 
-        <Component {...pageProps} />
+        <div className="pt-[80px] lg:mt-0">
+          <Component {...pageProps} />
+        </div>
 
       </AppWrapper>
 
