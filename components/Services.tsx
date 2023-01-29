@@ -55,7 +55,7 @@ export default function Services() {
       <div className="layout--technologist">
         <div className="p-[4rem]">
           <div className="header w-full">
-            <h1 className="text-[4rem] mb-12">General Technologist</h1>
+            <h1 className="text-center text-4xl lg:text-[4rem] mb-12">General Technologist</h1>
             <p className="text-[1.2rem]">I love technology! Whatever solution you need&#8212;whether that by a small script, an ad hoc analysis, or a full web app&#8212;I am always up to the challenge to find a solution.</p>
             <p className="text-[1.2rem]">I have experience using different platforms to deploy my projects and ensure a sensible, efficient develop/deployment pipeline.</p>
           </div>
