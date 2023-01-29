@@ -36,15 +36,15 @@ export default function Introduction() {
   return (
     <div className="h-screen p-12">
       <div className="relative flex items-center h-5/6">
-        <h1 className="relative -top-20 text-4xl lg:text-8xl">Professional &nbsp;
+        <h1 className="relative -top-20 -left-2 text-5xl md:text-6xl md:left-20 lg:text-8xl">Professional &nbsp;
           { transitions((style, item) => (
-            <animated.span style={{ ...style, color: colors[item] }} className="overflow-hidden absolute lg:leading-relaxed lg:-top-1/3">
+            <animated.span style={{ ...style, color: colors[item] }} className="absolute">
               { item }
             </animated.span>
           )) }
         </h1>
 
-        <div className="absolute right-1/2 bottom-0 -mr-10">
+        <div className="absolute right-1/2 bottom-10 -mr-10">
           <i 
             className="angle down huge icon cursor-pointer" 
             onClick={() => messageRef.current.scrollIntoView()}
