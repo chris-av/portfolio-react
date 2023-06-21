@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 interface Props {
   type?: "a" | "next-link" | "button";
+  size?: "sm" | "md" | "lg" | "xl";
   color?: "blue" | "green" | "purple";
   children: ReactNode;
   extraClasses?: string;
@@ -17,6 +18,7 @@ type CombinedProps = ButtonProps | AnchorProps & Props;
 
 export default function Button({
   type = "button",
+  size = "md",
   color = "blue",
   children,
   href = "/",
