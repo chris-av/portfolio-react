@@ -25,10 +25,17 @@ export default function Button({
   extraClasses = "",
 }: CombinedProps) {
 
-  const baseStyle = classnames("rounded-lg px-4 py-2 font-bold", {
+  const baseStyle = classnames("w-fit cursor-pointer rounded-lg px-4 py-2 font-bold", {
+    // colors
     "bg-purple text-white": color === "purple",
     "bg-[blue] text-white": color === "blue",
-    "bg-[yellow]": color === "green",
+    "bg-green text-white": color === "green",
+
+    // sizing
+    "my-2 px-4 py-2 text-sm": size === "sm",
+    "my-4 px-8  py-4 text-base": size === "md",
+    "my-4 px-8 py-4 text-lg": size === "lg",
+    "my-8 px-8 py-4 text-xl": size === "xl",
   });
 
   if (type === "a") {
