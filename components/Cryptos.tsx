@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, } from 'react';
 import { wallets as walletAddress } from '@/data/wallets.data';
 import styled from 'styled-components';
 
@@ -53,15 +53,15 @@ export default function Cryptos() {
 
   
   return (
-    <div className="max-w-[750px] mx-auto px-12">
+    <div className="mx-auto max-w-[750px] px-12">
 
-      <div className="crypto-container relative flex justify-between items-center my-8 mx-4">
+      <div className="crypto-container relative mx-4 my-8 flex items-center justify-between">
         <div 
           style={{
             opacity: copyBitCoinSuccess ? 1: 0, 
             transition: "opacity 1s", 
           }} 
-          className="absolute invisible flex justify-center items-center font-bold -left-[20px] -top-[50px] bg-black text-white w-[130px] h-[35px] rounded-lg"
+          className="invisible absolute -left-[20px] -top-[50px] flex h-[35px] w-[130px] items-center justify-center rounded-lg bg-black font-bold text-white"
         >
           {copyBitCoinSuccess}
         </div>
@@ -75,13 +75,13 @@ export default function Cryptos() {
 
       </div>
       
-      <div className="crypto-container relative flex justify-between items-center my-8 mx-4">
+      <div className="crypto-container relative mx-4 my-8 flex items-center justify-between">
         <div 
           style={{
             opacity: copyBitCoinSuccess ? 1: 0, 
             transition: "opacity 1s", 
           }}
-          className="absolute invisible flex justify-center items-center font-bold -left-[20px] -top-[50px] bg-black text-white w-[130px] h-[35px] rounded-lg"
+          className="invisible absolute -left-[20px] -top-[50px] flex h-[35px] w-[130px] items-center justify-center rounded-lg bg-black font-bold text-white"
         >
           {copyEthereumSuccess}
         </div>
