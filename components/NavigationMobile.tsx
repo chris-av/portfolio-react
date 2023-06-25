@@ -1,6 +1,7 @@
+"use client";
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter, usePathname } from 'next/navigation';
 import { useAppContext } from '@/state/state';
 
 import useWindowSize from '@/hooks/useWindowSize';
@@ -9,8 +10,8 @@ import useWindowSize from '@/hooks/useWindowSize';
 import { github, instagram, linkedin } from '@/data/socials';
 
 export default function NavigationMobile() {
-  
-  const { pathname: location } = useRouter();
+
+  const location = usePathname();
   const windowSize = useWindowSize();
   const { open, toggleOpen } = useAppContext();
 
@@ -22,7 +23,7 @@ export default function NavigationMobile() {
   return (
     <div 
       style={{ transform: open ? "translateX(0)" : "translateX(-100%)" }} 
-      className="fixed bg-purple z-10 flex flex-col h-full w-full text-white p-12 -mt-[1px] transition-transform duration-500"
+      className="fixed z-10 -mt-[1px] flex h-full w-full flex-col bg-purple p-12 text-white transition-transform duration-500"
     >
       <nav className="mb-menu text-3xl">
         <ul>
@@ -53,7 +54,7 @@ export default function NavigationMobile() {
 
         </ul>
       </nav>
-      <div className="logo-container w-full my-12 flex justify-center items-center [&>*]:mx-4 [&>*]:text-2xl">
+      <div className="logo-container my-12 flex w-full items-center justify-center [&>*]:mx-4 [&>*]:text-2xl">
         <a href={linkedin}><i className={`linkedin link big inverted icon`}></i></a>
         <a href={github}><i className={`github link big inverted icon`}></i></a>
         <a href={instagram}><i className={`instagram link big inverted icon`}></i></a>
