@@ -1,21 +1,19 @@
-import React from 'react';
-import Card from '@/components/Card';
-
+"use client";
 import { useSpring, animated } from '@react-spring/web';
 import { portfolio } from '@/data/portfolio.data';
+import Card from '@/components/Card';
 
-export default function Portfolio() {
-  const duration = 2300;
-
+export default function ClientWrapper() {
+  const duration = 10;
   const styles = portfolio.map(p => useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
     delay: p.delay,
     config: { duration: duration },
   }));
-
+  console.log({ styles });
   return (
-    <div className="py-[2rem]">
+    <div>
       { portfolio.filter(p => p.active === true).map((portf, i) => (
           <animated.div style={styles[i]} key={i}>
             <Card
@@ -23,12 +21,10 @@ export default function Portfolio() {
               daterange={""}
               jobtitle={portf.jobtitle}
               description={portf.description}
-              styles={{}}
             />
           </animated.div>
         )) }
-    </div>
-  )
+    </div> 
+  );
 }
-
 

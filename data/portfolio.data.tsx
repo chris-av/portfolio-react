@@ -11,7 +11,8 @@ export const portfolio = [
         <p>Worked closely with the college admninistrators to understand the business logic and reimplement using React for frontend and Node/Express + Postgres.</p>
         <p>Coordinated with students and teachers to incorporate feedback and implement new features.</p>
       </div>
-    )
+    ),
+    delay: 0,
   },
   {
     organization: "Wise Attend",
