@@ -4,7 +4,10 @@ import Services from '@/components/Services';
 import { github, instagram, linkedin } from '@/data/socials';
 
 
-export default function AboutMe() {
+export default function Page() {
+
+  console.log('am I on the server?');
+
   return (
     <div>
       <div className="">
@@ -23,9 +26,9 @@ export default function AboutMe() {
         <a target="_blank" rel="noopener noreferrer" href={instagram}><i className={`instagram link big black icon`}></i></a>
       </div>
 
-
     </div>
   );
 }
+
 
 
