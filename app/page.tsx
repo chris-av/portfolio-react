@@ -6,8 +6,6 @@ import { github, instagram, linkedin } from '@/data/socials';
 
 export default function Page() {
 
-  console.log('am I on the server?');
-
   return (
     <div>
       <div className="">
