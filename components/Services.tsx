@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+"use client";
+import { useRef, useEffect } from 'react';
 import { useSpring, animated } from '@react-spring/web';
-import { useAppContext } from '@/state/state';
+import "semantic-ui-css/semantic.min.css";
 
 import LayoutTwoPanel from '@/styles/LayoutTwoPanel';
 import LayoutSinglePanel from '@/styles/LayoutSinglePanel';
@@ -10,7 +11,8 @@ import useIsVisible from '@/hooks/useIsVisible';
 
 export default function Services() {
 
-  const { messageRef } = useAppContext();
+
+  const messageRef = useRef<null | HTMLDivElement>(null);
 
   const webappRef = useRef(null);
   const dataRef = useRef(null);
@@ -36,7 +38,7 @@ export default function Services() {
           </div>
         </LayoutTwoPanel>
       </div>
-      
+
       <div className="layout--data">
         <LayoutTwoPanel reverse={true}>
           <div className="left w-full">
@@ -55,11 +57,11 @@ export default function Services() {
       <div className="layout--technologist">
         <div className="p-[4rem]">
           <div className="header w-full">
-            <h1 className="text-center text-4xl lg:text-[4rem] mb-12">General Technologist</h1>
+            <h1 className="mb-12 text-center text-4xl lg:text-[4rem]">General Technologist</h1>
             <p className="text-[1.2rem]">I love technology! Whatever solution you need&#8212;whether that by a small script, an ad hoc analysis, or a full web app&#8212;I am always up to the challenge to find a solution.</p>
             <p className="text-[1.2rem]">I have experience using different platforms to deploy my projects and ensure a sensible, efficient develop/deployment pipeline.</p>
           </div>
-          <div className="flex justify-center w-full max-w-[800px] mx-auto" ref={techRef}>
+          <div className="mx-auto flex w-full max-w-[800px] justify-center" ref={techRef}>
             <TechnologistAnimation isVisible={techVisible} />
           </div>
         </div>
@@ -70,7 +72,7 @@ export default function Services() {
 }
 
 
-const WebAppsAnimation = ({ isVisible } : { isVisible : boolean; }) => {
+const WebAppsAnimation = ({ isVisible }: { isVisible: boolean; }) => {
 
   const animate = {
     opacity: isVisible ? 1 : 0,
@@ -104,7 +106,7 @@ const WebAppsAnimation = ({ isVisible } : { isVisible : boolean; }) => {
 }
 
 
-const DataAnimation = ({ isVisible } : { isVisible: boolean; }) => {
+const DataAnimation = ({ isVisible }: { isVisible: boolean; }) => {
 
   const animate = {
     opacity: isVisible ? 1 : 0,
@@ -116,14 +118,14 @@ const DataAnimation = ({ isVisible } : { isVisible: boolean; }) => {
     <div className="grid grid-cols-2 gap-12">
       <animated.img style={{ ...useSpring({ ...animate, delay: 300 }), width: "80px" }} src="/python-logo-notext.svg" />
       <animated.img style={{ ...useSpring({ ...animate, delay: 500 }), width: "80px" }} src="/noun-data-analysis-1726791.svg" />
-      <animated.img style={{ ...useSpring({ ...animate, delay: 800 }), width: "80px"}} src="/noun-data-analysis-2790390.svg" />
+      <animated.img style={{ ...useSpring({ ...animate, delay: 800 }), width: "80px" }} src="/noun-data-analysis-2790390.svg" />
       <animated.img style={{ ...useSpring({ ...animate, delay: 1000 }), width: "80px" }} src="/Rlogo.svg" />
     </div>
   );
 
 }
 
-const TechnologistAnimation = ({ isVisible } : { isVisible: boolean; }) => {
+const TechnologistAnimation = ({ isVisible }: { isVisible: boolean; }) => {
 
   const animate = {
     opacity: isVisible ? 1 : 0,
@@ -133,9 +135,9 @@ const TechnologistAnimation = ({ isVisible } : { isVisible: boolean; }) => {
 
   return (
     <div className="mx-auto">
-      <h2 className="text-2xl text-center my-8 mt-24">Databases and Version Control</h2>
+      <h2 className="my-8 mt-24 text-center text-2xl">Databases and Version Control</h2>
 
-      <div className="grid grid-cols-3 gap-20 [&>*]:flex [&>*]:justify-center [&>*]:items-center">
+      <div className="grid grid-cols-3 gap-20 [&>*]:flex [&>*]:items-center [&>*]:justify-center">
         <div>
           <animated.i style={useSpring({ ...animate, delay: 300 })} className="git icon huge"></animated.i>
         </div>
@@ -147,19 +149,19 @@ const TechnologistAnimation = ({ isVisible } : { isVisible: boolean; }) => {
         </div>
 
         <animated.i style={useSpring({ ...animate, delay: 500 })} >
-          <img className="postgres" src="/postgres.svg" style={{ height:"80px" }}/>
+          <img className="postgres" src="/postgres.svg" style={{ height: "80px" }} />
         </animated.i>
         <animated.i style={useSpring({ ...animate, delay: 500 })} >
-          <img className="mongodb" src="/MongoDB_Icon.svg" style={{ height:"80px" }}/>
+          <img className="mongodb" src="/MongoDB_Icon.svg" style={{ height: "80px" }} />
         </animated.i>
         <animated.i style={useSpring({ ...animate, delay: 500 })} >
-          <img className="firebase" src="/Firebase_Logo.svg" style={{ height:"80px" }}/>
+          <img className="firebase" src="/Firebase_Logo.svg" style={{ height: "80px" }} />
         </animated.i>
 
       </div>
 
-      <h2 className="text-2xl text-center my-8 mt-24">Deployment</h2>
-      <div className="w-full mx-auto grid grid-cols-3 gap-12 [&>*]:flex [&>*]:justify-center [&>*]:items-center">
+      <h2 className="my-8 mt-24 text-center text-2xl">Deployment</h2>
+      <div className="mx-auto grid w-full grid-cols-3 gap-12 [&>*]:flex [&>*]:items-center [&>*]:justify-center">
         <div>
           <animated.i style={useSpring({ ...animate, delay: 300 })} className="docker blue icon huge"></animated.i>
         </div>

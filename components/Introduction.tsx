@@ -1,17 +1,23 @@
-import { useState, useEffect } from 'react';
-import { useAppContext } from '@/state/state';
+"use client";
+import { useState, useEffect, useRef } from 'react';
 import { useTransition, animated } from '@react-spring/web';
 
 
 export default function Introduction() {
 
   const [ items, setItems ] = useState<"Developer" | "Analyst" | "Engineer">('Analyst');
-  const { messageRef } = useAppContext();
+  const messageRef = useRef<null | HTMLDivElement>();
   const transitions = useTransition(items, {
     from: { opacity: 0, y: 50 },
     enter: { opacity: 1, y: 0 },
     leave: { opacity: 0, y: -50 },
   });
+
+  const scrollToRef = () => {
+    if (messageRef.current) {
+      messageRef.current.scrollIntoView();
+    }
+  }
 
   const colors = {
     "Developer": "#C85D91",  
@@ -35,8 +41,8 @@ export default function Introduction() {
 
   return (
     <div className="h-screen p-12">
-      <div className="relative flex items-center h-5/6">
-        <h1 className="relative -top-20 -left-2 text-4xl md:text-6xl md:left-20 lg:text-8xl">Professional &nbsp;
+      <div className="relative flex h-5/6 items-center">
+        <h1 className="relative -left-2 -top-20 text-4xl md:left-20 md:text-6xl lg:text-8xl">Professional &nbsp;
           { transitions((style, item) => (
             <animated.span style={{ ...style, color: colors[item] }} className="absolute">
               { item }
@@ -44,10 +50,10 @@ export default function Introduction() {
           )) }
         </h1>
 
-        <div className="absolute right-1/2 bottom-10 -mr-10">
+        <div className="absolute bottom-10 right-1/2 -mr-10">
           <i 
             className="angle down huge icon cursor-pointer" 
-            onClick={() => messageRef.current.scrollIntoView()}
+            onClick={() => scrollToRef()}
           />
         </div>
         

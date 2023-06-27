@@ -1,45 +1,48 @@
-import React, { useState } from 'react';
+import { useState, useRef } from 'react';
 import styled from 'styled-components';
-import { useAppContext } from '@/state/state';
 import { useSpring, animated, config } from '@react-spring/web';
 
 
 const Message = () => {
   const [flip, set] = useState(false);
-  const { messageRef } = useAppContext();
-		
+  const messageRef = useRef<null | HTMLDivElement>();
+
   const props = useSpring({
-      from: { opacity: 0, transform: `translatey(-10%)` },
-      to: { opacity: 1, transform: `translateY(0%)` },
-      delay: 800,
-      config: config.molasses,
-      onRest: () => set(!flip)
-    });
-  
-    const props2 = useSpring({
-      from: { opacity: 0, transform: `translatey(-10%)` },
-      to: { opacity: 1, transform: `translateY(0%)` },
-      delay: 1400,
-      config: config.molasses,
-      onRest: () => set(!flip)
-    });
+    from: { opacity: 0, transform: `translatey(-10%)` },
+    to: { opacity: 1, transform: `translateY(0%)` },
+    delay: 800,
+    config: config.molasses,
+    onRest: () => set(!flip)
+  });
 
-    const props3 = useSpring({
-      from: { opacity: 0, transform: `translatey(-10%)` },
-      to: { opacity: 1, transform: `translateY(0%)` },
-      delay: 2000,
-      config: config.molasses,
-      onRest: () => set(!flip)
-    });
+  const props2 = useSpring({
+    from: { opacity: 0, transform: `translatey(-10%)` },
+    to: { opacity: 1, transform: `translateY(0%)` },
+    delay: 1400,
+    config: config.molasses,
+    onRest: () => set(!flip)
+  });
 
-		return (
-			<Container>
-        <Message1 style={props}>Christian Valenzuela</Message1>
-        <Message2 style={props2}><strong>const</strong> greeting = () =&gt; console.log(<span>'hello world!'</span>);</Message2>
-        <div style={{ margin: "5rem 0" }} ></div>
-        <animated.i style={props3} className="angle down huge icon" onClick={() => messageRef.current.scrollIntoView()}></animated.i>
-      </Container>
-		);
+  const props3 = useSpring({
+    from: { opacity: 0, transform: `translatey(-10%)` },
+    to: { opacity: 1, transform: `translateY(0%)` },
+    delay: 2000,
+    config: config.molasses,
+    onRest: () => set(!flip)
+  });
+
+  return (
+    <Container>
+      <Message1 style={props}>Christian Valenzuela</Message1>
+      <Message2 style={props2}><strong>const</strong> greeting = () =&gt; console.log(<span>'hello world!'</span>);</Message2>
+      <div style={{ margin: "5rem 0" }} ></div>
+      <animated.i style={props3} className="angle down huge icon" onClick={() => {
+        if (messageRef.current) {
+          messageRef.current.scrollIntoView();
+        }
+      }}></animated.i>
+    </Container>
+  );
 }
 
 

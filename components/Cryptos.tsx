@@ -1,3 +1,4 @@
+"use client";
 import { useState, } from 'react';
 import { wallets as walletAddress } from '@/data/wallets.data';
 import styled from 'styled-components';
