@@ -1,12 +1,11 @@
 "use client";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, } from 'react';
 import { useTransition, animated } from '@react-spring/web';
 
 
-export default function Introduction() {
+export default function Introduction({ messageRef }: { messageRef: any }) {
 
   const [ items, setItems ] = useState<"Developer" | "Analyst" | "Engineer">('Analyst');
-  const messageRef = useRef<null | HTMLDivElement>();
   const transitions = useTransition(items, {
     from: { opacity: 0, y: 50 },
     enter: { opacity: 1, y: 0 },
