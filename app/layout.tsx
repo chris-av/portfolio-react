@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import '@/styles/globals.css';
 import { Nunito } from 'next/font/google';
-// import NavBar from '@/components/Navigation';
+import NavBar from '@/components/Navigation';
 // import MobileNavBar from '@/components/NavigationMobile';
 import Footer from '@/components/Footer';
 
@@ -25,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={noto.className}>
+        <NavBar />
         {children}
         <Footer />
       </body>
