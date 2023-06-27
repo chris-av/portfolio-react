@@ -2,18 +2,18 @@
 import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import { useAppContext } from '@/state/state';
 
 import useWindowSize from '@/hooks/useWindowSize';
 
 
 import { github, instagram, linkedin } from '@/data/socials';
+import { useState } from 'react';
 
 export default function NavigationMobile() {
 
   const location = usePathname();
   const windowSize = useWindowSize();
-  const { open, toggleOpen } = useAppContext();
+  const [ open, toggleOpen ] = useState(false);
 
 
   useIsomorphicLayoutEffect(() => {
