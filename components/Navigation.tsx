@@ -1,48 +1,47 @@
-import React from 'react';
 import Link from 'next/link';
 import Burger from '@/components/Burger';
 
 
 export default function Navigation() {
-    return (
-      <div className="fixed w-full lg:static h-[80px] bg-purple text-white z-30">
+  return (
+    <div className="fixed z-30 h-[80px] w-full bg-purple text-white lg:static">
 
-        <div className="h-full lg:hidden">
-          <Burger />
-        </div>
-
-        <nav className="hidden h-full lg:flex justify-between">
-          
-          <Link href="/" className="flex justify-center items-center select-none text-2xl ml-6 hover:text-white">
-            Christian Valenzuela
-          </Link>
-          
-          <ul className="flex justify-between items-center">
-            <li className="flex justify-center items-center h-full min-w-[120px]">
-              <Link href="/" className="h-full flex items-center hover:text-white">
-                About Me
-              </Link>
-            </li>
-            <li className="flex justify-center items-center h-full min-w-[120px]">
-              <Link href="/portfolio" className="h-full flex items-center hover:text-white">
-                My Portfolio
-              </Link>
-            </li>
-            <li className="flex justify-center items-center h-full min-w-[120px]">
-              <Link href="/resume" className="h-full flex items-center hover:text-white">
-                Resume
-              </Link>
-            </li>
-            <li className="flex justify-center items-center h-full min-w-[120px]">
-              <Link href="/contact" className="h-full flex items-center hover:text-white">
-                Contact
-              </Link>
-            </li>
-          </ul>
-
-        </nav>
-
+      <div className="h-full lg:hidden">
+        <Burger />
       </div>
-    );
+
+      <nav className="hidden h-full justify-between lg:flex">
+
+        <Link href="/" className="ml-6 flex select-none items-center justify-center text-2xl hover:text-[#DFDFDF]">
+          Christian Valenzuela
+        </Link>
+
+        <ul className="flex items-center justify-between">
+          <li className="flex h-full min-w-[120px] items-center justify-center">
+            <Link href="/" className="flex h-full items-center hover:text-[#DFDFDF]">
+              About Me
+            </Link>
+          </li>
+          <li className="flex h-full min-w-[120px] items-center justify-center">
+            <Link href="/portfolio" className="flex h-full items-center hover:text-[#DFDFDF]">
+              My Portfolio
+            </Link>
+          </li>
+          <li className="flex h-full min-w-[120px] items-center justify-center">
+            <Link href="/resume" className="flex h-full items-center hover:text-[#DFDFDF]">
+              Resume
+            </Link>
+          </li>
+          <li className="flex h-full min-w-[120px] items-center justify-center">
+            <Link href="/contact" className="flex h-full items-center hover:text-[#DFDFDF]">
+              Contact
+            </Link>
+          </li>
+        </ul>
+
+      </nav>
+
+    </div>
+  );
 }
 
