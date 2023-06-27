@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 import '@/styles/globals.css';
 import { Nunito } from 'next/font/google';
-import NavBar from '@/components/Navigation';
-import MobileNavBar from '@/components/NavigationMobile';
+// import NavBar from '@/components/Navigation';
+// import MobileNavBar from '@/components/NavigationMobile';
 
 
 const noto = Nunito({
