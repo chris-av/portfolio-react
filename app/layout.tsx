@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 import { Nunito } from 'next/font/google';
 // import NavBar from '@/components/Navigation';
 // import MobileNavBar from '@/components/NavigationMobile';
+import Footer from '@/components/Footer';
 
 
 const noto = Nunito({
@@ -25,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={noto.className}>
         {children}
+        <Footer />
       </body>
     </html>
   )
