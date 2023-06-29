@@ -105,11 +105,19 @@ const DataAnimation = ({ isVisible }: { isVisible: boolean; }) => {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-12 [&>*]:flex [&>*]:items-center [&>*]:justify-center">
-      <animated.img style={{ ...useSpring({ ...animate, delay: 300 }), width: "80px" }} src="/python-logo-notext.svg" className="h-[60px]" />
-      <animated.img style={{ ...useSpring({ ...animate, delay: 500 }), width: "80px" }} src="/noun-data-analysis-1726791.svg" className="h-[60px]" />
-      <animated.img style={{ ...useSpring({ ...animate, delay: 800 }), width: "80px" }} src="/noun-data-analysis-2790390.svg" className="h-[60px]" />
-      <animated.img style={{ ...useSpring({ ...animate, delay: 1000 }), width: "80px" }} src="/Rlogo.svg" className="h-[60px]" />
+    <div className="grid grid-cols-3 gap-12 [&>*]:flex [&>*]:items-center [&>*]:justify-center">
+      <animated.img style={{ ...useSpring({ ...animate, delay: 300 }), width: "80px" }} src="/python-logo-notext.svg" className="h-[64px]" />
+      <animated.div style={useSpring({ ...animate, delay: 1400 })}>
+        <i className="database black huge icon"></i>
+      </animated.div>
+      <animated.img style={{ ...useSpring({ ...animate, delay: 1000 }), width: "80px" }} src="/Rlogo.svg" className="h-[64px]" />
+      <animated.img style={{ ...useSpring({ ...animate, delay: 800 }), width: "80px" }} src="/noun-data-analysis-2790390.svg" className="h-[64px]" />
+      <animated.div style={useSpring({ ...animate, delay: 1400 })}>
+        <i className="chart pie black huge icon"></i>
+      </animated.div>
+      <animated.div style={useSpring({ ...animate, delay: 1400 })}>
+        <i className="cloud black huge icon"></i>
+      </animated.div>
     </div>
   );
 
