@@ -48,9 +48,9 @@ export default function Services({ messageRef }: { messageRef: any }) {
 
       <div className="p-[4rem]">
         <div className="header w-full">
-          <h1 className="mb-12 text-center text-4xl lg:text-[4rem]">General Technologist</h1>
-          <p className="text-[1.2rem]">I love technology! Whatever solution you need&#8212;whether that by a small script, an ad hoc analysis, or a full web app&#8212;I am always up to the challenge to find a solution.</p>
-          <p className="text-[1.2rem]">I have experience using different platforms to deploy my projects and ensure a sensible, efficient develop/deployment pipeline.</p>
+          <h1 className="mb-12 text-center text-xl md:text-3xl">General Technologist</h1>
+          <p className="">I love technology! Whatever solution you need&#8212;whether that by a small script, an ad hoc analysis, or a full web app&#8212;I am always up to the challenge to find a solution.</p>
+          <p className="">I have experience using different platforms to deploy my projects and ensure a sensible, efficient develop/deployment pipeline.</p>
         </div>
         <div className="mx-auto flex w-full max-w-[800px] justify-center" ref={techRef}>
           <TechnologistAnimation isVisible={techVisible} />
