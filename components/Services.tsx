@@ -21,45 +21,39 @@ export default function Services({ messageRef }: { messageRef: any }) {
   return (
     <div className="w-full" ref={messageRef}>
 
-      <div className="layout--webapps">
-        <LayoutTwoPanel>
-          <div className="left">
-            <h1>Web Apps and Landing Pages</h1>
-            <p>Whether you need a simple landing page for your product or portfolio, or a full-stack website, I can help present your work to an online audience!</p>
-            <p>As a developer, I can create your dream website using a CMS tool like WordPress or Squarespace, or I can code it up using HTML, Javascript.</p>
-            <p>I have substantial experience using advanced Javascript libraries and frameworks like React, Nextjs and or others to ensure that your website's codebase is based on the bleeding edge of web technologies!</p>
-          </div>
-          <div className="right" ref={webappRef}>
-            <WebAppsAnimation isVisible={webappVisible} />
-          </div>
-        </LayoutTwoPanel>
-      </div>
+      <LayoutTwoPanel>
+        <div className="w-1/2">
+          <h1 className="mb-12 text-xl md:text-3xl">Web Apps and Landing Pages</h1>
+          <p>Whether you need a simple landing page for your product or portfolio, or a full-stack website, I can help present your work to an online audience!</p>
+          <p>As a developer, I can create your dream website using a CMS tool like WordPress or Squarespace, or I can code it up using HTML, Javascript.</p>
+          <p>I have substantial experience using advanced Javascript libraries and frameworks like React, Nextjs and or others to ensure that your website's codebase is based on the bleeding edge of web technologies!</p>
+        </div>
+        <div className="flex w-1/2 items-center justify-center" ref={webappRef}>
+          <WebAppsAnimation isVisible={webappVisible} />
+        </div>
+      </LayoutTwoPanel>
 
-      <div className="layout--data">
-        <LayoutTwoPanel reverse={true}>
-          <div className="left w-full">
-            <h1>Data Analysis</h1>
-            <p>Most of my professional career has been spend doing data analysis.</p>
-            <p>My experience with data visualization tools, like Tableau, combined with my passion for programming in R/Python makes me an especially useful partner for deriving insights from your data.</p>
-            <p>I have professional experience pre-processing data using R and Python, and visualizing data using Tableau, Python or R (base or <code>ggplot</code> library)</p>
-            <p>Whether it is ETL, data exploration visualization, or analysis, I have the expertise to create dashboards, reports or other assets to help you understand your own data.</p>
-          </div>
-          <div className="right w-full" ref={dataRef}>
-            <DataAnimation isVisible={dataVisible} />
-          </div>
-        </LayoutTwoPanel>
-      </div>
+      <LayoutTwoPanel>
+        <div className="w-1/2">
+          <h1 className="mb-12 text-xl md:text-3xl">Data Analysis</h1>
+          <p>Most of my professional career has been spend doing data analysis.</p>
+          <p>My experience with data visualization tools, like Tableau, combined with my passion for programming in R/Python makes me an especially useful partner for deriving insights from your data.</p>
+          <p>I have professional experience pre-processing data using R and Python, and visualizing data using Tableau, Python or R (base or <code>ggplot</code> library)</p>
+          <p>Whether it is ETL, data exploration visualization, or analysis, I have the expertise to create dashboards, reports or other assets to help you understand your own data.</p>
+        </div>
+        <div className="flex w-1/2 items-center justify-center" ref={dataRef}>
+          <DataAnimation isVisible={dataVisible} />
+        </div>
+      </LayoutTwoPanel>
 
-      <div className="layout--technologist">
-        <div className="p-[4rem]">
-          <div className="header w-full">
-            <h1 className="mb-12 text-center text-4xl lg:text-[4rem]">General Technologist</h1>
-            <p className="text-[1.2rem]">I love technology! Whatever solution you need&#8212;whether that by a small script, an ad hoc analysis, or a full web app&#8212;I am always up to the challenge to find a solution.</p>
-            <p className="text-[1.2rem]">I have experience using different platforms to deploy my projects and ensure a sensible, efficient develop/deployment pipeline.</p>
-          </div>
-          <div className="mx-auto flex w-full max-w-[800px] justify-center" ref={techRef}>
-            <TechnologistAnimation isVisible={techVisible} />
-          </div>
+      <div className="p-[4rem]">
+        <div className="header w-full">
+          <h1 className="mb-12 text-center text-4xl lg:text-[4rem]">General Technologist</h1>
+          <p className="text-[1.2rem]">I love technology! Whatever solution you need&#8212;whether that by a small script, an ad hoc analysis, or a full web app&#8212;I am always up to the challenge to find a solution.</p>
+          <p className="text-[1.2rem]">I have experience using different platforms to deploy my projects and ensure a sensible, efficient develop/deployment pipeline.</p>
+        </div>
+        <div className="mx-auto flex w-full max-w-[800px] justify-center" ref={techRef}>
+          <TechnologistAnimation isVisible={techVisible} />
         </div>
       </div>
 
@@ -77,7 +71,7 @@ const WebAppsAnimation = ({ isVisible }: { isVisible: boolean; }) => {
   };
 
   return (
-    <div className="animation-container grid grid-cols-3 gap-12">
+    <div className="grid grid-cols-3 gap-12">
       <animated.div style={useSpring({ ...animate, delay: 300 })}>
         <i className="react blue huge icon"></i>
       </animated.div>
@@ -111,11 +105,11 @@ const DataAnimation = ({ isVisible }: { isVisible: boolean; }) => {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-12">
-      <animated.img style={{ ...useSpring({ ...animate, delay: 300 }), width: "80px" }} src="/python-logo-notext.svg" />
-      <animated.img style={{ ...useSpring({ ...animate, delay: 500 }), width: "80px" }} src="/noun-data-analysis-1726791.svg" />
-      <animated.img style={{ ...useSpring({ ...animate, delay: 800 }), width: "80px" }} src="/noun-data-analysis-2790390.svg" />
-      <animated.img style={{ ...useSpring({ ...animate, delay: 1000 }), width: "80px" }} src="/Rlogo.svg" />
+    <div className="grid grid-cols-2 gap-12 [&>*]:flex [&>*]:items-center [&>*]:justify-center">
+      <animated.img style={{ ...useSpring({ ...animate, delay: 300 }), width: "80px" }} src="/python-logo-notext.svg" className="h-[60px]" />
+      <animated.img style={{ ...useSpring({ ...animate, delay: 500 }), width: "80px" }} src="/noun-data-analysis-1726791.svg" className="h-[60px]" />
+      <animated.img style={{ ...useSpring({ ...animate, delay: 800 }), width: "80px" }} src="/noun-data-analysis-2790390.svg" className="h-[60px]" />
+      <animated.img style={{ ...useSpring({ ...animate, delay: 1000 }), width: "80px" }} src="/Rlogo.svg" className="h-[60px]" />
     </div>
   );
 
