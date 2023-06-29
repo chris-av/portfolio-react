@@ -1,5 +1,5 @@
 "use client";
-import { useRef, } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import "semantic-ui-css/components/icon.min.css";
 
@@ -18,6 +18,16 @@ export default function Services({ messageRef }: { messageRef: any }) {
   const dataVisible = useIsVisible(dataRef);
   const techVisible = useIsVisible(techRef);
 
+  const [state1, setState1] = useState(false);
+  const [state2, setState2] = useState(false);
+  const [state3, setState3] = useState(false);
+
+  useEffect(() => {
+    if (webappVisible) { setState1(true); }
+    if (dataVisible) { setState2(true); }
+    if (techVisible) { setState3(true); }
+  }, [webappVisible, dataVisible, techVisible]);
+
   return (
     <div className="w-full" ref={messageRef}>
 
@@ -29,7 +39,7 @@ export default function Services({ messageRef }: { messageRef: any }) {
           <p>I have substantial experience using advanced Javascript libraries and frameworks like React, Nextjs and or others to ensure that your website's codebase is based on the bleeding edge of web technologies!</p>
         </div>
         <div className="flex w-1/2 items-center justify-center" ref={webappRef}>
-          <WebAppsAnimation isVisible={webappVisible} />
+          <WebAppsAnimation isVisible={state1} />
         </div>
       </LayoutTwoPanel>
 
@@ -42,7 +52,7 @@ export default function Services({ messageRef }: { messageRef: any }) {
           <p>Whether it is ETL, data exploration visualization, or analysis, I have the expertise to create dashboards, reports or other assets to help you understand your own data.</p>
         </div>
         <div className="flex w-1/2 items-center justify-center" ref={dataRef}>
-          <DataAnimation isVisible={dataVisible} />
+          <DataAnimation isVisible={state2} />
         </div>
       </LayoutTwoPanel>
 
@@ -53,7 +63,7 @@ export default function Services({ messageRef }: { messageRef: any }) {
           <p className="">I have experience using different platforms to deploy my projects and ensure a sensible, efficient develop/deployment pipeline.</p>
         </div>
         <div className="mx-auto flex w-full max-w-[800px] justify-center" ref={techRef}>
-          <TechnologistAnimation isVisible={techVisible} />
+          <TechnologistAnimation isVisible={state3} />
         </div>
       </div>
 
