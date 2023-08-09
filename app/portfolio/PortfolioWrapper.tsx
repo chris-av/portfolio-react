@@ -11,7 +11,6 @@ export default function ClientWrapper() {
     delay: p.delay,
     config: { duration: duration },
   }));
-  console.log({ styles });
   return (
     <div>
       { portfolio.filter(p => p.active === true).map((portf, i) => (
