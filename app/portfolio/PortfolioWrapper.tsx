@@ -1,29 +1,47 @@
 "use client";
-import { useSpring, animated } from '@react-spring/web';
+import { useState, useEffect, } from 'react';
 import { portfolio } from '@/data/portfolio.data';
 import Card from '@/components/Card';
+import sleep from '@/utils/sleep';
 
 export default function ClientWrapper() {
-  const duration = 10;
-  const styles = portfolio.map(p => useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    delay: p.delay,
-    config: { duration: duration },
-  }));
+  const [showItems, setShowItems] = useState([false, false, false]);
+  const showPortfolio = [...portfolio];
+
+  useEffect(() => {
+    async function main() {
+      await sleep(0.2);
+      for (let i = 0; i < showPortfolio.length; i++) {
+        await sleep(1);
+        setShowItems(prev => {
+          const cpy = [...prev];
+          cpy[i] = true;
+          return cpy;
+        });
+      }
+    }
+    main();
+  }, []);
+
   return (
     <div>
-      { portfolio.filter(p => p.active === true).map((portf, i) => (
-          <animated.div style={styles[i]} key={i}>
+      {showPortfolio.map((port, i) => {
+        return (
+          <div
+            key={port.organization}
+            className="transition-opacity duration-700"
+            style={{ opacity: showItems[i] ? 1 : 0 }}
+          >
             <Card
-              org={portf.organization}
+              org={port.organization}
               daterange={""}
-              jobtitle={portf.jobtitle}
-              description={portf.description}
+              jobtitle={port.jobtitle}
+              description={port.description}
             />
-          </animated.div>
-        )) }
-    </div> 
+          </div>
+        )
+      })}
+    </div>
   );
 }
 
