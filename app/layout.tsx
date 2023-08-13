@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import '@/styles/globals.css';
 import { Nunito } from 'next/font/google';
 import NavBar from '@/components/Navigation';
-// import MobileNavBar from '@/components/NavigationMobile';
+import NavbarWrapper from './NavbarWrapper';
 import Footer from '@/components/Footer';
 
 
@@ -25,8 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={noto.className}>
-        <NavBar />
-        {children}
+        <NavbarWrapper />
+        <div className="pt-[80px] lg:pt-0">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
