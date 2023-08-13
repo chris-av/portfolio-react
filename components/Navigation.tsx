@@ -2,14 +2,12 @@
 import Link from 'next/link';
 import Burger from '@/components/Burger';
 import NavigationMobile from './NavigationMobile';
-import NavbarProvider from '@/state/navbar';
 
 
 export default function Navigation() {
   return (
-    <NavbarProvider>
+    <div>
       <div className="fixed z-30 h-[80px] w-full bg-purple text-white lg:static">
-        <NavigationMobile />
 
         <div className="absolute z-50 h-full lg:hidden">
           <Burger />
@@ -48,7 +46,7 @@ export default function Navigation() {
 
       </div>
 
-    </NavbarProvider>
+    </div>
   );
 }
 
