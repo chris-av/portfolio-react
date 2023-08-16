@@ -1,8 +1,8 @@
 interface Props {
-  organization: any,
-  jobtitle: any,
-  range: any,
-  description: any,
+  organization: string,
+  jobtitle: string,
+  range: string,
+  description: string[],
 }
 
 export default function TimeLineSection({ organization, jobtitle, range, description, }: Props) {
