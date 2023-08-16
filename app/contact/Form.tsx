@@ -12,10 +12,10 @@ export default function Form() {
     if (event.target.name === 'email') setEmail(event.target.value);
     if (event.target.name === 'message') setMessage(event.target.value);
   }
-
-  const encode = (data: any) => {
-    return Object.keys(data).map(key => {
-      return encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+  
+  const encode = <K extends string,V extends string | number | boolean>(data: Record<K,V>) => {
+    return Object.keys(data).map((key: string) => {
+      return encodeURIComponent(key) + '=' + encodeURIComponent(data[key as keyof typeof data])
     }).join('&');
   }
 
