@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, MutableRefObject } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import "semantic-ui-css/components/icon.min.css";
 
@@ -8,7 +8,7 @@ import LayoutTwoPanel from '@/styles/LayoutTwoPanel';
 import useIsVisible from '@/hooks/useIsVisible';
 
 
-export default function Services({ messageRef }: { messageRef: any }) {
+export default function Services({ messageRef }: { messageRef: MutableRefObject<HTMLDivElement | null> }) {
 
   const webappRef = useRef(null);
   const dataRef = useRef(null);

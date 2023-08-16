@@ -1,12 +1,12 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
 
 interface CardProps {
   org: string;
   jobtitle: string;
   daterange: string;
-  description: any;
-  styles?: any;
+  description: () => ReactNode;
+  styles?: Record<string, string>;
 }
 
 export default function Card({ org, jobtitle, daterange, description, styles = {} } : CardProps) {

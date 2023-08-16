@@ -13,7 +13,7 @@ export default function TimeLineSection({ organization, jobtitle, range, descrip
         <h2 className="text-2xl">{jobtitle}</h2>
         <h3 className="my-2 text-xl">{organization}</h3>
         <ul className="ml-12 list-disc">
-          {description.map((des: any, i: any) => <li key={i} className="my-2">{des}</li>)}
+          {description.map((des: string, i: number) => <li key={i} className="my-2">{des}</li>)}
         </ul>
       </div>
     </div>

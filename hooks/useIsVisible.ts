@@ -1,8 +1,8 @@
 "use client";
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, MutableRefObject } from 'react';
 
 
-export default function useIsVisible(ref : any) {
+export default function useIsVisible(ref : MutableRefObject<Element | null>) {
   const [ isVisible, setIsVisible ] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -11,8 +11,8 @@ export default function useIsVisible(ref : any) {
   }, []);
 
   useEffect(() => {
+    if (!ref.current) { return; }
     observerRef.current?.observe(ref.current);
-
     return () => {
       observerRef.current?.disconnect();
     }
