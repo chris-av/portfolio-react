@@ -12,8 +12,6 @@ export default function PageWrapper() {
 
       <Services messageRef={ref} />
 
-      <h1 className="mb-12 mt-24 text-center text-4xl">Wanna donate ? </h1>
-
     </div>
   );
 }
