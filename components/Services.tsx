@@ -32,7 +32,7 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
     <div className="w-full" ref={messageRef}>
 
       <LayoutTwoPanel>
-        <div className="w-1/2">
+        <div>
           <h1 className="mb-12 text-xl md:text-3xl">Web Apps and Landing Pages</h1>
           <p>Whether you need a simple landing page for your product or portfolio, or a full-stack website, I can help present your work to an online audience!</p>
           <p>As a developer, I can create your dream website using a CMS tool like WordPress or Squarespace, or I can code it up using HTML, Javascript.</p>
@@ -44,7 +44,7 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
       </LayoutTwoPanel>
 
       <LayoutTwoPanel>
-        <div className="w-1/2">
+        <div>
           <h1 className="mb-12 text-xl md:text-3xl">Data Analysis</h1>
           <p>Most of my professional career has been spend doing data analysis.</p>
           <p>My experience with data visualization tools, like Tableau, combined with my passion for programming in R/Python makes me an especially useful partner for deriving insights from your data.</p>
