@@ -7,7 +7,6 @@ specifiers:
   '@types/node': ^18.11.18
   '@types/react': ^18.0.27
   '@types/react-dom': ^18.0.10
-  '@types/styled-components': ^5.1.26
   autoprefixer: ^10.4.13
   classnames: ^2.3.2
   eslint: ^8.20.0
@@ -35,7 +34,6 @@ devDependencies:
   '@types/node': 18.16.18
   '@types/react': 18.2.14
   '@types/react-dom': 18.2.6
-  '@types/styled-components': 5.1.26
   autoprefixer: 10.4.14_postcss@8.4.24
   eslint: 8.43.0
   postcss: 8.4.24
@@ -605,13 +603,6 @@ packages:
       tslib: 2.5.3
     dev: false
 
-  /@types/hoist-non-react-statics/3.3.1:
-    resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
-    dependencies:
-      '@types/react': 18.2.14
-      hoist-non-react-statics: 3.3.2
-    dev: true
-
   /@types/node/18.16.18:
     resolution: {integrity: sha512-/aNaQZD0+iSBAGnvvN2Cx92HqE5sZCPZtx2TsK+4nvV23fFe09jVDvpArXr2j9DnYlzuU9WuoykDDc6wqvpNcw==}
     dev: true
@@ -636,14 +627,6 @@ packages:
 
   /@types/scheduler/0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
-    dev: true
-
-  /@types/styled-components/5.1.26:
-    resolution: {integrity: sha512-KuKJ9Z6xb93uJiIyxo/+ksS7yLjS1KzG6iv5i78dhVg/X3u5t1H7juRWqVmodIdz6wGVaIApo1u01kmFRdJHVw==}
-    dependencies:
-      '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 18.2.14
-      csstype: 3.1.2
     dev: true
 
   /@vercel/node-bridge/2.2.2:
@@ -1365,12 +1348,6 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
-    dev: true
-
-  /hoist-non-react-statics/3.3.2:
-    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
-    dependencies:
-      react-is: 16.13.1
     dev: true
 
   /http-shutdown/1.2.2:
@@ -2106,6 +2083,7 @@ packages:
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+    dev: false
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
