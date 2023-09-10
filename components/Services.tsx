@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import "semantic-ui-css/components/icon.min.css";
 
-import LayoutTwoPanel from '@/styles/LayoutTwoPanel';
+import { LayoutTwoPanel } from '@/design-system/layouts';
 
 import useIsVisible from '@/hooks/useIsVisible';
 
