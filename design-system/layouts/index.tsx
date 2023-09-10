@@ -8,7 +8,7 @@ interface ComponentProps {
 
 export default function Layout({ myref, children } : ComponentProps) {
   return (
-    <div className="p-32 h-[90vh] text-lg sm:p-8 sm:text-base">
+    <div className="h-[90vh] p-32 text-lg sm:p-8 sm:text-base">
       { children }
     </div>
   );
