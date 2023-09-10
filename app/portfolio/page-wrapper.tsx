@@ -25,18 +25,18 @@ export default function ClientWrapper() {
 
   return (
     <div>
-      {showPortfolio.map((port, i) => {
+      {showPortfolio.map(({ id, organization, jobtitle, description }, i) => {
         return (
           <div
-            key={port.organization}
+            key={id}
             className="transition-opacity duration-700"
             style={{ opacity: showItems[i] ? 1 : 0 }}
           >
             <Card
-              org={port.organization}
+              org={organization}
               daterange={""}
-              jobtitle={port.jobtitle}
-              description={port.description}
+              jobtitle={jobtitle}
+              description={description}
             />
           </div>
         )
