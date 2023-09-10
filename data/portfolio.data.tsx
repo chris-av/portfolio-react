@@ -2,6 +2,7 @@ import React from 'react';
 
 export const portfolio = [
   {
+    id: "49b9a8b5393675c47c69",
     organization: "South Coast College",
     active: true,
     jobtitle: "Independent Contractor - Developer",
@@ -15,6 +16,7 @@ export const portfolio = [
     delay: 0,
   },
   {
+    id: "e34b074a4f4e0035be2b",
     organization: "Wise Attend",
     active: true,
     jobtitle: "Front and Backend",
@@ -29,6 +31,7 @@ export const portfolio = [
     delay: 1000
   },
   {
+    id: "32e533eba2a7dce65caf",
     organization: "MomentOm",
     active: false,
     jobtitle: "Frontend",
@@ -43,6 +46,7 @@ export const portfolio = [
     delay: 1200
   },
   {
+    id: "2678aa159f464ce6de5b",
     organization: "Together App",
     active: false,
     jobtitle: "Frontend",
