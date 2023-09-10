@@ -1,4 +1,5 @@
 import { ReactNode, RefObject } from 'react';
+export * from './two-panel';
 
 
 interface ComponentProps {
