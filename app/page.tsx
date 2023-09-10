@@ -1,9 +1,9 @@
-import ClientWrapper from './ClientWrapper';
+import PageWrapper from './page-wrapper';
 
 export default function Page() {
   return (
     <div>
-      <ClientWrapper />
+      <PageWrapper/>
     </div>
   );
 }
