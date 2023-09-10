@@ -9,9 +9,7 @@ export default function PageWrapper() {
   return (
     <div>
       <Introduction messageRef={ref} />
-
       <Services messageRef={ref} />
-
     </div>
   );
 }
