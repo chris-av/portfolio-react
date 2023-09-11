@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState, MutableRefObject } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import "semantic-ui-css/components/icon.min.css";
+import classnames from 'classnames';
 
 import { LayoutTwoPanel } from '@/design-system/layouts';
 
@@ -80,26 +81,28 @@ const WebAppsAnimation = ({ isVisible }: { isVisible: boolean; }) => {
     duration: 2000
   };
 
+  const icons = [
+    { icon: "react", color: "blue" },
+    { icon: "node", color: "green" },
+    { icon: "js", color: "yellow" },
+    { icon: "html5", color: "red" },
+    { icon: "css3", color: "blue" },
+    { icon: "sass", color: "pink" },
+  ];
+
   return (
     <div className="grid grid-cols-3 gap-12">
-      <animated.div style={useSpring({ ...animate, delay: 300 })}>
-        <i className="react blue huge icon"></i>
-      </animated.div>
-      <animated.div style={useSpring({ ...animate, delay: 500 })}>
-        <i className="node green huge icon"></i>
-      </animated.div>
-      <animated.div style={useSpring({ ...animate, delay: 800 })}>
-        <i className="js yellow huge icon"></i>
-      </animated.div>
-      <animated.div style={useSpring({ ...animate, delay: 1000 })}>
-        <i className="html5 red huge icon"></i>
-      </animated.div>
-      <animated.div style={useSpring({ ...animate, delay: 1200 })}>
-        <i className="css3 blue huge icon"></i>
-      </animated.div>
-      <animated.div style={useSpring({ ...animate, delay: 1400 })}>
-        <i className="sass pink huge icon"></i>
-      </animated.div>
+      {icons.map(({ icon, color }, i) => (
+        <animated.div
+          style={useSpring({...animate, delay: 300 + (300*i)})}
+        >
+          <i className={classnames([
+            icon, color,
+            "huge", // TODO: detect screen size dynamically
+            "icon",
+          ])}/>
+        </animated.div>
+      ))}
     </div>
   );
 
