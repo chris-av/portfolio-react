@@ -82,18 +82,19 @@ const WebAppsAnimation = ({ isVisible }: { isVisible: boolean; }) => {
   };
 
   const icons = [
-    { icon: "react", color: "blue" },
-    { icon: "node", color: "green" },
-    { icon: "js", color: "yellow" },
-    { icon: "html5", color: "red" },
-    { icon: "css3", color: "blue" },
-    { icon: "sass", color: "pink" },
+    { id: "6498c3e745", icon: "react", color: "blue" },
+    { id: "4d73b78ab7", icon: "node", color: "green" },
+    { id: "ab9c5b5561", icon: "js", color: "yellow" },
+    { id: "72def0fac4", icon: "html5", color: "red" },
+    { id: "5afc7ad30c", icon: "css3", color: "blue" },
+    { id: "041a21c0ce", icon: "sass", color: "pink" },
   ];
 
   return (
     <div className="grid grid-cols-3 gap-12">
-      {icons.map(({ icon, color }, i) => (
+      {icons.map(({ id, icon, color }, i) => (
         <animated.div
+          key={id}
           style={useSpring({...animate, delay: 300 + (300*i)})}
         >
           <i className={classnames([
