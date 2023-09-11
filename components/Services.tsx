@@ -33,7 +33,7 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
     <div className="w-full" ref={messageRef}>
 
       <LayoutTwoPanel>
-        <div>
+        <div className="mb-12 lg:mb-0">
           <h1 className="mb-12 text-xl md:text-3xl">Web Apps and Landing Pages</h1>
           <p>Whether you need a simple landing page for your product or portfolio, or a full-stack website, I can help present your work to an online audience!</p>
           <p>As a developer, I can create your dream website using a CMS tool like WordPress or Squarespace, or I can code it up using HTML, Javascript.</p>
