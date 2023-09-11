@@ -25,7 +25,7 @@ export default function Introduction({ messageRef }: { messageRef: MutableRefObj
   } as const;
 
   useEffect(() => {
-    const tmp = setInterval(() => {
+    const interval = setInterval(() => {
       setItems(prev => {
         if (prev === 'Developer') return 'Analyst';
         if (prev === 'Analyst') return 'Engineer';
@@ -33,9 +33,7 @@ export default function Introduction({ messageRef }: { messageRef: MutableRefObj
         return "Analyst"
       })
     }, 2000);
-
-    return () => clearInterval(tmp);
-
+    return () => clearInterval(interval);
   }, [items]);
 
   return (
