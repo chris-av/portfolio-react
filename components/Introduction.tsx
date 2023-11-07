@@ -39,7 +39,7 @@ export default function Introduction({ messageRef }: { messageRef: any }) {
   return (
     <div className="h-screen p-12">
       <div className="flex h-5/6 items-center">
-        <h1 className="-left-2 -top-20 text-4xl md:left-20 md:text-6xl xl:text-8xl">Professional &nbsp;
+        <h1 className="-left-2 -top-20 text-2xl sm:text-4xl md:left-20 md:text-6xl xl:text-8xl">Professional &nbsp;
           { transitions((style, item) => (
             <animated.span style={{ ...style, color: colors[item] }} className="absolute">
               { item }
