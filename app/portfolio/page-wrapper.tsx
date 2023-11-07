@@ -1,47 +1,46 @@
 "use client";
-import { useState, useEffect, } from 'react';
+import { ReactNode } from 'react';
 import { portfolio } from '@/data/portfolio.data';
-import Card from '@/components/Card';
-import sleep from '@/utils/sleep';
 
 export default function ClientWrapper() {
-  const [showItems, setShowItems] = useState([false, false, false]);
-  const showPortfolio = [...portfolio];
-
-  useEffect(() => {
-    async function main() {
-      await sleep(0.2);
-      for (let i = 0; i < showPortfolio.length; i++) {
-        await sleep(1);
-        setShowItems(prev => {
-          const cpy = [...prev];
-          cpy[i] = true;
-          return cpy;
-        });
-      }
-    }
-    main();
-  }, []);
-
+  const showPortfolio = portfolio.filter(p => p.active === true);
   return (
     <div>
-      {showPortfolio.map(({ id, organization, jobtitle, description }, i) => {
-        return (
-          <div
-            key={id}
-            className="transition-opacity duration-700"
-            style={{ opacity: showItems[i] ? 1 : 0 }}
-          >
-            <Card
-              org={organization}
-              daterange={""}
-              jobtitle={jobtitle}
-              description={description}
-            />
-          </div>
-        )
-      })}
+
+      <div className="mx-auto max-w-[900px]">
+        {showPortfolio.map(({ id, organization, jobtitle, description, tags, }) => {
+          return (
+            <div
+              key={id}
+              className="mb-12 p-4"
+            >
+              <h2 className="mb-2 text-2xl">{organization}</h2>
+              <h3 className="mb-4 text-xl">{jobtitle}</h3>
+              <p>{description()}</p>
+              {tags?.map(tag => (
+                <Tag>{tag}</Tag>
+              ))}
+            </div>
+          )
+        })}
+      </div>
+
     </div>
+  );
+}
+
+
+
+
+interface TagProps {
+  children: ReactNode;
+}
+
+function Tag({ children }: TagProps) {
+  return (
+    <span className="mx-2 rounded-md bg-gray-100 px-4 py-2 text-sm">
+      {children}
+    </span>
   );
 }
 
