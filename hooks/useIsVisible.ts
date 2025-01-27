@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState, useRef, MutableRefObject } from 'react';
 
-
 export default function useIsVisible(ref : MutableRefObject<Element | null>) {
   const [ isVisible, setIsVisible ] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -21,4 +20,3 @@ export default function useIsVisible(ref : MutableRefObject<Element | null>) {
   return isVisible;
 
 }
-

@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 
-
 interface CardProps {
   org: string;
   jobtitle: string;

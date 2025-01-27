@@ -2,7 +2,6 @@
 import { useState, useEffect, MutableRefObject } from 'react';
 import { useTransition, animated } from '@react-spring/web';
 
-
 export default function Introduction({ messageRef }: { messageRef: MutableRefObject<HTMLDivElement | null> }) {
 
   const [items, setItems] = useState<"Developer" | "Analyst" | "Engineer">('Analyst');
@@ -67,4 +66,3 @@ export default function Introduction({ messageRef }: { messageRef: MutableRefObj
     </div>
   );
 }
-

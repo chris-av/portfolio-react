@@ -2,7 +2,6 @@ import { ReactNode, ComponentProps } from 'react';
 import Link from 'next/link';
 import classnames from 'classnames';
 
-
 interface Props {
   type?: "a" | "next-link" | "button";
   size?: "sm" | "md" | "lg" | "xl";
@@ -14,7 +13,6 @@ interface Props {
 type ButtonProps = ComponentProps<"button"> & { type: "a" | "next-link" };
 type AnchorProps = ComponentProps<"a">;
 type CombinedProps = ButtonProps | AnchorProps & Props;
-
 
 export default function Button({
   type = "button",

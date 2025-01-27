@@ -146,6 +146,6 @@ const CreateAnimationSection = ({
         </animated.div>
       ))}
     </div>
-  )
+  );
 
 }
