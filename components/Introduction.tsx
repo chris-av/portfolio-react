@@ -37,22 +37,24 @@ export default function Introduction({ messageRef }: { messageRef: MutableRefObj
   }, [items]);
 
   return (
-    <div className="relative h-screen">
-      <div className="relative flex h-5/6 flex-col items-center justify-center text-center lg:ml-[15%] lg:text-left">
-        <h1 className="-top-20 w-full text-6xl xl:text-8xl">Professional&nbsp;
-          {transitions((style, item) => (
-            <animated.span style={{ ...style, color: colors[item] }} className="absolute hidden lg:inline-block">
-              {item}
-            </animated.span>
-          ))}
-        </h1>
-
-        <div className="my-12 text-6xl font-bold lg:hidden xl:text-8xl">
-          {transitions((style, item) => (
-            <animated.div style={{ ...style, color: colors[item] }} className="absolute left-0 w-full">
-              {item}
-            </animated.div>
-          ))}
+    <div className="h-screen">
+      <div className="flex h-5/6 w-full items-center">
+        <div className="relative mx-auto flex w-full max-w-[1200px] flex-col justify-center p-4">
+          <h1 className="mb-12 text-center text-4xl lg:text-left lg:text-6xl xl:text-8xl">Christian Valenzuela</h1>
+          <h2 className="-top-20 w-full text-center text-3xl lg:text-left lg:text-4xl xl:text-6xl">Professional&nbsp;
+            {transitions((style, item) => (
+              <animated.span style={{ ...style, color: colors[item] }} className="absolute hidden lg:inline-block">
+                {item}
+              </animated.span>
+            ))}
+          </h2>
+          <div className="text-3xl font-bold lg:hidden xl:text-6xl">
+            {transitions((style, item) => (
+              <animated.div style={{ ...style, color: colors[item] }} className="absolute left-1/2 -translate-x-1/2 transform text-center">
+                {item}
+              </animated.div>
+            ))}
+          </div>
         </div>
       </div>
 
