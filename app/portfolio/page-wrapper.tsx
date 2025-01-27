@@ -30,8 +30,6 @@ export default function ClientWrapper() {
 }
 
 
-
-
 interface TagProps {
   children: ReactNode;
 }
@@ -43,4 +41,3 @@ function Tag({ children }: TagProps) {
     </span>
   );
 }
-

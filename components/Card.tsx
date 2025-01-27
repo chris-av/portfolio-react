@@ -27,4 +27,3 @@ export default function Card({ org, jobtitle, daterange, description, styles = {
     </div>
   );
 }
-

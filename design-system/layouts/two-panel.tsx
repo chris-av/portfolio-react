@@ -17,7 +17,5 @@ export function LayoutTwoPanel({
     >
       {children}
     </div>
-  )
+  );
 }
-
-

@@ -1,6 +1,5 @@
 import { useState, useContext, createContext, ReactNode } from 'react';
 
-
 type NavbarContextType = {
   open: boolean;
   toggleOpen: (status: boolean) => void;
@@ -13,7 +12,6 @@ const defaultValues: NavbarContextType = {
 
 export const NavbarContext = createContext<NavbarContextType>(defaultValues);
 export const useNavbarContext = () => useContext(NavbarContext);
-
 
 export default function NavbarProvider({
   children,
@@ -35,4 +33,3 @@ export default function NavbarProvider({
     </NavbarContext.Provider>
   )
 }
-

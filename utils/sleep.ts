@@ -5,4 +5,3 @@ export default function(seconds: number) {
     }, seconds * 1000)
   });
 }
-

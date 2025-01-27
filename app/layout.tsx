@@ -4,7 +4,6 @@ import { Nunito } from 'next/font/google';
 import NavbarWrapper from './NavbarWrapper';
 import Footer from '@/components/Footer';
 
-
 const noto = Nunito({
   subsets: ["latin"],
   display: "swap",
@@ -31,5 +30,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  )
+  );
 }
