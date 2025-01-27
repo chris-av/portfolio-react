@@ -18,9 +18,7 @@ export default function useIconSize() {
   let iconWidth = 80;
   let iconHeight = 80;
 
-  if (screenWidth <= 400) {
-    iconSize = "large";
-  } else if (screenWidth <= 600) {
+  if (screenWidth <= 600) {
     iconSize = "big";
   } else if (screenWidth <= 900) {
     iconSize = "huge";
