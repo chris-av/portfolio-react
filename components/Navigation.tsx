@@ -14,7 +14,7 @@ export default function Navigation() {
         <nav className="hidden h-full justify-between lg:flex">
 
           <Link href="/" className="ml-6 flex select-none items-center justify-center text-2xl hover:text-[#DFDFDF]">
-            Christian Valenzuela
+            <i className="terminal icon olive" />
           </Link>
 
           <ul className="flex items-center justify-between">
