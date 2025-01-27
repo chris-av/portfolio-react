@@ -21,12 +21,10 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
 
   const [state1, setState1] = useState(false);
   const [state2, setState2] = useState(false);
-  const [state3, setState3] = useState(false);
 
   useEffect(() => {
     if (webappVisible) { setState1(true); }
     if (dataVisible) { setState2(true); }
-    if (techVisible) { setState3(true); }
   }, [webappVisible, dataVisible, techVisible]);
 
   return (
