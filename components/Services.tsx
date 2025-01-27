@@ -7,6 +7,7 @@ import classnames from 'classnames';
 import { LayoutTwoPanel } from '@/design-system/layouts';
 
 import useIsVisible from '@/hooks/useIsVisible';
+import useIconSize from '@/hooks/useIconSize';
 
 
 export default function Services({ messageRef }: { messageRef: MutableRefObject<HTMLDivElement | null> }) {
@@ -32,7 +33,7 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
 
       <LayoutTwoPanel>
         <div className="mb-12 lg:mb-0">
-          <h1 className="mb-12 text-xl md:text-3xl">Web Apps and Landing Pages</h1>
+          <h2 className="mb-12 text-xl md:text-3xl">Web Apps and Landing Pages</h2>
           <p>Whether you need a simple landing page for your product or portfolio, or a full-stack website, I can help present your work to an online audience!</p>
           <p>As a developer, I can create your dream website using a CMS tool like WordPress or Squarespace, or I can code it up using HTML, Javascript.</p>
           <p>I have substantial experience using advanced Javascript libraries and frameworks like React, Nextjs and or others to ensure that your website's codebase is based on the bleeding edge of web technologies!</p>
@@ -55,8 +56,8 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
       </LayoutTwoPanel>
 
       <LayoutTwoPanel>
-        <div>
-          <h1 className="mb-12 text-xl md:text-3xl">Data Analysis</h1>
+        <div className="mb-12 lg:mb-0">
+          <h2 className="mb-12 text-xl md:text-3xl">Data Analysis</h2>
           <p>Most of my professional career has been spend doing data analysis.</p>
           <p>My experience with data visualization tools, like Tableau, combined with my passion for programming in R/Python makes me an especially useful partner for deriving insights from your data.</p>
           <p>I have professional experience pre-processing data using R and Python, and visualizing data using Tableau, Python or R (base or <code>ggplot</code> library)</p>
@@ -68,12 +69,12 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
             start_delay={600}
             next_item_delay={300}
             assets={[
-              { id: "78ab7", type: "semantic", icon: "python", color: "blue" },
-              { id: "78ab7", type: "semantic", icon: "database", color: "black" },
-              { id: "3e745", type: "custom", src: "/Rlogo.svg", styles: { width: "80px", height: "64px" }, },
-              { id: "3e745", type: "custom", src: "/noun-data-analysis-2790390.svg", styles: { width: "80px", height: "64px" }, },
-              { id: "ad30c", type: "semantic", icon: "chart pie", color: "black" },
-              { id: "1c0ce", type: "semantic", icon: "cloud", color: "black" },
+              { id: "e7239d8a472624caf3f7", type: "semantic", icon: "python", color: "blue" },
+              { id: "f0aae19276d0ba970d5e", type: "semantic", icon: "database", color: "black" },
+              { id: "6a4757018684e507c4ad", type: "custom", src: "/Rlogo.svg", styles: { width: "80px", height: "64px" }, },
+              { id: "c5bfa00e994693811572", type: "custom", src: "/noun-data-analysis-2790390.svg", styles: { width: "80px", height: "64px" }, },
+              { id: "cfd8a6d7b452745dfa4a", type: "semantic", icon: "chart pie", color: "black" },
+              { id: "8e744b0ce658fcff2a11", type: "semantic", icon: "cloud", color: "black" },
             ]}
           />
         </div>
@@ -118,6 +119,8 @@ const CreateAnimationSection = ({
     duration: 2000
   };
 
+  const { iconSize, iconWidth, iconHeight, } = useIconSize();
+
   return (
     <div className="grid grid-cols-3 gap-12">
       {assets.map((asset, i) => (
@@ -129,7 +132,7 @@ const CreateAnimationSection = ({
             <i
               className={classnames([
                 asset.icon, asset.color,
-                "huge",
+                iconSize,
                 "icon",
               ])}
             />
@@ -137,7 +140,7 @@ const CreateAnimationSection = ({
             <img
               className=""
               src={asset.src}
-              style={asset.styles}
+              style={{...asset.styles, width: iconWidth, height: iconHeight, }}
             />
           )}
         </animated.div>
