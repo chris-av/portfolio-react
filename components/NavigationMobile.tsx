@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import useWindowSize from '@/hooks/useWindowSize';
 
 
-import { github, instagram, linkedin } from '@/data/socials';
+import { github, linkedin } from '@/data/socials';
 
 export default function NavigationMobile() {
 
@@ -52,7 +52,6 @@ export default function NavigationMobile() {
       <div className="logo-container my-12 flex w-full items-center justify-center [&>*]:mx-4 [&>*]:text-2xl">
         <a href={linkedin}><i className={`linkedin link big inverted icon`}></i></a>
         <a href={github}><i className={`github link big inverted icon`}></i></a>
-        <a href={instagram}><i className={`instagram link big inverted icon`}></i></a>
       </div>
     </div>
   );
