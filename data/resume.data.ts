@@ -14,6 +14,19 @@ type Resume = {
 
 export const freelance: Job[] = [
   {
+    id: "3d2a2d0c6f8dd51afeb4",
+    organization: "UC Santa Cruz",
+    jobtitle: "Data Engineer Consultant",
+    range: "July 2024 - October 2024",
+    description: [
+      "Instructed a team of researchers in implementing better code hygiene, leading to higher data consistency and improved documentation.",
+      "Lowered the time of the data ingestion step by over 89% by caching results and performing bulk operations when hitting the OpenAlex API.",
+      "Performed expensive calcutions in R across millions of records, saving researchers days-worth of work to focus on final analysis in Stata.",
+      "Leveraged the OpenAI API to extract information and data from archival documentation, saving hundreds of hours of manual work.",
+    ],
+    tags: ["R", "OpenAlex API", "OpenAI API", "stats", "difference-in-differences", "data cleaning", "ETL",],
+  },
+  {
     id: "b07e8c1e14fbdbc5e3be",
     organization: "Eminent Translations",
     jobtitle: "Full Stack Engineer",
@@ -25,6 +38,32 @@ export const freelance: Job[] = [
       "Created an interactive, reader-like experience for users to navigate chapters and volumes of content.",
     ],
     tags: ["NextJS", "TypeScript", "server components", "Sanity.io", "Vercel", "caching",],
+  },
+  {
+    id: "c5d267f2b72f606cff2c",
+    organization: "Politarian",
+    jobtitle: "Data Engineer Consultant",
+    range: "October 2023 - December 2024",
+    description: [
+      "Optimized web-scraper performance by caching results requiing expensive computation, decreasing serverless function runtime by 18%.",
+      "Configured AWS EventBridge Scheduler and serverless functions to run jobs on a schedule, freeing client from having to run scripts manually.",
+      "Implemented more comprehensive logging and exception handling, improving observability on the different stages of the scraping process.",
+      "Extended the scraper to retrieve previously inaccessible content with Selenium, increasing the number of matched records by more than 14%.",
+    ],
+    tags: ["Python", "web scraping", "AWS Lambda", "AWS ECR", "AWS SNS", "ETL", "data cleaning",],
+  },
+  {
+    id: "999c79d4b25090e79e41",
+    organization: "Ledafilms",
+    jobtitle: "Full Stack Engineer",
+    range: "October 2022 - February 2023",
+    description: [
+      "Architected a secure web application to adminstrate licenses, contracts, and other mission critical data for the CEO and his team",
+      "Implemented a queuing system in the frontend to kick of computationally expensive operations in the cloud, improving user experience.",
+      "Enforced type safety through Typescript/TSDocs, making the codebase more maintanable and better documented",
+      "Build Figma mocksups and wireframes, with a focus for modern, cohesive design system and oriented towards a smooth data entry experience."
+    ],
+    tags: ["NextJS", "Figma", "Sequelize", "SQL", "AWS"],
   },
   {
     id: "49b9a8b5393675c47c69",
