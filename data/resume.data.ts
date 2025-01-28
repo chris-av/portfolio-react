@@ -112,7 +112,7 @@ export const jobs: Job[] = [
       "Successfully negotiated the renewal of the organization’s data memorandum with LAUSD by outlining a clear mission and delivery timetable of data products to stakeholders both in the school district and across our departments.",
       "Extended features in our Student Information Systems (PowerSchool) by writing custom plugins in SQL, NodeJS, and Python, automating data delivery to key vendors supporting our schools.",
     ],
-    tags: ["Python", "SQL", "R", "sftp", "shell", "Bash", "NodeJS", "Google Drive API", "R", "XML", "data cleaning", "ETL", "Salesforce", "Tableau", "PowerSchool",],
+    tags: ["Python", "SQL", "R", "sftp", "shell", "Bash", "NodeJS", "Google Drive API", "XML", "data cleaning", "ETL", "Salesforce", "Tableau", "PowerSchool",],
   },
   {
     id: "38994532-2048-11ed861d-0242ac120002",
