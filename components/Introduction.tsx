@@ -36,7 +36,7 @@ export default function Introduction({ messageRef }: { messageRef: MutableRefObj
   }, [items]);
 
   return (
-    <div className="h-screen">
+    <div className="h-[calc(100vh-80px)]">
       <div className="flex h-5/6 w-full items-center">
         <div className="relative mx-auto flex w-full max-w-[1200px] flex-col justify-center p-4">
           <h1 className="mb-12 text-center text-4xl lg:text-left lg:text-6xl xl:text-8xl">Christian Valenzuela</h1>
@@ -57,7 +57,7 @@ export default function Introduction({ messageRef }: { messageRef: MutableRefObj
         </div>
       </div>
 
-      <div className="bottom-50 absolute right-1/2 -mr-10">
+      <div className="flex h-1/6 w-full items-center justify-center">
         <i
           className="angle down huge icon cursor-pointer"
           onClick={() => scrollToRef()}
