@@ -16,7 +16,7 @@ export default function ClientWrapper() {
             >
               <h2 className="mb-2 text-2xl">{organization}</h2>
               <h3 className="mb-4 text-xl">{jobtitle}</h3>
-              <p>{description()}</p>
+              <div>{description()}</div>
               {tags?.map(tag => (
                 <Tag>{tag}</Tag>
               ))}
