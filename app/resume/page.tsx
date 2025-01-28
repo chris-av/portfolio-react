@@ -5,7 +5,15 @@ export default function Page() {
   return (
     <div className="flex items-center justify-center p-8">
       <div className="max-w-[1200px]">
-        <h1 className="my-20 text-center text-4xl">Resume</h1>
+
+        <div className="my-16">
+          <h1 className="mb-4 text-center text-4xl">Resume</h1>
+          <div className="flex justify-center">
+            <a className="font-bold text-blue-500 underline underline-offset-2" target="_blank" href="/resume-data-engineer.pdf">Full Stack</a>
+            <div className="mx-2 text-sm text-blue-500">•</div>
+            <a className="font-bold text-blue-500 underline underline-offset-2" target="_blank" href="/resume-full-stack.pdf">Data Engineer</a>
+          </div>
+        </div>
 
         <h2 className="decoration-3 text-3xl font-extrabold text-purple-500">Job History</h2>
         <div className="mb-8 h-[3px] w-full rounded-xl bg-purple-500"></div>
