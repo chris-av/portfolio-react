@@ -82,7 +82,7 @@ export const freelance: Job[] = [
       "Landing page architected with a simple React frontend with search engine optimization.",
       "Advised client on design system to meet their branding requirements."
     ],
-    tags: ["ReactJS", "TailwindCSS"],
+    tags: ["ReactJS", "styled-components", "Google Maps API", "Sketch"],
   }
 ];
 
