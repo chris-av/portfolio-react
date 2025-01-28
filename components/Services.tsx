@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, MutableRefObject } from 'react';
 import { useSpring, animated } from '@react-spring/web';
-import "semantic-ui-css/components/icon.min.css";
 import classnames from 'classnames';
 
 import { LayoutTwoPanel } from '@/design-system/layouts';
