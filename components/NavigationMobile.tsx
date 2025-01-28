@@ -47,12 +47,6 @@ export default function NavigationMobile() {
             </Link>
           </li>
 
-          <li className="mb-menu-item p">
-            <Link href="/contact" onClick={() => toggleOpen(false)}>
-              Contact
-            </Link>
-          </li>
-
         </ul>
       </nav>
       <div className="logo-container my-12 flex w-full items-center justify-center [&>*]:mx-4 [&>*]:text-2xl">
