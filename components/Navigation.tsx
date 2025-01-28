@@ -24,11 +24,6 @@ export default function Navigation() {
               </Link>
             </li>
             <li className="flex h-full min-w-[120px] items-center justify-center">
-              <Link href="/portfolio" className="flex h-full items-center hover:text-[#DFDFDF]">
-                My Portfolio
-              </Link>
-            </li>
-            <li className="flex h-full min-w-[120px] items-center justify-center">
               <Link href="/resume" className="flex h-full items-center hover:text-[#DFDFDF]">
                 Resume
               </Link>

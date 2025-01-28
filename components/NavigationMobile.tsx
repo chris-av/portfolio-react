@@ -36,12 +36,6 @@ export default function NavigationMobile() {
           </li>
 
           <li className="mb-menu-item my-4">
-            <Link href="/portfolio" onClick={() => toggleOpen(false)}>
-              Portfolio
-            </Link>
-          </li>
-
-          <li className="mb-menu-item my-4">
             <Link href="/resume" onClick={() => toggleOpen(false)}>
               Resume
             </Link>
