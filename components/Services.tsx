@@ -32,10 +32,11 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
 
       <LayoutTwoPanel>
         <div className="mb-12 lg:mb-0">
-          <h2 className="mb-12 text-xl md:text-3xl">Web Apps and Landing Pages</h2>
-          <p>Whether you need a simple landing page for your product or portfolio, or a full-stack website, I can help present your work to an online audience!</p>
-          <p>As a developer, I can create your dream website using a CMS tool like WordPress or Squarespace, or I can code it up using HTML, Javascript.</p>
-          <p>I have substantial experience using advanced Javascript libraries and frameworks like React, Nextjs and or others to ensure that your website's codebase is based on the bleeding edge of web technologies!</p>
+          <h2 className="mb-4 text-xl md:text-3xl">Customized Web Solutions</h2>
+            I specialize in crafting modern, scalable web applications tailored to your unique requirements.
+            From interactive front-end interfaces to robust back-end systems, I build solutions using technologies like React, Next.js, and Node.js.
+            I bring strong fundamentals as a web developer and can seamlessly deliver value to your existing architecture—whether it’s built with vanilla JavaScript, powered by build or transpilation tools, or implemented using popular frameworks on the market.
+          </p>
         </div>
         <div className="flex w-1/2 items-center justify-center" ref={webappRef}>
           <CreateAnimationSection
@@ -56,11 +57,12 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
 
       <LayoutTwoPanel>
         <div className="mb-12 lg:mb-0">
-          <h2 className="mb-12 text-xl md:text-3xl">Data Analysis</h2>
-          <p>Most of my professional career has been spend doing data analysis.</p>
-          <p>My experience with data visualization tools, like Tableau, combined with my passion for programming in R/Python makes me an especially useful partner for deriving insights from your data.</p>
-          <p>I have professional experience pre-processing data using R and Python, and visualizing data using Tableau, Python or R (base or <code>ggplot</code> library)</p>
-          <p>Whether it is ETL, data exploration visualization, or analysis, I have the expertise to create dashboards, reports or other assets to help you understand your own data.</p>
+          <h2 className="mb-4 text-xl md:text-3xl">Data-Driven Solutions</h2>
+          <p>
+            With years of experience in data engineering and analysis, I can transform raw data into meaningful insights.
+            My expertise lies in bridging the gap between data science and engineering, delivering solutions that are not only insightful but also built to scale.
+            Whether it's adding observability, containerization, or advanced tooling to your analysis, I can elevate your workflows to ensure they’re modular, reproducible, and production-ready.
+          </p>
         </div>
         <div className="flex w-1/2 items-center justify-center" ref={dataRef}>
           <CreateAnimationSection
@@ -139,7 +141,7 @@ const CreateAnimationSection = ({
             <img
               className=""
               src={asset.src}
-              style={{...asset.styles, width: iconWidth, height: iconHeight, }}
+              style={{ ...asset.styles, width: iconWidth, height: iconHeight, }}
             />
           )}
         </animated.div>
