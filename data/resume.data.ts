@@ -144,7 +144,7 @@ export const jobs: Job[] = [
     id: "38993e84-2048-11ed861d-0242ac120002",
     organization: 'LA Promise Fund',
     jobtitle: 'Data and Analytics Manager',
-    range: 'March 2020 - Present',
+    range: 'March 2020 - May 2024',
     description: [
       "Designed and implemented an efficient data pipeline for ingesting raw academic data from the Los Angeles Unified School District (LAUSD) spanning millions of records.",
       "Delivered mission-critical academic reports and other data products for the National School Improvement program, providing insight into student academic performance for several principals across the Slate-Z/South Los Angeles region.",
