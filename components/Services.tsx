@@ -28,7 +28,7 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
   }, [webappVisible, dataVisible, techVisible]);
 
   return (
-    <div className="w-full" ref={messageRef}>
+    <div className="w-full pt-16 lg:pt-0" ref={messageRef}>
 
       <LayoutTwoPanel>
         <div className="mb-12 lg:mb-0">
