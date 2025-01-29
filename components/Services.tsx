@@ -33,6 +33,7 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
       <LayoutTwoPanel>
         <div className="mb-12 lg:mb-0">
           <h2 className="mb-4 text-xl md:text-3xl">Customized Web Solutions</h2>
+          <p className="lg:text-xl">
             I specialize in crafting modern, scalable web applications tailored to your unique requirements.
             From interactive front-end interfaces to robust back-end systems, I build solutions using technologies like React, Next.js, and Node.js.
             I bring strong fundamentals as a web developer and can seamlessly deliver value to your existing architecture—whether it’s built with vanilla JavaScript, powered by build or transpilation tools, or implemented using popular frameworks on the market.
@@ -58,7 +59,7 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
       <LayoutTwoPanel>
         <div className="mb-12 lg:mb-0">
           <h2 className="mb-4 text-xl md:text-3xl">Data-Driven Solutions</h2>
-          <p>
+          <p className="lg:text-xl">
             With years of experience in data engineering and analysis, I can transform raw data into meaningful insights.
             My expertise lies in bridging the gap between data science and engineering, delivering solutions that are not only insightful but also built to scale.
             Whether it's adding observability, containerization, or advanced tooling to your analysis, I can elevate your workflows to ensure they’re modular, reproducible, and production-ready.
