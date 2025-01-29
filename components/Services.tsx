@@ -71,12 +71,12 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
             start_delay={600}
             next_item_delay={300}
             assets={[
-              { id: "e7239d8a472624caf3f7", type: "semantic", icon: "python", color: "blue" },
-              { id: "f0aae19276d0ba970d5e", type: "semantic", icon: "database", color: "black" },
+              { id: "6a4757018684e507c4ad", type: "custom", src: "/python-logo-notext.svg", styles: { width: "80px", height: "64px" }, },
               { id: "6a4757018684e507c4ad", type: "custom", src: "/Rlogo.svg", styles: { width: "80px", height: "64px" }, },
-              { id: "c5bfa00e994693811572", type: "custom", src: "/noun-data-analysis-2790390.svg", styles: { width: "80px", height: "64px" }, },
-              { id: "cfd8a6d7b452745dfa4a", type: "semantic", icon: "chart pie", color: "black" },
-              { id: "8e744b0ce658fcff2a11", type: "semantic", icon: "cloud", color: "black" },
+              { id: "9e5bddacb54d992a946c", type: "custom", src: "/tableau-icon.svg", styles: { width: "80px", height: "64px" }, },
+              { id: "f0aae19276d0ba970d5e", type: "custom", src: "/postgres.svg", styles: { width: "80px", height: "64px" }, },
+              { id: "4ccd4caa849a06e65558", type: "custom", src: "/bigquery.svg", styles: { width: "80px", height: "64px" }, },
+              { id: "5b4819533095e3f409f4", type: "semantic", icon: "aws", color: "yellow" },
             ]}
           />
         </div>
