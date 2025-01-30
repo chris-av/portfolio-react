@@ -72,7 +72,7 @@ export default function Services({ messageRef }: { messageRef: MutableRefObject<
             next_item_delay={300}
             assets={[
               { id: "6a4757018684e507c4ad", type: "custom", src: "/python-logo-notext.svg", styles: { width: "80px", height: "64px" }, },
-              { id: "6a4757018684e507c4ad", type: "custom", src: "/Rlogo.svg", styles: { width: "80px", height: "64px" }, },
+              { id: "5b618479d6ebfcc37bfd", type: "custom", src: "/Rlogo.svg", styles: { width: "80px", height: "64px" }, },
               { id: "9e5bddacb54d992a946c", type: "custom", src: "/tableau-icon.svg", styles: { width: "80px", height: "64px" }, },
               { id: "f0aae19276d0ba970d5e", type: "custom", src: "/postgres.svg", styles: { width: "80px", height: "64px" }, },
               { id: "4ccd4caa849a06e65558", type: "custom", src: "/bigquery.svg", styles: { width: "80px", height: "64px" }, },

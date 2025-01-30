@@ -141,7 +141,7 @@ export const jobs: Job[] = [
     tags: ["Python", "dbt", "SQL", "Airflow", "GCP", "Hex", "Bash", "shell", "Superblocks", "DNC Portal", "BigQuery", "ETL", "data pipelines", "data orchestration", "web scraping"],
   },
   {
-    id: "38993e84-2048-11ed861d-0242ac120002",
+    id: "52574537-5364-3330e4d9-c9f7d6bb9783",
     organization: 'LA Promise Fund',
     jobtitle: 'Data and Analytics Manager',
     range: 'March 2020 - May 2024',
