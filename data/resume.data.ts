@@ -15,7 +15,7 @@ type Resume = {
 export const freelance: Job[] = [
   {
     id: "3d2a2d0c6f8dd51afeb4",
-    organization: "UC Santa Cruz",
+    organization: "UC Merced",
     jobtitle: "Data Engineer Consultant",
     range: "July 2024 - October 2024",
     description: [
