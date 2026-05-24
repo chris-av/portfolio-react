@@ -1,10 +1,10 @@
 import Image from "next/image";
-import getTopItems from "@/utils/spotify/api/getTopItems";
+import getTopArtists from "@/utils/spotify/api/getTopArtists";
 import { SpotifyImageMetaData } from "@/utils/spotify/common/interfaces";
 
 export default async function Page() {
-  const topItemsPayload = await getTopItems();
-  const topItems = topItemsPayload.items;
+  const topArtistsPayload = await getTopArtists();
+  const topArtists = topArtistsPayload.items;
   return (
     <div className="max-w-[1200px] mx-auto">
       <h2 className="text-center text-4xl my-4">My top music artists</h2>
@@ -12,7 +12,7 @@ export default async function Page() {
         div
         className="grid grid-cols-3 gap-4"
       >
-        {topItems.map(({ id, name, external_urls: { spotify: href }, images }) => (
+        {topArtists.map(({ id, name, external_urls: { spotify: href }, images }) => (
           <a href={href} target="_blank">
             <
               div

@@ -1,7 +1,7 @@
 import getAccessToken from "@/utils/spotify/auth/getAccessToken";
 import { SpotifyImageMetaData } from "@/utils/spotify/common/interfaces";
 
-interface TopItem {
+interface TopArtist {
   external_urls: {
     spotify: string;
   };
@@ -19,8 +19,8 @@ interface TopItem {
   uri: string;
 }
 
-interface TopItemsPayload {
-  items: TopItem[];
+interface TopArtistsPayload {
+  items: TopArtist[];
   total: number;
   limit: number;
   offset: number;
@@ -33,13 +33,13 @@ interface TopItemsPayload {
  * Get the top listened items associated with my account.
  * Paginated.
  */
-export default async function getTopItems(): Promise<TopItemsPayload> {
+export default async function getTopItems(): Promise<TopArtistsPayload> {
   const accessToken = await getAccessToken();
   const response = await fetch("https://api.spotify.com/v1/me/top/artists", {
     headers: {
       "Authorization": `Bearer ${accessToken}`,
     },
   });
-  const data: TopItemsPayload = await response.json()
+  const data: TopArtistsPayload = await response.json()
   return data;
 }
