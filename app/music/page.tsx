@@ -11,11 +11,11 @@ export default async function Page() {
   const topTracks = topTracksPayload.items;
 
   return (
-    <div className="max-w-[1200px] mx-auto">
-      <h2 className="text-center text-4xl my-4">My top music artists</h2>
+    <div className="max-w-[1200px] mx-auto p-4">
+      <h2 className="text-center text-4xl md:text-4xl my-8">My top music artists</h2>
       <
         div
-        className="grid grid-cols-3 gap-4"
+        className="grid grid-cols-1 md:grid-cols-3 gap-4"
       >
         {topArtists.map(({ id, name, external_urls: { spotify: href }, images }) => (
           <a href={href} target="_blank">
@@ -35,10 +35,10 @@ export default async function Page() {
         ))}
       </div>
 
-      <h2 className="text-center text-4xl my-4">My top tracks</h2>
+      <h2 className="text-center text-4xl md:text-4xl my-8">My top tracks</h2>
       <
         div
-        className="grid grid-cols-3 gap-4"
+        className="grid grid-cols-1 md:grid-cols-3 gap-4"
       >
         {topTracks.map(({ id, name, external_urls: { spotify: href }, album: { images } }) => (
           <a href={href} target="_blank">
