@@ -4,10 +4,11 @@ import getTopTracks from "@/utils/spotify/api/getTopTracks";
 import { SpotifyImageMetaData } from "@/utils/spotify/common/interfaces";
 
 export default async function Page() {
-  const topArtistsPayload = await getTopArtists();
+  const [topArtistsPayload, topTracksPayload] = await Promise.all([
+    getTopArtists(),
+    getTopTracks(),
+  ]);
   const topArtists = topArtistsPayload.items;
-
-  const topTracksPayload = await getTopTracks();
   const topTracks = topTracksPayload.items;
 
   return (

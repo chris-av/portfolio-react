@@ -1,14 +1,11 @@
+import { cache } from "react";
 import {
   getSpotifyRefreshToken,
   getSpotifyClientId,
   getSpotifyClientSecret,
 } from "./consts"
 
-
-/**
- * will perform the request to procure a new access token from /api/token
- */
-export default async function getAccessToken() {
+const getAccessToken = cache(async function getAccessToken() {
   const endpoint = "https://accounts.spotify.com/api/token";
 
   const refreshToken = getSpotifyRefreshToken();
@@ -28,7 +25,7 @@ export default async function getAccessToken() {
       grant_type: "refresh_token",
       refresh_token: refreshToken,
     }),
-    cache: "no-store",
+    next: { revalidate: 900 },
   });
 
   const data = await response.json();
@@ -38,5 +35,6 @@ export default async function getAccessToken() {
   }
 
   return data["access_token"];
+});
 
-}
+export default getAccessToken;
