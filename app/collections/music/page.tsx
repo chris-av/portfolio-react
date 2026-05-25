@@ -36,7 +36,7 @@ export default async function Page() {
         ))}
       </div>
 
-      <h2 className="text-center text-4xl md:text-4xl my-8">My top tracks</h2>
+      <h2 className="text-center text-4xl md:text-4xl my-8">Songs on my rotation</h2>
       <
         div
         className="grid grid-cols-1 md:grid-cols-3 gap-4"
