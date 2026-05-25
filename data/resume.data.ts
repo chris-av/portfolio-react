@@ -127,6 +127,35 @@ export const freelance: Job[] = [
 
 export const jobs: Job[] = [
   {
+    id: "",
+    organization: "Manufacturo",
+    jobtitle: 'Solutions Consultant',
+    range: 'June 2025 - Present',
+    description: [
+      "Designed and deployed high-impact MES solutions for aerospace and defense manufacturers focused on manufacturing traceability, validation workflows, and operational visibility across complex part genealogies and production lifecycles.",
+      "Partnered directly with customers to gather technical and operational requirements, delivering production-critical solutions for manufacturing validations, workflow automation, reporting, and large-scale MES data migrations.",
+      "Executed enterprise MES migration initiatives involving tens of thousands of work orders, inventory records, and quality/nonconformance records by modeling data across disparate systems, developing transformation/loading workflows, and implementing validation processes to ensure continuity of production operations during platform transitions."
+    ],
+    tags: [
+      "C#",
+      "Python",
+      "Bash",
+      "Shell",
+      "JavaScript",
+      "Typescript",
+      "Angular",
+      "AzureDevops",
+      "SQL",
+      "MS SQL",
+      "BigQuery",
+      "Snowflake",
+      "data pipelines",
+      "data orchestration",
+      "web scraping",
+      "project management"
+    ]
+  },
+  {
     id: "630d165be8cd61ea3cd792513c32ec9c",
     organization: 'Democratic National Committee',
     jobtitle: 'Analytics Engineer',
