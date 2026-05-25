@@ -28,6 +28,11 @@ export default function Navigation() {
                 Resume
               </Link>
             </li>
+            <li className="flex h-full min-w-[120px] items-center justify-center">
+              <Link href="/collections/music" className="flex h-full items-center hover:text-[#DFDFDF]">
+                Music
+              </Link>
+            </li>
           </ul>
 
         </nav>

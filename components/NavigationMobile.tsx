@@ -32,6 +32,11 @@ export default function NavigationMobile() {
               Resume
             </Link>
           </li>
+          <li className="mb-menu-item my-4">
+            <Link href="/collections/music" onClick={() => toggleOpen(false)}>
+              Music
+            </Link>
+          </li>
         </ul>
       </nav>
       <div className="logo-container my-12 flex w-full items-center justify-center [&>*]:mx-4 [&>*]:text-2xl">
