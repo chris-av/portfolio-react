@@ -1,12 +1,14 @@
 import Image from "next/image";
 import getTopArtists from "@/utils/spotify/api/getTopArtists";
 import getTopTracks from "@/utils/spotify/api/getTopTracks";
+import getPlaylist from "@/utils/spotify/api/getPlaylist";
 import { SpotifyImageMetaData } from "@/utils/spotify/common/interfaces";
 
 export default async function Page() {
-  const [topArtistsPayload, topTracksPayload] = await Promise.all([
+  const [topArtistsPayload, topTracksPayload, playlist] = await Promise.all([
     getTopArtists(),
     getTopTracks(),
+    getPlaylist("5qAAPtzz49U2o1tJlAArgz"),
   ]);
   const topArtists = topArtistsPayload.items;
   const topTracks = topTracksPayload.items;
@@ -53,6 +55,30 @@ export default async function Page() {
               </div>
               <div>
                 <RenderArtistImage images={images} />
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <h2 className="text-center text-4xl md:text-4xl my-8">Support these artists</h2>
+      <
+        div
+        className="grid grid-cols-1 md:grid-cols-3 gap-4"
+      >
+        {playlist.tracks.items.map(({ item: { id, name, artists, album: { images }, external_urls: { spotify } }, }) => (
+          <a href={spotify} target="_blank">
+            <
+              div
+              key={id}
+              className="flex justify-between p-4 items-center border-2 border-blue-100 hover:border-blue-400 rounded-xl transition-all ease-in"
+            >
+              <div>
+                <RenderArtistImage images={images} />
+              </div>
+              <div>
+                <h3>{name}</h3>
+                <div>{artists.map(a => a.name).join(", ")}</div>
               </div>
             </div>
           </a>
