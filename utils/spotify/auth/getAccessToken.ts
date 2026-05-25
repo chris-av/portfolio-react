@@ -28,6 +28,7 @@ export default async function getAccessToken() {
       grant_type: "refresh_token",
       refresh_token: refreshToken,
     }),
+    cache: "no-store",
   });
 
   const data = await response.json();
