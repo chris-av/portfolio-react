@@ -35,7 +35,9 @@ interface TopArtistsPayload {
  */
 export default async function getTopItems(): Promise<TopArtistsPayload> {
   const accessToken = await getAccessToken();
-  const response = await fetch("https://api.spotify.com/v1/me/top/artists", {
+  const url = new URL("https://api.spotify.com/v1/me/top/artists");
+  url.searchParams.set("limit", "9");
+  const response = await fetch(url, {
     headers: {
       "Authorization": `Bearer ${accessToken}`,
     },
