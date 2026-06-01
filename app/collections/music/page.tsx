@@ -4,6 +4,8 @@ import getTopTracks from "@/utils/spotify/api/getTopTracks";
 import getPlaylist from "@/utils/spotify/api/getPlaylist";
 import { SpotifyImageMetaData } from "@/utils/spotify/common/interfaces";
 
+export const dynamic = "force-dynamic";
+
 export default async function Page() {
   const [topArtistsPayload, topTracksPayload, playlist] = await Promise.all([
     getTopArtists(),
