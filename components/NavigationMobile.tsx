@@ -33,8 +33,8 @@ export default function NavigationMobile() {
             </Link>
           </li>
           <li className="mb-menu-item my-4">
-            <Link href="/collections/music" onClick={() => toggleOpen(false)}>
-              Music
+            <Link href="/collections" onClick={() => toggleOpen(false)}>
+              Collections
             </Link>
           </li>
         </ul>

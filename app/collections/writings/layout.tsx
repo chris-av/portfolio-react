@@ -1,0 +1,9 @@
+import { ReactNode } from "react";
+
+export default function WritingsLayout({ children }: { children: ReactNode }) {
+  return (
+    <div className="max-w-300 mx-auto px-6 py-12">
+      {children}
+    </div>
+  );
+}
