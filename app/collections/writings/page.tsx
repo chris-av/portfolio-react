@@ -9,8 +9,15 @@ type Essay = {
   href: string;
   title: string;
   description: string;
-  date?: string;
+  date?: Date;
 };
+
+const datefmt = new Intl.DateTimeFormat("en-US", {
+  weekday: "long",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
 
 function getEssays(): Essay[] {
   return fs
@@ -39,11 +46,12 @@ export default function WritingsPage() {
         <h1 className="mb-3 text-4xl font-extrabold text-purple-500">Writings</h1>
       </div>
 
-      {essays.map(({ href, title, description }) => (
+      {essays.map(({ href, title, description, date, }) => (
         <Link key={href} href={href}>
           <div className="rounded-xl border border-purple-500/20 bg-purple-500/5 p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-purple-500 hover:bg-purple-500/10 hover:shadow-[0_8px_32px_rgba(168,85,247,0.3)]">
             <h2 className="mb-1 text-xl font-bold">{title}</h2>
             <p className="text-sm opacity-60">{description}</p>
+            <p className="text-sm opacity-60">{datefmt.format(date)}</p>
           </div>
         </Link>
       ))}
