@@ -1,24 +1,38 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import Link from "next/link";
 
-const essays = [
-  {
-    href: "/collections/writings/test",
-    title: "On Building Things",
-    description: "The trap of perfect architecture, and why shipping consistently is a skill.",
-  },
-  {
-    href: "/collections/writings/on-data-engineering",
-    title: "On Data Engineering",
-    description: "Why data pipelines are harder than they look, and where the real complexity hides.",
-  },
-  {
-    href: "/collections/writings/on-learning",
-    title: "On Learning New Technologies",
-    description: "The build-first approach, the role of discomfort, and what actually transfers.",
-  },
-];
+const writingsDir = path.join(process.cwd(), "app/collections/writings");
+
+type Essay = {
+  href: string;
+  title: string;
+  description: string;
+  date?: string;
+};
+
+function getEssays(): Essay[] {
+  return fs
+    .readdirSync(writingsDir, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => {
+      const filePath = path.join(writingsDir, entry.name, "page.mdx");
+      if (!fs.existsSync(filePath)) return null;
+      const { data } = matter(fs.readFileSync(filePath, "utf8"));
+      return {
+        href: `/collections/writings/${entry.name}`,
+        title: data.title,
+        description: data.description,
+        date: data.date,
+      } as Essay;
+    })
+    .filter((essay): essay is Essay => essay !== null)
+    .sort((a, b) => (a.date && b.date ? +new Date(b.date) - +new Date(a.date) : 0));
+}
 
 export default function WritingsPage() {
+  const essays = getEssays();
   return (
     <div className="flex flex-col gap-4">
       <div className="mb-8 text-center">
