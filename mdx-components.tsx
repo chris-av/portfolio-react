@@ -24,7 +24,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <li className="text-lg pl-2">{children}</li>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-purple-500 pl-4 italic my-6 opacity-80">{children}</blockquote>
+      <blockquote className="border-l-4 border-purple-500 pl-4 italic my-6 opacity-80 lg:max-w-[45vw] lg:mx-auto">{children}</blockquote>
+    ),
+    Attribution: ({ children }) => (
+      <footer className="mt-2 text-right text-sm not-italic opacity-70">
+        — <cite>{children}</cite>
+      </footer>
     ),
     code: ({ children }) => (
       <code className="bg-gray-100 rounded px-1 py-0.5 font-mono text-sm">{children}</code>
