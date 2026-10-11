@@ -12,6 +12,8 @@ export type Experience = {
   jobtitle: string;
   range: string;
   summary: string;
+  // Matches a Job's `anchor` in resume.data.ts, linked as /resume#<resumeAnchor>.
+  resumeAnchor: string;
 };
 
 type Discipline = {
@@ -58,6 +60,7 @@ const systemsExperience: Experience[] = [
     jobtitle: "Solutions Consultant",
     range: "2025–Present",
     summary: "Design and deploy customer-specific solutions for manufacturing execution systems used by aerospace and defense manufacturers. Work directly with stakeholders to translate production requirements into software supporting traceability, validations, reporting, and data migrations. Help transition tens of thousands of work orders, inventory records, and quality records between enterprise systems while validating data for production continuity.",
+    resumeAnchor: "manufacturo",
   },
   {
     id: "dnc",
@@ -66,6 +69,7 @@ const systemsExperience: Experience[] = [
     jobtitle: "Analytics Engineer",
     range: "2024",
     summary: "Built and maintained data workflows with dbt, Airflow, and BigQuery in a fast-moving campaign environment. Supported engineering and analytics teams across battleground states, investigated data quality issues, and contributed to election-night reporting through automated collection of precinct-level results.",
+    resumeAnchor: "dnc",
   },
   {
     id: "la-promise-fund",
@@ -74,6 +78,7 @@ const systemsExperience: Experience[] = [
     jobtitle: "Data & Analytics Manager",
     range: "2020–2024",
     summary: "Built data ingestion and reporting workflows for large-scale academic datasets, integrated school information systems with external services, and worked with education stakeholders to deliver operational reporting and data products.",
+    resumeAnchor: "la-promise-fund",
   },
 ];
 
@@ -94,6 +99,7 @@ const webExperience: Experience[] = [
     jobtitle: "Full Stack Engineer",
     range: "2022–2024",
     summary: "Modernized a content-heavy web application using Next.js and a headless CMS, moving expensive client-side work to the server and reducing bundle size to improve load times by 80%. Built a consistent design system and an interactive reading experience while making content management more flexible for the client.",
+    resumeAnchor: "eminent-translations",
   },
   {
     id: "ledafilms",
@@ -102,6 +108,7 @@ const webExperience: Experience[] = [
     jobtitle: "Full Stack Engineer",
     range: "2022–2023",
     summary: "Architected a secure application for managing licenses, contracts, and other critical business records. Designed data-entry workflows and interfaces, and introduced a frontend queue for triggering computationally expensive cloud operations without blocking the user experience.",
+    resumeAnchor: "ledafilms",
   },
   {
     id: "manufacturo-interfaces",
@@ -110,6 +117,7 @@ const webExperience: Experience[] = [
     jobtitle: "Solutions Consultant",
     range: "2025–Present",
     summary: "Build custom interfaces and operational tooling for manufacturing execution systems, connecting frontend workflows with APIs, services, and production data. Translate customer requirements into applications supporting manufacturing traceability, validations, and reporting.",
+    resumeAnchor: "manufacturo",
   },
 ];
 

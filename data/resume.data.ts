@@ -1,5 +1,6 @@
 type Job = {
   id: string;
+  anchor?: string;
   organization: string;
   jobtitle: string;
   range?: string;
@@ -28,6 +29,7 @@ export const freelance: Job[] = [
   },
   {
     id: "b07e8c1e14fbdbc5e3be",
+    anchor: "eminent-translations",
     organization: "Eminent Translations",
     jobtitle: "Full Stack Engineer",
     range: "November 2022 - May 2024",
@@ -54,6 +56,7 @@ export const freelance: Job[] = [
   },
   {
     id: "999c79d4b25090e79e41",
+    anchor: "ledafilms",
     organization: "Ledafilms",
     jobtitle: "Full Stack Engineer",
     range: "October 2022 - February 2023",
@@ -128,6 +131,7 @@ export const freelance: Job[] = [
 export const jobs: Job[] = [
   {
     id: "",
+    anchor: "manufacturo",
     organization: "Manufacturo",
     jobtitle: 'Solutions Consultant',
     range: 'June 2025 - Present',
@@ -157,6 +161,7 @@ export const jobs: Job[] = [
   },
   {
     id: "630d165be8cd61ea3cd792513c32ec9c",
+    anchor: "dnc",
     organization: 'Democratic National Committee',
     jobtitle: 'Analytics Engineer',
     range: 'May 2024 - November 2024',
@@ -171,6 +176,7 @@ export const jobs: Job[] = [
   },
   {
     id: "52574537-5364-3330e4d9-c9f7d6bb9783",
+    anchor: "la-promise-fund",
     organization: 'LA Promise Fund',
     jobtitle: 'Data and Analytics Manager',
     range: 'March 2020 - May 2024',

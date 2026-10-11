@@ -1,9 +1,11 @@
 import { freelance, jobs } from '@/data/resume.data';
 import '@/styles/globals.css';
+import ScrollToHash from './ScrollToHash';
 
 export default function Page() {
   return (
     <div className="flex items-center justify-center p-8">
+      <ScrollToHash />
       <div className="max-w-[1200px]">
 
         <div className="my-16">
@@ -25,12 +27,13 @@ export default function Page() {
         <div className="mb-8 h-[3px] w-full rounded-xl bg-purple-500"></div>
         <div className="mx-auto max-w-[900px]">
           {jobs.map(({
-            id, organization, range, jobtitle, description, tags,
+            id, anchor, organization, range, jobtitle, description, tags,
           }) => {
             return (
               <div
-                key={id}
-                className="mb-12 selection:bg-purple-500 selection:text-white"
+                key={id || anchor}
+                id={anchor}
+                className="mb-12 scroll-mt-24 selection:bg-purple-500 selection:text-white lg:scroll-mt-8"
               >
                 <h3 className="mb-2 text-2xl">{organization}, <span className="text-2xl text-purple-500 dark:text-purple-400">{jobtitle}</span></h3>
                 <div className="text-lg font-bold">{range}</div>
@@ -55,12 +58,13 @@ export default function Page() {
         <div className="mb-8 h-[3px] w-full rounded-xl bg-orange-500"></div>
         <div className="mx-auto max-w-[900px]">
           {freelance.map(({
-            id, organization, jobtitle, description, tags,
+            id, anchor, organization, jobtitle, description, tags,
           }) => {
             return (
               <div
                 key={id}
-                className="mb-12 selection:bg-orange-500 selection:text-white"
+                id={anchor}
+                className="mb-12 scroll-mt-24 selection:bg-orange-500 selection:text-white lg:scroll-mt-8"
               >
                 <h3 className="mb-2 text-2xl">{organization}, <span className="text-2xl text-orange-500">{jobtitle}</span></h3>
                 <ul className="list-outside list-disc">

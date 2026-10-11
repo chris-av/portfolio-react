@@ -130,11 +130,15 @@ function SubHeading({ children }: { children: ReactNode }) {
 function ExperienceGrid({ experience, secondary = false }: { experience: Experience[]; secondary?: boolean }) {
   return (
     <div className="grid gap-6 lg:grid-cols-3">
-      {experience.map(({ id, domain, organization, jobtitle, range, summary }) => (
-        <article
+      {experience.map(({ id, domain, organization, jobtitle, range, summary, resumeAnchor }) => (
+        // scroll={false} lets ScrollToHash on /resume smooth-scroll to the entry
+        // instead of Next jumping straight to it.
+        <Link
           key={id}
+          href={`/resume#${resumeAnchor}`}
+          scroll={false}
           className={classnames(
-            "flex flex-col rounded-xl border border-gray-200 p-6 transition-colors hover:border-purple-500 dark:border-white/10 dark:hover:border-purple-light",
+            "flex flex-col rounded-xl border border-gray-200 p-6 text-inherit no-underline transition-colors hover:border-purple-500 hover:text-inherit dark:border-white/10 dark:hover:border-purple-light",
             !secondary && "bg-gray-50 dark:bg-white/5",
           )}
         >
@@ -147,7 +151,7 @@ function ExperienceGrid({ experience, secondary = false }: { experience: Experie
             <span className="text-sm text-gray-500 dark:text-gray-400">{range}</span>
           </div>
           <p className="mb-0 text-gray-700 dark:text-gray-300">{summary}</p>
-        </article>
+        </Link>
       ))}
     </div>
   );
