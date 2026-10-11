@@ -1,4 +1,5 @@
 import type { MDXComponents } from 'mdx/types'
+import PostMeta from './app/collections/writings/PostMeta'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -37,6 +38,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     hr: () => (
       <hr className="my-8 border-t border-gray-200" />
     ),
+    PostMeta,
     ...components,
   }
 }

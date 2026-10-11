@@ -1,6 +1,7 @@
 import createMDX from '@next/mdx';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
+import remarkPostMeta from './utils/remark-post-meta.mjs';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -35,6 +36,7 @@ const withMDX = createMDX({
     remarkPlugins: [
       remarkFrontmatter,
       [remarkMdxFrontmatter, { name: 'metadata' }],
+      remarkPostMeta,
     ],
   },
 });
