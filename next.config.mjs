@@ -5,7 +5,6 @@ import remarkPostMeta from './utils/remark-post-meta.mjs';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   compiler: {
     styledComponents: true
   },

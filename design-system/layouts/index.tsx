@@ -3,7 +3,7 @@ export * from './two-panel';
 
 
 interface ComponentProps {
-  myref?: RefObject<HTMLDivElement>;
+  myref?: RefObject<HTMLDivElement | null>;
   children?: ReactNode;
 }
 
