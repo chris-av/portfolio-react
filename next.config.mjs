@@ -1,7 +1,5 @@
+import { fileURLToPath } from 'node:url';
 import createMDX from '@next/mdx';
-import remarkFrontmatter from 'remark-frontmatter';
-import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
-import remarkPostMeta from './utils/remark-post-meta.mjs';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -26,16 +24,21 @@ const nextConfig = {
         // search: "",
       },
     ],
-  }
+  },
+  experimental: {
+    agentUpgrade: "latest",
+  },
 };
 
 const withMDX = createMDX({
   extension: /\.(mdx)$/,
   options: {
     remarkPlugins: [
-      remarkFrontmatter,
-      [remarkMdxFrontmatter, { name: 'metadata' }],
-      remarkPostMeta,
+      // Turbopack requires serializable loader options, so plugins are
+      // referenced by module name/path and resolved by @next/mdx.
+      'remark-frontmatter',
+      ['remark-mdx-frontmatter', { name: 'metadata' }],
+      fileURLToPath(new URL('./utils/remark-post-meta.mjs', import.meta.url)),
     ],
   },
 });
