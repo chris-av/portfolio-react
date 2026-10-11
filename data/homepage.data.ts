@@ -5,7 +5,7 @@ type FocusArea = {
   focus: string[];
 };
 
-type Experience = {
+export type Experience = {
   id: string;
   domain: string;
   organization: string;
@@ -14,13 +14,22 @@ type Experience = {
   summary: string;
 };
 
+type Discipline = {
+  id: string;
+  number: string;
+  title: string;
+  focusHeading?: string;
+  focusAreas: FocusArea[];
+  experience: Experience[];
+};
+
 export const pitch = {
   role: "Software Engineer · Data Systems & Integrations",
   headline: "I build software that connects systems, improves workflows, and makes complex data useful.",
   body: "My work spans enterprise applications, data pipelines, API integrations, and production-critical tools—often in close collaboration with the people who depend on them.",
 };
 
-export const focusAreas: FocusArea[] = [
+const systemsFocusAreas: FocusArea[] = [
   {
     id: "enterprise-applications",
     title: "Enterprise Applications & Integrations",
@@ -41,7 +50,7 @@ export const focusAreas: FocusArea[] = [
   },
 ];
 
-export const selectedExperience: Experience[] = [
+const systemsExperience: Experience[] = [
   {
     id: "manufacturo",
     domain: "Manufacturing Systems",
@@ -65,5 +74,59 @@ export const selectedExperience: Experience[] = [
     jobtitle: "Data & Analytics Manager",
     range: "2020–2024",
     summary: "Built data ingestion and reporting workflows for large-scale academic datasets, integrated school information systems with external services, and worked with education stakeholders to deliver operational reporting and data products.",
+  },
+];
+
+const webFocusAreas: FocusArea[] = [
+  {
+    id: "web-applications",
+    title: "Building Applications People Actually Use",
+    description: "I build full-stack applications that make complex information and workflows accessible to the people who use them. My web engineering work includes interactive interfaces, API-backed features, content platforms, and business applications. I focus on performance, maintainability, and designing software around real user needs—not just a particular frontend framework.",
+    focus: ["TypeScript", "React", "Next.js", "Angular", "Node.js", "REST APIs", "SQL"],
+  },
+];
+
+const webExperience: Experience[] = [
+  {
+    id: "eminent-translations",
+    domain: "Content Platform Modernization",
+    organization: "Eminent Translations",
+    jobtitle: "Full Stack Engineer",
+    range: "2022–2024",
+    summary: "Modernized a content-heavy web application using Next.js and a headless CMS, moving expensive client-side work to the server and reducing bundle size to improve load times by 80%. Built a consistent design system and an interactive reading experience while making content management more flexible for the client.",
+  },
+  {
+    id: "ledafilms",
+    domain: "Business Operations Application",
+    organization: "Ledafilms",
+    jobtitle: "Full Stack Engineer",
+    range: "2022–2023",
+    summary: "Architected a secure application for managing licenses, contracts, and other critical business records. Designed data-entry workflows and interfaces, and introduced a frontend queue for triggering computationally expensive cloud operations without blocking the user experience.",
+  },
+  {
+    id: "manufacturo-interfaces",
+    domain: "Manufacturing Interfaces",
+    organization: "Manufacturo",
+    jobtitle: "Solutions Consultant",
+    range: "2025–Present",
+    summary: "Build custom interfaces and operational tooling for manufacturing execution systems, connecting frontend workflows with APIs, services, and production data. Translate customer requirements into applications supporting manufacturing traceability, validations, and reporting.",
+  },
+];
+
+export const disciplines: Discipline[] = [
+  {
+    id: "systems-data",
+    number: "01",
+    title: "Systems & Data Engineering",
+    focusHeading: "What I Work On",
+    focusAreas: systemsFocusAreas,
+    experience: systemsExperience,
+  },
+  {
+    id: "web-application",
+    number: "02",
+    title: "Web & Application Engineering",
+    focusAreas: webFocusAreas,
+    experience: webExperience,
   },
 ];
