@@ -16,7 +16,7 @@ export default function WritingsPage() {
   return (
     <div className="flex flex-col gap-4">
       <div className="mb-8 text-center">
-        <h1 className="mb-3 text-4xl font-extrabold text-purple-500">Writings</h1>
+        <h1 className="mb-3 text-4xl font-extrabold text-purple-500 dark:text-purple-400">Writings</h1>
       </div>
 
       {essays.map(({ href, title, description, date, tags }) => (

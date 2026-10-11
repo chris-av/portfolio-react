@@ -17,7 +17,7 @@ export default function PageWrapper() {
         <h2 className="font-bond mb-12 text-center text-2xl lg:mb-0 lg:text-4xl">Find me in the following platforms!</h2>
         <div className="relative mx-auto my-12 flex h-[85px] w-full flex-col items-center justify-around lg:w-3/4 lg:flex-row">
           <a href={fiverr} target="_blank" rel="noopener noreferrer" className="left-0 top-1/2 -translate-y-1/2 transform lg:absolute">
-            <div className="border-1 w-[150px] rounded-xl border-[#0079D0] p-4 shadow-[0_6px_12px_0_rgba(0,121,208,0.6)] transition-all hover:w-[200px] lg:w-[180px]">
+            <div className="border-1 w-[150px] rounded-xl border-[#0079D0] p-4 shadow-[0_6px_12px_0_rgba(0,121,208,0.6)] transition-all hover:w-[200px] lg:w-[180px] dark:bg-white">
               <Image
                 src="/fiverr.svg"
                 alt="Fiverr Logo"
@@ -29,7 +29,7 @@ export default function PageWrapper() {
           </a>
           <div className="my-4 lg:my-0" />
           <a href={upwork} target="_blank" rel="noopener noreferrer" className="right-0 top-1/2 -translate-y-1/2 lg:absolute ">
-            <div className="border-1 w-[150px] rounded-xl border-[#00d559] p-4 shadow-[0_6px_12px_0_rgba(0,213,89,0.6)] transition-all hover:w-[220px] lg:w-[200px]">
+            <div className="border-1 w-[150px] rounded-xl border-[#00d559] p-4 shadow-[0_6px_12px_0_rgba(0,213,89,0.6)] transition-all hover:w-[220px] lg:w-[200px] dark:bg-white">
               <Image
                 src="/upwork-logo.svg"
                 alt="Upwork Logo"
@@ -46,7 +46,7 @@ export default function PageWrapper() {
           <span>
             <Link
               href="/resume"
-              className="font-bold text-blue-900 underline"
+              className="font-bold text-blue-900 underline dark:text-blue-300"
               target="_blank" rel="noopener noreferrer"
             >here</Link>
           </span>

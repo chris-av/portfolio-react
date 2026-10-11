@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { Nunito } from 'next/font/google';
 import NavbarWrapper from './NavbarWrapper';
 import Footer from '@/components/Footer';
+import { themeInitScript } from '@/utils/theme';
 import '@/styles/globals.css';
 import "semantic-ui-css/components/icon.min.css";
 
@@ -51,7 +52,11 @@ export default function RootLayout({
   children: ReactNode,
 }) {
   return (
-    <html lang="en">
+    // data-theme is set by themeInitScript before hydration
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className={noto.className}>
         <NavbarWrapper />
         <div className="pt-[80px] lg:pt-0">

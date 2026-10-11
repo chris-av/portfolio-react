@@ -1,11 +1,36 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  color-scheme: light;
+}
+
+:root[data-theme=dark] {
+  --background: #13121c;
+  --foreground: #e4e2f0;
+  color-scheme: dark;
+}
+
 html, body {
   padding: 0;
   margin: 0;
   font-family: 'Nunito', sans-serif;
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* semantic-ui forces black icons with !important */
+[data-theme=dark] i.black.icon {
+  color: var(--foreground) !important;
 }
 
 * {

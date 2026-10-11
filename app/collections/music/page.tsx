@@ -21,7 +21,7 @@ export default async function Page() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
         {playlist.tracks.items.map(({ item: { id, name, artists, album: { images }, external_urls: { spotify } } }) => (
           <a key={id} href={spotify} target="_blank" rel="noopener noreferrer">
-            <div className="flex gap-4 p-4 items-center rounded-xl border border-[#434179]/20 bg-[#434179]/5 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:border-[#434179] hover:bg-[#434179]/10 hover:shadow-[0_8px_32px_rgba(67,65,121,0.35)]">
+            <div className="flex gap-4 p-4 items-center rounded-xl border border-[#434179]/20 bg-[#434179]/5 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:border-[#434179] hover:bg-[#434179]/10 hover:shadow-[0_8px_32px_rgba(67,65,121,0.35)] dark:border-purple-light/20 dark:bg-purple-light/5 dark:hover:border-purple-light dark:hover:bg-purple-light/10">
               <RenderImage images={images} />
               <div>
                 <h3>{name}</h3>
@@ -48,7 +48,7 @@ export default async function Page() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
         {topArtists.map(({ id, name, external_urls: { spotify: href }, images }) => (
           <a key={id} href={href} target="_blank" rel="noopener noreferrer">
-            <div className="flex gap-4 p-4 items-center rounded-xl border border-[#434179]/20 bg-[#434179]/5 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:border-[#434179] hover:bg-[#434179]/10 hover:shadow-[0_8px_32px_rgba(67,65,121,0.35)]">
+            <div className="flex gap-4 p-4 items-center rounded-xl border border-[#434179]/20 bg-[#434179]/5 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:border-[#434179] hover:bg-[#434179]/10 hover:shadow-[0_8px_32px_rgba(67,65,121,0.35)] dark:border-purple-light/20 dark:bg-purple-light/5 dark:hover:border-purple-light dark:hover:bg-purple-light/10">
               <RenderImage images={images} round />
               <h2 className="text-lg">{name}</h2>
             </div>

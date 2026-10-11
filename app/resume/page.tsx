@@ -9,19 +9,19 @@ export default function Page() {
         <div className="my-16">
           <h1 className="mb-4 text-center text-4xl">Resume</h1>
           <div className="flex flex-col justify-center lg:flex-row">
-            <a className="mb-2 font-bold text-blue-500 underline underline-offset-2 lg:mb-0" target="_blank" href="/resume-full-stack.pdf">
+            <a className="mb-2 font-bold text-blue-500 underline dark:text-blue-400 underline-offset-2 lg:mb-0" target="_blank" href="/resume-full-stack.pdf">
               <span><i className="icon pdf file red" /></span>
               Full Stack Resume
             </a>
             <div className="mx-2 hidden text-xl lg:block">|</div>
-            <a className="mb-2 font-bold text-blue-500 underline underline-offset-2 lg:mb-0" target="_blank" href="/resume-data-engineer.pdf">
+            <a className="mb-2 font-bold text-blue-500 underline dark:text-blue-400 underline-offset-2 lg:mb-0" target="_blank" href="/resume-data-engineer.pdf">
               <span><i className="icon pdf file red" /></span>
               Data Engineer Resume
             </a>
           </div>
         </div>
 
-        <h2 className="decoration-3 text-3xl font-extrabold text-purple-500">Job History</h2>
+        <h2 className="decoration-3 text-3xl font-extrabold text-purple-500 dark:text-purple-400">Job History</h2>
         <div className="mb-8 h-[3px] w-full rounded-xl bg-purple-500"></div>
         <div className="mx-auto max-w-[900px]">
           {jobs.map(({
@@ -32,7 +32,7 @@ export default function Page() {
                 key={id}
                 className="mb-12 selection:bg-purple-500 selection:text-white"
               >
-                <h3 className="mb-2 text-2xl">{organization}, <span className="text-2xl text-purple-500">{jobtitle}</span></h3>
+                <h3 className="mb-2 text-2xl">{organization}, <span className="text-2xl text-purple-500 dark:text-purple-400">{jobtitle}</span></h3>
                 <div className="text-lg font-bold">{range}</div>
                 <ul className="list-outside list-disc">
                   {description.map((desc, i) => (
@@ -41,7 +41,7 @@ export default function Page() {
                 </ul>
                 <div className="flex flex-wrap">
                   {tags?.map(tag => (
-                    <span key={tag} className="m-2 cursor-pointer select-none rounded-md bg-gray-100 px-4 py-2 text-sm font-bold transition-colors hover:bg-purple-500 hover:text-white">
+                    <span key={tag} className="m-2 cursor-pointer select-none rounded-md bg-gray-100 px-4 dark:bg-white/10 py-2 text-sm font-bold transition-colors hover:bg-purple-500 hover:text-white">
                       {tag}
                     </span>
                   ))}
@@ -70,7 +70,7 @@ export default function Page() {
                 </ul>
                 <div className="flex flex-wrap">
                   {tags?.map(tag => (
-                    <span key={tag} className="m-2 cursor-pointer select-none rounded-md bg-gray-100 px-4 py-2 text-sm font-bold transition-colors hover:bg-orange-600 hover:text-white">
+                    <span key={tag} className="m-2 cursor-pointer select-none rounded-md bg-gray-100 px-4 dark:bg-white/10 py-2 text-sm font-bold transition-colors hover:bg-orange-600 hover:text-white">
                       {tag}
                     </span>
                   ))}

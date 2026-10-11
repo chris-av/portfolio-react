@@ -18,7 +18,7 @@ export default function NavigationMobile() {
   return (
     <div 
       style={{ transform: open ? "translateX(0)" : "translateX(-100%)" }} 
-      className="fixed z-10 -mt-[1px] flex h-full w-full flex-col bg-purple px-12 pt-20 text-white transition-transform duration-500"
+      className="fixed z-10 -mt-[1px] flex h-full w-full flex-col bg-purple px-12 dark:bg-purple-deep pt-20 text-white transition-transform duration-500"
     >
       <nav className="mb-menu text-3xl">
         <ul>

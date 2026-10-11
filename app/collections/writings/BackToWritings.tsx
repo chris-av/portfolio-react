@@ -14,7 +14,7 @@ export default function BackToWritings() {
   return (
     <Link
       href={WRITINGS_PATH}
-      className="mb-8 inline-flex items-center gap-1 rounded-lg border border-purple-500/20 bg-purple-500/5 px-4 py-2 text-sm font-bold text-purple-500 transition-all duration-300 ease-out hover:border-purple-500 hover:bg-purple-500/10"
+      className="mb-8 inline-flex items-center gap-1 rounded-lg border border-purple-500/20 bg-purple-500/5 px-4 py-2 text-sm font-bold text-purple-500 dark:text-purple-400 transition-all duration-300 ease-out hover:border-purple-500 hover:bg-purple-500/10"
     >
       <i className="chevron left icon leading-none" />
       All writings

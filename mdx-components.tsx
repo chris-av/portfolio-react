@@ -4,7 +4,7 @@ import PostMeta from './app/collections/writings/PostMeta'
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: ({ children }) => (
-      <h1 className="text-4xl text-center font-extrabold text-purple-500 mt-8 mb-6">{children}</h1>
+      <h1 className="text-4xl text-center font-extrabold text-purple-500 dark:text-purple-400 mt-8 mb-6">{children}</h1>
     ),
     h2: ({ children }) => (
       <h2 className="text-3xl text-center font-bold mt-8 mb-4">{children}</h2>
@@ -33,10 +33,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </footer>
     ),
     code: ({ children }) => (
-      <code className="bg-gray-100 rounded px-1 py-0.5 font-mono text-sm">{children}</code>
+      <code className="bg-gray-100 dark:bg-white/10 rounded px-1 py-0.5 font-mono text-sm">{children}</code>
     ),
     hr: () => (
-      <hr className="my-8 border-t border-gray-200" />
+      <hr className="my-8 border-t border-gray-200 dark:border-white/10" />
     ),
     PostMeta,
     ...components,

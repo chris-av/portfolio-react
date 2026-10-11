@@ -15,7 +15,7 @@ const collections = [
     title: "Writings",
     description: "My personal writings on random stuff.",
     cardClass: "border-purple-500/20 bg-purple-500/5 hover:border-purple-500 hover:bg-purple-500/10 hover:shadow-[0_8px_32px_rgba(168,85,247,0.3)]",
-    iconClass: "text-purple-500",
+    iconClass: "text-purple-500 dark:text-purple-400",
   },
 ];
 
